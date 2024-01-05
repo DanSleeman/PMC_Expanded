@@ -1,0 +1,1 @@
+uxCreateButton('labelTesting','Label Testing','/Platform/LabelLibrary/ViewLabelsTestingForm')

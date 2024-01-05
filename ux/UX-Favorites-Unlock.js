@@ -1,0 +1,1 @@
+scriptInject('ux/src/UX-Favorites-Unlock-Script.js')

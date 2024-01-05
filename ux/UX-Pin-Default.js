@@ -1,0 +1,1 @@
+scriptInject('ux/src/UX-Pin-Default-Script.js')

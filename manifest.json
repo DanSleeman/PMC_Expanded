@@ -1,0 +1,429 @@
+{
+  "update_url": "C:\\Users\\sleemand.SHAPE\\OneDrive - Verplank Enterprises, Inc\\Scripts",
+  "name": "Plex EX",
+  "version": "1.0",
+  "description": "Consolidates the Tampermonkey scripts I use to an addon",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "manifest_version": 3,
+  "action": {
+    "name": "Manipulate DOM",
+    "icons": ["icon-default.png"],
+    "default_icon": "icon-default.png",
+    "default_title": "Plex EX"
+  },
+  "permissions":[
+    "storage",
+    "activeTab",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions":[
+    "*://*.plex.com/"
+  ],
+  "content_scripts": [ 
+  {
+    "matches":[
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*",
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "js":[
+      "lib/jquery-2.2.3.min.js",
+      "lib/utils.js"
+    ]
+  },
+  {
+    "matches": [ 
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],
+    "include_globs": [
+      "*plexonline.com/*/Schedulers/shipping_days.asp*",
+      "*plexonline.com/*/Schedulers/Shipping_Days.asp*"
+    ],
+    "js": [ 
+      "classic/Plex-Calendar-Year-Expander.js"
+    ]
+  },
+  {
+    "css":[
+      "classic/Position-Role-Association-Highlight.css"
+    ],
+    "include_globs":[
+      "*plexonline.com/*/Rendering_Engine/Default.aspx?Request=Show&RequestData=SourceType(Screen)SourceKey(6567)*"
+    ],
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ]
+  },
+  {
+    "css":[
+      "ux/UX-Position-Role-Association-Highlight.css"
+    ],
+    "include_globs":[
+      "*cloud.plex.com/Security/PositionSecurityRoleAssociations/ViewPositionRoleAssociation*"
+    ],
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],
+    "include_globs": [
+      "*plexonline.com/*/Rendering_Engine/Default.aspx?Request=Show&RequestData=SourceType(Screen)SourceKey(13534)*"
+    ],
+    "js": [
+      "classic/Label-Designer-Button.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],
+    "include_globs": [
+      "*plexonline.com/*/Rendering_Engine/Default.aspx?Request=Show&RequestData=SourceType(Screen)SourceKey(37166)*"
+    ],
+    "js": [
+      "classic/Renault-DELFOR-Button.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],
+    "include_globs": [
+      "*plexonline.com/*/Program_Manager/PDS_Checklist.asp*"
+    ],    
+    "js": [
+      "classic/Checklist-Edit-Link.js"
+    ]
+  },  
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],  
+    "exclude_globs": [
+      "*Raw_Data_Export.asp*"
+    ],
+    "js": [
+      
+      "classic/Plex-Esc-Override.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],  
+    "include_globs": [
+      "*Modules/Quality/Checksheet/ChecksheetLine.aspx*"
+    ],
+    "js": [
+      "classic/Checksheet-Populate.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],
+    "include_globs": [
+      "*/Sales/PO.asp*"
+    ],    
+    "js": [
+      "classic/Customer-PO-Buttons.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],
+    "include_globs": [
+      "*plexonline.com/*/EDI/EDI_Log2.asp*"
+    ],    
+    "js": [
+      "classic/EDI-Log-Buttons.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],
+    "include_globs": [
+      "*plexonline.com/*/Rendering_Engine/Default.aspx?Request=Show&RequestData=SourceType(Screen)SourceKey(6567)*"
+    ],
+    "js": [
+      "classic/Position-Role-Association-Buttons.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],
+    "include_globs": [
+      "*plexonline.com/*/Rendering_Engine/*"
+    ],
+    "js": [
+      "classic/VP-Tab-Index-Fix.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*"
+    ],
+    "include_globs": [
+      "*plexonline.com/*/User_Manager_Customer_Form.asp*"
+    ],    
+    "js": [
+      "classic/User-Manager-Button.js"
+    ]
+  },
+    {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*cloud.plex.com/Shipping/CustomerLabelDesigner/ViewCustomerLabelElementsGrid*"
+    ],
+    "js": [
+      "ux/UX-Label-Designer-Button.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "js": [
+      "ux/UX-Favorites-Unlock.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*cloud.plex.com/Security/PositionSecurityRoleAssociations/ViewPositionRoleAssociation*"
+    ],
+    "js": [
+        "ux/UX-Position-Role-Association-Rearrange.js",
+        "ux/UX-Position-Role-Association-Buttons.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*cloud.plex.com/Security/UserManagement/ViewUserManagerCustomerForm*"
+    ],
+    "js": [
+        "ux/UX-User-Manager-Role-Buttons.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*cloud.plex.com/EDI/EDILog*"
+    ],
+    "js": [
+      "ux/UX-EDI-Log-Buttons.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*cloud.plex.com/ProgramManagement/Checklists/StepOverview*"
+    ],
+    "js": [
+      "ux/UX-Project-Management-Checklist-Link.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*Shipping/CustomerLabelDesigner/ViewCustomerLabelElementsGrid*"
+    ],
+    "js": [
+      "ux/UX-Label-Links.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*Platform/RevisionTracking?ApplicationKey=1275*"
+    ],
+    "js": [
+      "ux/UX-User-Manager-Revision-History.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "exclude_globs": [
+      "*LaunchPage*",
+      "*Platform/Settings?CloudApplicationKey*"
+    ],
+    "js": [
+      "ux/UX-Pin-Default.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "exclude_globs": [
+      "*login*"
+    ],
+    "js": [
+      "ux/UX-Compare-Settings.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*cloud.plex.com/Quality/Checklists/ChecklistGridView*"
+    ],
+    "js": [
+      "ux/UX-Checklist-Edit-Link.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*ControlPanel/Dashboard*"
+    ],
+    "js": [
+      "ux/UX-Checksheet-Fill.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*Security/SecurityAdminManager*"
+    ],
+    "js": [
+      "ux/UX-Security-Manager-Action-Keys.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*Security/SecurityRolesActionList*"
+    ],
+    "js": [
+      
+      "ux/UX-Role-Manager-Action-Keys.js"
+    ]
+  }
+  ],
+  "web_accessible_resources": [
+  {
+    "resources":[
+      "lib/jquery-2.2.3.min.js",
+      "lib/utils.js",
+      "classic/src/Plex-Esc-Override-Script.js",
+      "ux/src/UX-Pin-Default-Script.js",
+      "ux/src/UX-Position-Role-Association-Rearrange-Script.js",
+      "ux/src/UX-Checksheet-Fill-Script.js",
+      "ux/src/UX-Favorites-Unlock-Script.js",
+      "ux/src/UX-Security-Manager-Action-Keys-Script.js",
+      "ux/src/UX-Role-Manager-Action-Keys-Script.js",
+      "ux/UX-User-Manager-Revision-History-Cleanup.js"
+    ],
+    "matches":[
+      "*://test.plexus-online.com/*",
+      "*://www.plexus-online.com/*",
+      "*://test.plexonline.com/*",
+      "*://www.plexonline.com/*",
+      "*://plus.plexonline.com/*",
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ]
+  }
+]
+}
