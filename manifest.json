@@ -34,8 +34,8 @@
       "*://cloud.plex.com/*"
     ],
     "js":[
-      "lib/jquery-2.2.3.min.js",
-      "lib/utils.js"
+      "util/jquery-2.2.3.min.js",
+      "util/utils.js"
     ]
   },
   {
@@ -396,7 +396,6 @@
       "*Security/SecurityRolesActionList*"
     ],
     "js": [
-      
       "ux/UX-Role-Manager-Action-Keys.js"
     ]
   }
@@ -404,8 +403,8 @@
   "web_accessible_resources": [
   {
     "resources":[
-      "lib/jquery-2.2.3.min.js",
-      "lib/utils.js",
+      "util/jquery-2.2.3.min.js",
+      "util/utils.js",
       "classic/src/Plex-Esc-Override-Script.js",
       "ux/src/UX-Pin-Default-Script.js",
       "ux/src/UX-Position-Role-Association-Rearrange-Script.js",

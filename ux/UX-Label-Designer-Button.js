@@ -1,1 +1,1 @@
-uxCreateButton('labelTesting','Label Testing','/Platform/LabelLibrary/ViewLabelsTestingForm')
+uxCreateButton('labelTesting','Label Testing','/Platform/LabelLibrary/ViewLabelsTestingForm',null,true)

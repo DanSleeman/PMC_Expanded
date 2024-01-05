@@ -1,4 +1,4 @@
-function uxCreateButton(id,name,link=null,title=null){
+function uxCreateButton(id,name,link=null,title=null,newTab=false){
     let plexBase = window.location.origin;
     let x = document.getElementsByClassName('plex-actions');
     let t = x[0];
@@ -10,6 +10,9 @@ function uxCreateButton(id,name,link=null,title=null){
     a.innerText = name
     if(link !== null){
         a.href = `${plexBase}${link}`
+        if (newTab){
+            a.target= '_blank';
+        }
     }
     if(title !== null){
         a.title = title
