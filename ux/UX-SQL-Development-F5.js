@@ -1,0 +1,1 @@
+scriptInject('ux/src/UX-SQL-Development-F5-Script.js')

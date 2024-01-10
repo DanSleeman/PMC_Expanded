@@ -7,9 +7,18 @@ I have been slowly working to migrate my classic features to UX.
 
 # UX Features
 
-TODO - 1/5/2024 Create a script that overrides the F5 key on the SQL development environment to execute the script instead of refreshing the page.  
-This is the behavior in classic (or may be a part of Cumulus extension).
 
+TODO - 1/10/2024 - Create links for the user manager "customer access" portion which links to that user's detail screen in the relevant PCN
+
+`https://cloud.plex.com/Security/UserManagement/ViewUserManagerCustomerForm?__sk=21&__sak=81&__actionKey=10473&__asid=QUPRux4BrXTwENpMFzem&UserValue=2528250&UserCustomerKey=1100333&__features=novirtual`  
+`https://cloud.plex.com/Security/UserManagement/ViewUserManagerCustomerForm?__sk=21&__sak=81&__actionKey=10473&__asid=Ud8py6ZDapYhPiAVY2uW&UserValue=2528250&UserCustomerKey=6348365&__features=novirtual`
+
+__sk and __sak appear to be different for different submenus in the user manager. These are consistent from user to user and PCN to PCN.  
+UserValue is the same. This is the PUN  
+UserCustomerKey is different based on the PCN that is selected. Need to figure out if this is available on the screen or not.
+
+datasource.raw is an array of each row which has a lot of detail. Does not have the usercustomerkey though.  
+This same detail is avaialable on each checkbox data as well.
 
 ### No Lazy Loading
 
@@ -79,9 +88,18 @@ UX does not allow this by default, but there was a time when it did and they hav
 
 This script removes and replaces the available options in the F-key drop down selector when loaded.
 
-F5 is still restricted in order to replicate the classic behavor as well as allow for future SQL development environment useage without conflicts.
+F5 is still restricted in order to replicate the classic behavor as well as allow for SQL development environment useage without conflicts.
 
 ![Example](images/ux-favorites.jpg)
+
+### SQL Development Environment F5 to Execute
+
+1/10/2024 There is an issue with this which causes all F keys to stop functioning on the SQL development screen.
+
+Allows to use the F5 key to execute a SQL query.  
+This was behavior available in the classic version if using the Cumulus plugin.
+
+Most IDEs allow F5 execution, and there is nothing worse than Plex completely erasing your SQL work when you press F5 instead of moving your hand to your mouse to click on a button.
 
 ### Label Designer
 

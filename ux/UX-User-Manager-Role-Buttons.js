@@ -1,3 +1,20 @@
+scriptInject('util/utils.js')
+scriptInject('ux/src/UX-User-Manager-Role-Buttons-Script.js')
+
+window.addEventListener('message',function(event){
+    if (event.source != window) return;
+    switch(event.data.type){
+        case "copyRoles":
+            copyRoles()
+            break;
+        case "pasteRoles":
+            pasteRoles()
+            break;
+        case "allAdmin":
+            allAdmin()
+            break;
+    }
+})
 function copyRoles(){
     var a = []
     $('input[type="checkbox"][name="AssignedToRole"]').each(
@@ -35,17 +52,3 @@ function allAdmin(){
         }
     )
 }
-
-uxCreateButton('copyRoles','Copy Roles')
-uxCreateButton('pasteRoles','Paste Roles')
-uxCreateButton('allAdmin','Select All Admin')
-
-document.getElementById ("copyRoles").addEventListener (
-    "mouseup", copyRoles, false
-    );
-document.getElementById ("pasteRoles").addEventListener (
-    "mouseup", pasteRoles, false
-    );
-document.getElementById ("allAdmin").addEventListener (
-    "mouseup", allAdmin, false
-    );
