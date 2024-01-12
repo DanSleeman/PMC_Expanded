@@ -1,5 +1,19 @@
 # Change Log
 
+## [0.3] - 2024-11-1
+
+### Fixed
+
+Fixed issue with role manager buttons to prevent errors on initialization.
+
+### Added
+
+Added notification toasts to UX user manager role buttons.
+
+### Changed
+
+Changed favorites F-key unlock selector to be less strict to avoid future DOM changes that may affect functionality.
+
 ## [0.2] - 2024-10-1
 
 ### Added
@@ -18,4 +32,3 @@ This method allows the buttons to use the Plex toast alert function when pressed
 ### TODO
 Fix SQL Development Environment F5 override to still allow other F keys to function.
 
-Figure out what is causing the user manager role buttons to sometimes fail initialization.
