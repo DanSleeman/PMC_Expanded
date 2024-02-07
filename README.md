@@ -193,6 +193,20 @@ For instance, if "Original Value" has a record with a matching "New Value" then 
 This would allow for cleaning up all the entries which have not actually changed.
 The grouping would need to be done by the "Modified Date" column grouping.
 
+
+### Role Revision History
+
+`UX-Role-History-Buttons.js` `UX-Role-History-Buttons-Script.js`
+
+Adds a button to copy the "Remove" type records in the search results.
+
+This allows for pasting these roles back into a user record or position role association.
+
+This is likely unique to Shape's use-case. They are using a specific Plex sproc for security integration with ADP which does not properly deal with manual roles outside of postions or "additional positions" security roles.
+
+The sproc is removing any access that is not directly assigned to the person's position role association.  
+The expected behavior is to keep anything manual, as well as any additional position role association.
+
 # Classic Features
 
 ### Calendar Mass Update

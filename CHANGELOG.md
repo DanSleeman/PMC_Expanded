@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.4] - 2024-7-2
+
+### Added
+
+Added button to "role history" screen which will copy role names that have "remove" actions.  
+This will support pasting these roles into the user manager and position role association screens.
+
 ## [0.3] - 2024-11-1
 
 ### Fixed

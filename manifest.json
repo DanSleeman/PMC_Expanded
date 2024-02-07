@@ -1,7 +1,7 @@
 {
   "update_url": "C:\\Users\\sleemand.SHAPE\\OneDrive - Verplank Enterprises, Inc\\Scripts",
   "name": "Plex EX",
-  "version": "0.3",
+  "version": "0.4",
   "description": "Consolidates the Tampermonkey scripts I use to an addon",
   "background": {
     "service_worker": "background.js"
@@ -285,6 +285,18 @@
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
+        "*cloud.plex.com/VisionPlex/Screen*actionKey=8086*"
+    ],
+    "js": [
+        "ux/UX-Role-History-Buttons.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
       "*cloud.plex.com/EDI/EDILog*"
     ],
     "js": [
@@ -439,6 +451,7 @@
       "ux/src/UX-Role-Manager-Action-Keys-Script.js",
       "ux/UX-User-Manager-Revision-History-Cleanup.js",
       "ux/src/UX-User-Manager-Role-Buttons-Script.js",
+      "ux/src/UX-Role-History-Buttons-Script.js",
       "ux/src/UX-Position-Role-Association-Buttons-Script.js",
       "ux/src/UX-SQL-Development-F5-Script.js"
     ],
