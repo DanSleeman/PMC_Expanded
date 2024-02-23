@@ -93,4 +93,6 @@ function sortTable(e) {
             return $(`td:eq(${sortIndex})`, b).text().localeCompare($(`td:eq(${sortIndex})`, a).text());
         }
     }).appendTo(tbody);
+    tbody.find('tr:even').removeClass('plex-grid-row-odd').addClass('plex-grid-row-even');
+    tbody.find('tr:odd').removeClass('plex-grid-row-even').addClass('plex-grid-row-odd');
 }

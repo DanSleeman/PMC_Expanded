@@ -1,7 +1,7 @@
 {
   "update_url": "C:\\Users\\sleemand.SHAPE\\OneDrive - Verplank Enterprises, Inc\\Scripts",
   "name": "Plex EX",
-  "version": "0.4",
+  "version": "0.5",
   "description": "Consolidates the Tampermonkey scripts I use to an addon",
   "background": {
     "service_worker": "background.js"
@@ -285,7 +285,7 @@
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
-        "*cloud.plex.com/VisionPlex/Screen*actionKey=8086*"
+        "*VisionPlex/screen*actionKey=8086*"
     ],
     "js": [
         "ux/UX-Role-History-Buttons.js"

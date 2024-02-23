@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.5] - 2024-23-2
+
+### Changed
+
+Updated role members table sorting to apply the appropriate even/odd class for highlights.
+
+### Fixed
+
+Fixed manifest glob formatting for role history buttons.
+
 ## [0.4] - 2024-7-2
 
 ### Added
