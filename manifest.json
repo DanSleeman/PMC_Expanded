@@ -262,9 +262,27 @@
     "include_globs": [
       "*cloud.plex.com/Security/PositionSecurityRoleAssociations/ViewPositionRoleAssociation*"
     ],
+    "exclude_globs": [
+        "*cloud.plex.com/Security/PositionSecurityRoleAssociations?_*"
+    ],
     "js": [
         "ux/UX-Position-Role-Association-Rearrange.js",
         "ux/UX-Position-Role-Association-Buttons.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*cloud.plex.com/Security/PositionSecurityRoleAssociations?_*"
+    ],
+    "exclude_globs": [
+        "*cloud.plex.com/Security/PositionSecurityRoleAssociations/ViewPositionRoleAssociation*"
+    ],
+    "js": [
+        "ux/UX-Position-Role-Association-Grid-Buttons.js"
     ]
   },
   {
@@ -453,6 +471,7 @@
       "ux/src/UX-User-Manager-Role-Buttons-Script.js",
       "ux/src/UX-Role-History-Buttons-Script.js",
       "ux/src/UX-Position-Role-Association-Buttons-Script.js",
+      "ux/src/UX-Position-Role-Association-Grid-Buttons-Script.js",
       "ux/src/UX-SQL-Development-F5-Script.js"
     ],
     "matches":[
