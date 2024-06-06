@@ -14,9 +14,20 @@ function actionKeyInsert(){
         x[i].parentNode.parentNode.nextSibling.nextSibling.appendChild(dNode);
     }
 }
+function createTheButtons(){
+    uxCreateButton('actionKeys','Show Action Keys',null,'Displays Action Key for VP navigation.')
 
-uxCreateButton('actionKeys','Show Action Keys',null,'Displays Action Key for VP navigation.')
+    document.getElementById ("actionKeys").addEventListener (
+        "mouseup", actionKeyInsert, false
+    );
+}
 
-document.getElementById ("actionKeys").addEventListener (
-    "mouseup", actionKeyInsert, false
-);
+function checkForFunction(){
+    if (typeof window.uxCreateButton === 'function'){
+        createTheButtons();
+    } else {
+        requestAnimationFrame(checkForFunction);
+    }
+}
+
+checkForFunction();

@@ -1,6 +1,40 @@
 # Change Log
 
-## [0.5] - 2024-23-2
+## [0.7] - 2024-6-6
+
+### Added
+
+Added additional local storage variable for "Copied" source.  
+This records the last record that was used when the "Copy roles" button is pressed in UX.
+
+Added functionality to display the last copied source on the "Paste Roles" buttons in UX.
+
+Added logic to pass the "Copied" local variable to injected scripts so it can be used when creating buttons.
+
+### Changed
+
+Updated all `copyRoles` functions to store the relevant source data in local storage.
+
+
+## [0.6] - 2024-5-28
+
+### Added
+
+Added two buttons to `UX-Role-History-Buttons` for filtering results
+* UX Roles - Filters for only roles starting with "UX"
+* Classic Roles - Filters for only roles not starting with "UX"
+
+Added script to swap the position of the first and last name fields on the Employees screen.  
+There is a userscript for this as well for standalone functionality.
+
+### Fixed
+
+Updated `UX-Security-Manager-Action-Keys-Script` to wait until the function is available before calling
+
+Updated `UX-Role-Manager-Action-Keys-Script` to wait until the function is available before calling
+
+
+## [0.5] - 2024-2-23
 
 ### Changed
 
@@ -10,14 +44,14 @@ Updated role members table sorting to apply the appropriate even/odd class for h
 
 Fixed manifest glob formatting for role history buttons.
 
-## [0.4] - 2024-7-2
+## [0.4] - 2024-2-7
 
 ### Added
 
 Added button to "role history" screen which will copy role names that have "remove" actions.  
 This will support pasting these roles into the user manager and position role association screens.
 
-## [0.3] - 2024-11-1
+## [0.3] - 2024-1-11
 
 ### Fixed
 
@@ -31,7 +65,7 @@ Added notification toasts to UX user manager role buttons.
 
 Changed favorites F-key unlock selector to be less strict to avoid future DOM changes that may affect functionality.
 
-## [0.2] - 2024-10-1
+## [0.2] - 2024-1-10
 
 ### Added
 Added override to UX SQL Development Environment to execute the SQL when F5 is pressed.

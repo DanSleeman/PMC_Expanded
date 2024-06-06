@@ -3,6 +3,14 @@ function createTheButtons(){
         document.getElementById ("copyRoles").addEventListener (
             "mouseup", buttonCallback, false
             );
+        uxCreateButton('uxRolesFilter','UX Roles',null,null,false,'UX Prefix Roles Displayed');
+        document.getElementById ("uxRolesFilter").addEventListener (
+            "mouseup", buttonCallback, false
+            );
+        uxCreateButton('classicRolesFilter','Classic Roles',null,null,false,'Classic Roles Displayed');
+        document.getElementById ("classicRolesFilter").addEventListener (
+            "mouseup", buttonCallback, false
+            );
 }
 
 function buttonCallback(e){

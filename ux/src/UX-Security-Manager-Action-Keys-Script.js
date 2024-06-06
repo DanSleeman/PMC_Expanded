@@ -64,7 +64,18 @@ function actionKeyInsertWrapper(){
 actionKeyInsertWrapper();
 */
 // Start Action Button Creation
-uxCreateButton('actionKeys','Show Action Keys',link=null,title='Displays Action Key for VP navigation.')
-document.getElementById ("actionKeys").addEventListener (
-    "mouseup", actionKeyInsert, false
-);
+function createTheButtons(){
+    uxCreateButton('actionKeys','Show Action Keys',link=null,title='Displays Action Key for VP navigation.')
+    document.getElementById ("actionKeys").addEventListener (
+        "mouseup", actionKeyInsert, false
+    );
+}
+function checkForFunction(){
+    if (typeof window.uxCreateButton === 'function'){
+        createTheButtons();
+    } else {
+        requestAnimationFrame(checkForFunction);
+    }
+}
+
+checkForFunction();

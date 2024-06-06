@@ -24,12 +24,17 @@ function uxCreateButton(id,name,link=null,title=null,newTab=false,notificationTe
     z.appendChild(a);
 }
 function scriptInject(scriptPath){
+    chrome.storage.local.get(['copied'],function(result){
+        var pasteText = result.copied
+        console.log(`utils.js - pasteText variable: ${pasteText}`)
     let s = document.createElement('script');
+    s.dataset.params = JSON.stringify({pasted:pasteText});
     s.src = chrome.runtime.getURL(scriptPath);
     s.onload = function() {
         this.remove();
     };
     (document.head || document.documentElement).appendChild(s);
+    });
 }
 
 function classicCreateButton(type,anchorClass,id,name,title=null,touchscreen=false){

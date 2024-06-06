@@ -1,3 +1,4 @@
+const dataset = document.currentScript.getAttribute('data-params')
 function buttonCallback(e){
     if (e.button !== 0) return;
     window.postMessage({type: this.id},"*")
@@ -5,8 +6,12 @@ function buttonCallback(e){
 }
 
 function createTheButtons(){
+console.log('script.js - dataset: ', dataset)
+const params = JSON.parse(dataset);
+console.log('script.js - createTheButtons function - injected params: ', params);
+let pasteText = params.pasted
 uxCreateButton('copyRoles','Copy Roles',null,null,false,'Roles Copied')
-uxCreateButton('pasteRoles','Paste Roles',null,null,false,'Roles Pasted')
+uxCreateButton('pasteRoles',`Paste Roles (${pasteText})`,null,null,false,'Roles Pasted')
 uxCreateButton('allAdmin','Select All Admin',null,null,false,'Admin Checked')
 
 document.getElementById ("copyRoles").addEventListener (
@@ -19,7 +24,6 @@ document.getElementById ("allAdmin").addEventListener (
     "mouseup", buttonCallback, false
     );
 }
-
 function checkForFunction(){
     if (typeof window.uxCreateButton === 'function'){
         createTheButtons();

@@ -10,7 +10,7 @@ window.addEventListener('message',function(event){
     }
 })
 
-function copyRoles(){
+function copyRoles(){//
     var a = []
     $('td:nth-child(3)').each(
         function(){
@@ -19,5 +19,9 @@ function copyRoles(){
             }})
     chrome.storage.local.set({roles:a},function(){
             console.log('Value is set to '+ a);
+        });
+    var u = $('tbody > tr > td')[0].children[0].textContent
+    chrome.storage.local.set({copied:u},function(){
+            console.log('Value copied from '+ u);
         });
     }

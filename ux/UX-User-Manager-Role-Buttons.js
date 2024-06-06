@@ -15,7 +15,7 @@ window.addEventListener('message',function(event){
             break;
     }
 })
-function copyRoles(){
+function copyRoles(){ //
     var a = []
     $('input[type="checkbox"][name="AssignedToRole"]').each(
         function(){
@@ -25,6 +25,10 @@ function copyRoles(){
             }})
     chrome.storage.local.set({roles:a},function(){
             console.log('Value is set to '+ a);
+        });
+    var u = $('label:contains("User ID")')[0].parentElement.parentElement.nextElementSibling.children[0].textContent
+    chrome.storage.local.set({copied:u},function(){
+            console.log('Value copied from '+ u);
         });
     }
 
