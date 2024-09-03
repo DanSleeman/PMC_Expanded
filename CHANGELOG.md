@@ -1,5 +1,27 @@
 # Change Log
 
+## [0.9] - 2024-6-28
+
+### Added
+
+Added buttons on user manager customer access screen to copy and paste PCN access.
+
+Added async function to `utils.js` for getting key values from chrome storage.
+
+### Changed
+
+Modified the `scriptInject` function to be async.  
+Modified the `scriptInject` dataset params to include the pastePCN source text.
+
+## [0.8] - 2024-6-18
+
+### Added
+
+Added button on Security Roles Manager screen for enterprise companies popup.  
+Function is to fill out the role name in all the enterprise PCNs that are relevant.
+
+Pgrad PCNs select existing roles, other PCNs enter a new role to be created.
+
 ## [0.7] - 2024-6-6
 
 ### Added

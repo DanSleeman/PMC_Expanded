@@ -4,8 +4,11 @@ scriptInject('ux/src/UX-Role-History-Buttons-Script.js')
 window.addEventListener('message',function(event){
     if (event.source != window) return;
     switch(event.data.type){
-        case "copyRoles":
-            copyRoles()
+        case "copyRolesRem":
+            copyRoles('Remove')
+            break;
+        case "copyRolesAdd":
+            copyRoles('Add')
             break;
         case "uxRolesFilter":
             filterUX()
@@ -16,13 +19,13 @@ window.addEventListener('message',function(event){
     }
 })
 
-function copyRoles(){ //
+function copyRoles(roleStatus){ //
     var a = [];
     var status;
     $('tbody > tr').each(
         function(){
             status = $(this).find('td').eq(1).text();
-            if (status == 'Remove'){
+            if (status == roleStatus){
                 a.push($(this).find('td').eq(2).text())
             }
         })

@@ -23,18 +23,60 @@ function uxCreateButton(id,name,link=null,title=null,newTab=false,notificationTe
     t.appendChild(z);
     z.appendChild(a);
 }
-function scriptInject(scriptPath){
-    chrome.storage.local.get(['copied'],function(result){
-        var pasteText = result.copied
-        console.log(`utils.js - pasteText variable: ${pasteText}`)
+
+function uxCreateButtonPopup(parentId,id,name,link=null,title=null,newTab=false,notificationText=null){
+    let plexBase = window.location.origin;
+    let t = document.querySelector(`#${parentId} .plex-actions`);
+    let z = document.createElement ('li');
+    // "<!-- ko template: { name: $data.clientViewName, data: $data } -->"
+    // z.setAttribute('data-bind',"title: $data.title, click: $data.executeAction, css: { 'disabled': !$data.isEnabled() }, visible: $data.visible()")
+    let a = document.createElement ('a');
+    a.setAttribute('data-bind',"id: $data.id, href: $data.href")
+    a.id = id
+    a.style = "user-select: auto;"
+    a.innerText = name
+    if(link !== null){
+        a.href = `${plexBase}${link}`
+        if (newTab){
+            a.target= '_blank';
+        }
+    }
+    if(title !== null){
+        a.title = title
+    }
+    if(notificationText !== null){
+        a.notificationText = notificationText
+    }
+    t.insertBefore(z,t.lastChild);
+    // t.appendChild(z);
+    z.appendChild(a);
+}
+
+async function readStorage(key){
+    const result = await chrome.storage.local.get(key);
+    return result[key]
+}
+
+
+async function scriptInject(scriptPath){
+    const copyText = new Object();
+    await readStorage('copied').then(val => {
+        console.log(`variable copied: ${val}`)
+        copyText.pasteText = val
+    })
+    await readStorage('copiedPCNs').then(val => {
+        console.log(`variable copiedPCNs: ${val}`)
+        copyText.pasteTextPCN = val
+    })
+    console.log(`utils.js - copyText.pasteText variable: ${copyText.pasteText}`)
+    console.log(`utils.js - copyText.pasteTextPCN variable: ${copyText.pasteTextPCN}`)
     let s = document.createElement('script');
-    s.dataset.params = JSON.stringify({pasted:pasteText});
+    s.dataset.params = JSON.stringify({pasted:copyText.pasteText,pastedPCN:copyText.pasteTextPCN});
     s.src = chrome.runtime.getURL(scriptPath);
     s.onload = function() {
         this.remove();
     };
     (document.head || document.documentElement).appendChild(s);
-    });
 }
 
 function classicCreateButton(type,anchorClass,id,name,title=null,touchscreen=false){

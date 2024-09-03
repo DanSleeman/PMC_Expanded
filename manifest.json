@@ -1,7 +1,7 @@
 {
   "update_url": "C:\\Users\\sleemand.SHAPE\\OneDrive - Verplank Enterprises, Inc\\Scripts",
   "name": "Plex EX",
-  "version": "0.7",
+  "version": "0.9",
   "description": "Consolidates the Tampermonkey scripts I use to an addon",
   "background": {
     "service_worker": "background.js"
@@ -465,6 +465,30 @@
     "js": [
       "ux/UX-Role-Manager-Action-Keys.js"
     ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*Security/SecurityRolesManager*"
+    ],
+    "js": [
+      "ux/UX-Enterprise-Roles.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
+      "*Security/UserCustomerManagement*"
+    ],
+    "js": [
+      "ux/UX-User-Customer-Access-Buttons.js"
+    ]
   }
   ],
   "web_accessible_resources": [
@@ -485,7 +509,9 @@
       "ux/src/UX-Position-Role-Association-Buttons-Script.js",
       "ux/src/UX-Position-Role-Association-Grid-Buttons-Script.js",
       "ux/src/UX-SQL-Development-F5-Script.js",
-      "ux/src/UX-Employees-Swap-Name-Script.js"
+      "ux/src/UX-Employees-Swap-Name-Script.js",
+      "ux/src/UX-Enterprise-Roles-Script.js",
+      "ux/src/UX-User-Customer-Access-Buttons-Script.js"
     ],
     "matches":[
       "*://test.plexus-online.com/*",

@@ -1,6 +1,10 @@
 function createTheButtons(){
-        uxCreateButton('copyRoles','Copy Roles',null,null,false,'Roles Copied');
-        document.getElementById ("copyRoles").addEventListener (
+        uxCreateButton('copyRolesRem','Copy Removed Roles',null,null,false,'Removed Roles Copied');
+        document.getElementById ("copyRolesRem").addEventListener (
+            "mouseup", buttonCallback, false
+            );
+        uxCreateButton('copyRolesAdd','Copy Added Roles',null,null,false,'Added Roles Copied');
+        document.getElementById ("copyRolesAdd").addEventListener (
             "mouseup", buttonCallback, false
             );
         uxCreateButton('uxRolesFilter','UX Roles',null,null,false,'UX Prefix Roles Displayed');
