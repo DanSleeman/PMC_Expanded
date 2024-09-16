@@ -1,5 +1,7 @@
 function uxCreateButton(id,name,link=null,title=null,newTab=false,notificationText=null){
     let plexBase = window.location.origin;
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('__asid');
     let x = document.getElementsByClassName('plex-actions');
     let t = x[0];
     let z = document.createElement ('li');
@@ -9,7 +11,9 @@ function uxCreateButton(id,name,link=null,title=null,newTab=false,notificationTe
     a.style = "user-select: auto;"
     a.innerText = name
     if(link !== null){
-        a.href = `${plexBase}${link}`
+        let url = new URL(`${plexBase}${link}`)
+        url.searchParams.append('__asid', token)
+        a.href = url
         if (newTab){
             a.target= '_blank';
         }
