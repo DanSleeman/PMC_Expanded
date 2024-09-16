@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.10] - 2024-9-16
+
+Fixed issue with buttons on screens not in the home PCN navigating back to the home PCN.
+
 ## [0.9] - 2024-6-28
 
 ### Added
