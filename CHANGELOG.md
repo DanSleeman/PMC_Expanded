@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.11] - 2024-10-14
+
+### Added
+
+Added button to save upload validation details to a CSV file.
+
+Added utils function `uxCreateButtonFooterPopup` which can add a button to the footer section of a popup dialog window.
+
 ## [0.10] - 2024-9-16
 
 Fixed issue with buttons on screens not in the home PCN navigating back to the home PCN.

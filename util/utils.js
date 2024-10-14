@@ -55,7 +55,20 @@ function uxCreateButtonPopup(parentId,id,name,link=null,title=null,newTab=false,
     // t.appendChild(z);
     z.appendChild(a);
 }
-
+function uxCreateButtonFooterPopup(parentId,id,name){
+    let plexBase = window.location.origin;
+    let t = document.querySelector(`${parentId} .plex-form-buttons`);
+    let z = document.createElement ('button');
+    // z.setAttribute('data-bind',`id: $root.elements['#${id}'].id, href: 'javascript:void(0);'`)
+    z.id = id
+    z.style = "user-select: auto;"
+    z.innerText = name
+    z.href = "javascript:void(0);"
+    z.setAttribute("class", "btn btn-sm default-action")
+    // z.class = "btn btn-sm default-action"
+    z.type = 'button'
+    t.insertBefore(z,t.lastChild);
+}
 async function readStorage(key){
     const result = await chrome.storage.local.get(key);
     return result[key]
