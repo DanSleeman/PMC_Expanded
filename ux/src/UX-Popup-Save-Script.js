@@ -61,7 +61,7 @@ function generateTableObject(){
 
     var allColumns = false; 
     // Fallback to download all columns if there are no checked columns or there is an issue finding the checked columns.
-    if (columnIndices.length = 0){
+    if (columnIndices.length < 1){
         allColumns = true;
     }
 
