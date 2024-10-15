@@ -86,7 +86,7 @@ function generateTableObject(){
                 // Use the header text as the key and the cell content as the value
                 // Header index is one ahead of row index for some reason.
                 var headerText = headers[index+1] || ('column' + (index+1)); // Fallback to 'columnX' if no header. 
-                rowData[headerText] = cells.eq(index).text().trim();
+                rowData[headerText] = cells.eq(index).text().trim().replaceAll('"','""'); //Not having this will break csv formatting.
             }
         });
 
