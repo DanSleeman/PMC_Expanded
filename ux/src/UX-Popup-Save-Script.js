@@ -43,6 +43,7 @@ function popupWrapper(){
         if (document.querySelector(favoritesPane) === null) return;
         if (document.querySelector(saveButton) !== null) return;
         popupButtonCreate();
+        addCheckboxesToTableHeader();
       }
       observeApp();
       popupCheck();
@@ -53,16 +54,20 @@ function generateTableObject(){
     // This selector should get the popup window data.
     // The base selector will return two tables since it sees the normal screen grid as well.
     // There are no good IDs to use for selecting the popup
+    // One screen appears to show that the popup has an ID, but I don't think this is consistent.
 
-    // Specify the indices of the columns you want to extract
-    var columnIndices = [];
+    var columnIndices = getCheckboxStatus();
+    
 
-    //Pass true if you want to extract the whole popup into a json object.
-    var allColumns = true; 
+    var allColumns = false; 
+    // Fallback to download all columns if there are no checked columns or there is an issue finding the checked columns.
+    if (columnIndices.length = 0){
+        allColumns = true;
+    }
 
     var rowDataList = [];
-
     var headers = [];
+    
     tbl.find('thead tr th').each(function(index) {
         headers[index] = $(this).text().trim();
     });
@@ -96,13 +101,8 @@ function generateTableObject(){
 }
 
 function saveJsonToCsv() {
-    // Example JSON data
     const jsonObject = generateTableObject()
-
-    // Convert JSON to CSV
     const csv = convertJsonToCsv(jsonObject);
-
-    // Trigger file download
     downloadCsv(csv, 'Upload_Validation_Data.csv');
 }
 
@@ -112,7 +112,6 @@ function convertJsonToCsv(jsonData) {
         headers.map(header => `"${row[header]}"`).join(',')
     );
 
-    // Add headers to the CSV
     csvRows.unshift(headers.join(','));
 
     return csvRows.join('\n');
@@ -127,12 +126,51 @@ function downloadCsv(csvContent, fileName) {
     a.setAttribute('download', fileName);
     a.click();
     
-    // Clean up
     window.URL.revokeObjectURL(url);
 }
 
 function popupButtonCreate(){
     uxCreateButtonFooterPopup(popupWindow, 'saveJsonBtn', 'Save CSV')
     document.getElementById('saveJsonBtn').addEventListener('click', saveJsonToCsv);
+}
+function getCheckboxStatus(){
+    const selectedColumns = document.querySelectorAll('.PlexEX.UploadValidationCheckbox')
+    let selectedIndexes = []
+    for (let i = 0; i < selectedColumns.length; i++){
+        if (selectedColumns[i].checked){
+            selectedIndexes.push(i)
+        }
+    }
+    return selectedIndexes
+}
+async function addCheckboxesToTableHeader() {
+    try {
+        const table = await waitForElement('#uploadValidationDialog', 60000, document, 0)
+        console.log(table)
+        // The popup initializes with an empty table prior to having data.
+        // Using the workaroundLength parameter of 1 will allow the await call to properly find the real table.
+        // Plex tables have 2-4 thead tr elements.
+        // Index 1 and 3 of this list are the actual header cells. Index 3 should be the stationary cell.
+        const headerRow = await waitForElement('thead tr', 60000, table, 3, 1);
+        console.log(headerRow)
+        const headers = headerRow.getElementsByTagName('th');
+        console.log(headers)
+        for (let i = 0; i < headers.length; i++) {
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.checked = true;
+            checkbox.setAttribute('class', 'PlexEX UploadValidationCheckbox')
+            
+            const checkboxContainer = document.createElement('div');
+            checkboxContainer.style.textAlign = 'center';
+            
+            checkboxContainer.appendChild(checkbox);
+            
+            // Placing the checkbox under the column text is more consistently formatted.
+            headers[i].appendChild(checkboxContainer);
+        }
+    } catch (error){
+        console.error(error);
+    }
 }
 popupWrapper();

@@ -95,7 +95,31 @@ async function scriptInject(scriptPath){
     };
     (document.head || document.documentElement).appendChild(s);
 }
+async function waitForElement(selector, timeout = 3000, parentNode = document, nodeIndex = 0, workaroundLength = 0) {
+    const pollingInterval = 100; // Check every 100ms
+    const maxTime = timeout / pollingInterval;
+    let timePassed = 0;
 
+    return new Promise((resolve, reject) => {
+        const interval = setInterval(() => {
+            const elements = parentNode.querySelectorAll(selector);
+            console.log(`Checking for elements: ${selector}. Found:`, elements.length);
+
+            if (elements.length > workaroundLength) {
+                clearInterval(interval); // Stop checking when the element is found
+                console.log(`Element ${selector} found!`, elements);
+                resolve(elements[nodeIndex]); // Resolve the promise with the found element
+            }
+            timePassed++;
+            if (timePassed >= maxTime) {
+                clearInterval(interval); // Stop checking after the timeout
+                console.error(`Timeout: Element ${selector} not found within ${timeout}ms`);
+
+                reject(new Error(`Element ${selector} not found within ${timeout}ms`));
+            }
+        }, pollingInterval);
+    });
+}
 function classicCreateButton(type,anchorClass,id,name,title=null,touchscreen=false){
     let x = document.getElementsByClassName(anchorClass);
     let t = x[0];

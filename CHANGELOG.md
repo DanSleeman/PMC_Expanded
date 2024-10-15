@@ -6,6 +6,8 @@
 
 Added button to save upload validation details to a CSV file.
 
+Added checkboxes to upload dialog table columns to select which columns to include in the download. All default to selected.
+
 Added utils function `uxCreateButtonFooterPopup` which can add a button to the footer section of a popup dialog window.
 
 ## [0.10] - 2024-9-16
