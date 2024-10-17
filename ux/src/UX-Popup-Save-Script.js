@@ -1,30 +1,29 @@
 const popupWindow = '#uploadValidationDialog'
 const popupFooter = ''
 const saveButton = '#saveJsonBtn'
+const tag = '[Plex EX Popup Save Button]';
+function log(message) {
+    console.log(`${tag}[${getTimestamp()}] ${message}`);
+  }
+
+function debug(message) {
+    console.debug(`${tag}[${getTimestamp()}] ${message}`);
+  }
+function asDoubleDigit(value) {
+    return value < 10 ? '0' + value : value;
+  }
+
+function getTimestamp() {
+    let dt = new Date();
+    let time = asDoubleDigit(dt.getHours()) + ':' + asDoubleDigit(dt.getMinutes()) + ':' + asDoubleDigit(dt.getSeconds());
+    return time;
+  }
+
 function popupWrapper(){
-    const tag = '[Plex EX Popup Save Button]';
-    
     const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     let appObserver = null;
     const favoritesPane = '#uploadValidationDialog';
     const appName = 'body';
-    function log(message) {
-        console.log(`${tag}[${getTimestamp()}] ${message}`);
-      }
-  
-      function debug(message) {
-        console.debug(`${tag}[${getTimestamp()}] ${message}`);
-      }
-  
-      function asDoubleDigit(value) {
-        return value < 10 ? '0' + value : value;
-      }
-  
-      function getTimestamp() {
-        let dt = new Date();
-        let time = asDoubleDigit(dt.getHours()) + ':' + asDoubleDigit(dt.getMinutes()) + ':' + asDoubleDigit(dt.getSeconds());
-        return time;
-      }
   
       function observeApp() {
         debug(`Observing ${appName}...`);
@@ -67,8 +66,9 @@ function generateTableObject(){
 
     var rowDataList = [];
     var headers = [];
-    
-    tbl.find('thead tr th').each(function(index) {
+
+    // Getting the text from just the th element includes some hidden text content from the sort order of the column.
+    tbl.find('thead tr th div abbr').each(function(index) {
         headers[index] = $(this).text().trim();
     });
 
@@ -84,8 +84,7 @@ function generateTableObject(){
         columnIndices.forEach(function(index) {
             if (cells.eq(index).length) {
                 // Use the header text as the key and the cell content as the value
-                // Header index is one ahead of row index for some reason.
-                var headerText = headers[index+1] || ('column' + (index+1)); // Fallback to 'columnX' if no header. 
+                var headerText = headers[index] || ('column' + (index)); // Fallback to 'columnX' if no header. 
                 rowData[headerText] = cells.eq(index).text().trim().replaceAll('"','""'); //Not having this will break csv formatting.
             }
         });
@@ -96,7 +95,7 @@ function generateTableObject(){
         }
     });
 
-    console.log('Extracted row data with headers as keys:', rowDataList);
+    debug('Extracted row data with headers as keys:', rowDataList);
     return rowDataList
 }
 
@@ -146,15 +145,15 @@ function getCheckboxStatus(){
 async function addCheckboxesToTableHeader() {
     try {
         const table = await waitForElement('#uploadValidationDialog', 60000, document, 0)
-        console.log(table)
+        debug(table)
         // The popup initializes with an empty table prior to having data.
         // Using the workaroundLength parameter of 1 will allow the await call to properly find the real table.
         // Plex tables have 2-4 thead tr elements.
         // Index 1 and 3 of this list are the actual header cells. Index 3 should be the stationary cell.
         const headerRow = await waitForElement('thead tr', 60000, table, 3, 1);
-        console.log(headerRow)
+        debug(headerRow)
         const headers = headerRow.getElementsByTagName('th');
-        console.log(headers)
+        debug(headers)
         for (let i = 0; i < headers.length; i++) {
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
