@@ -1,7 +1,7 @@
 {
   "update_url": "C:\\Users\\sleemand.SHAPE\\OneDrive - Verplank Enterprises, Inc\\Scripts",
   "name": "Plex EX",
-  "version": "0.11",
+  "version": "0.12",
   "description": "Consolidates the Tampermonkey scripts I use to an addon",
   "background": {
     "service_worker": "background.js"
@@ -260,7 +260,8 @@
       "*://cloud.plex.com/*"
     ],
     "js": [
-      "ux/UX-Popup-Validation-Download.js"
+      "ux/UX-Popup-Validation-Download.js",
+      "ux/UX-Export-Anywhere.js"
     ]
   },
   {
@@ -511,6 +512,7 @@
       "ux/src/UX-Checksheet-Fill-Script.js",
       "ux/src/UX-Favorites-Unlock-Script.js",
       "ux/src/UX-Popup-Save-Script.js",
+      "ux/src/UX-Export-Anywhere-Script.js",
       "ux/src/UX-Security-Manager-Action-Keys-Script.js",
       "ux/src/UX-Role-Manager-Action-Keys-Script.js",
       "ux/UX-User-Manager-Revision-History-Cleanup.js",

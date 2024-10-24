@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.12] - 2024-10-24
+
+### Added
+
+Added button to export the visible table content on any page.  
+Functions similarly to the upload popup download.  
+Default filename is the tab's title.
+
 ## [0.11] - 2024-10-14
 
 ### Added
