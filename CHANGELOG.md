@@ -8,6 +8,10 @@ Added button to export the visible table content on any page.
 Functions similarly to the upload popup download.  
 Default filename is the tab's title.
 
+### Fixed
+
+Fixed export anywhere to not attempt to load if the page doesn't have a table.
+
 ## [0.11] - 2024-10-14
 
 ### Added

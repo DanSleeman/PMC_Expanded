@@ -21,6 +21,9 @@ function exportWrapper(){
     if (document.getElementsByClassName('plex-actions').length == 0){
         return
     }
+    if (!jQuery('div.plex-grid-wrapper > table')[0]){
+        return
+    }
     exportButtonCreate();
     addExportCheckboxesToTableHeader();
 }
