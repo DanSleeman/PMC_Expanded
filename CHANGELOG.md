@@ -1,5 +1,31 @@
 # Change Log
 
+## TODO
+
+[ ] - Fix or modify exports on 'grouped' grids to handle row data which isn't present due to hidden repeating cell content.  
+
+* Inventory
+
+[ ] - Fix export for situations where the first header row spans the length of all the columns below.
+
+* Receiving Log
+
+[x] - Fix export for rows that span multiple columns. Appear to have a 'data-group-header' and 'data-group-footer-index' class
+
+* Inventory
+
+## [0.13] - 2024-10-30
+
+### Changed
+
+Added support for checkboxes on grids to be converted to an 'x' character.
+
+### Fixed
+
+Fixed export anywhere to not try loading until the utility functions are available.
+
+Fixed export for rows that span multiple columns. Only grabbing rows with "plex-grid-row" class which should omit the summary rows
+
 ## [0.12] - 2024-10-24
 
 ### Added

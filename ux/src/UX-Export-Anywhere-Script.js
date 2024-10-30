@@ -24,7 +24,7 @@ function exportWrapper(){
     if (!jQuery('div.plex-grid-wrapper > table')[0]){
         return
     }
-    exportButtonCreate();
+    checkForFunction();
     addExportCheckboxesToTableHeader();
 }
 
@@ -46,7 +46,7 @@ function generateExportTableObject(){
     // Getting the text from just the th element includes some hidden text content from the sort order of the column.
     // Some columns don't have text and this causes the indexes to be desynced if trying to directly find abbr elements.
     // Need to include the tr class because there is a single phantom thead tr th element for some reason
-    tbl.find('thead tr.plex-grid-header-row th').each(function(index) {
+    tbl.find('thead tr.plex-grid-header-row th.plex-grid-header-cell').each(function(index) {
         var columnText = ''
         if (this.querySelector('div abbr')){
             columnText = $(this.querySelector('div abbr')).text().trim();
@@ -63,7 +63,7 @@ function generateExportTableObject(){
         columnIndices = Array.from({length: headers.length}, (_, index) => index);
     }
 
-    tbl.find('tbody tr').each(function() {
+    tbl.find('tbody tr.plex-grid-row').each(function() {
         debug('compiling row data')
         
         var rowData = {}; 
@@ -74,7 +74,11 @@ function generateExportTableObject(){
             if (cells.eq(index).length) {
                 // Use the header text as the key and the cell content as the value
                 var headerText = headers[index] || ('column' + (index)); // Fallback to 'columnX' if no header. 
-                rowData[headerText] = cells.eq(index).text().trim().replaceAll('"','""'); //Not having this will break csv formatting.
+                if (cells.eq(index).find('i[class^="plex-icon-check"]').length){
+                    rowData[headerText] = "x" // Convert checkmarks to x characters
+                } else {
+                    rowData[headerText] = cells.eq(index).text().trim().replaceAll('"','""'); //Not having this will break csv formatting.
+                }
             }
         });
 
@@ -118,7 +122,13 @@ function exportCsv(csvContent, fileName) {
     
     window.URL.revokeObjectURL(url);
 }
-
+function checkForFunction(){
+    if (typeof window.uxCreateButton === 'function'){
+        exportButtonCreate();
+    } else {
+        requestAnimationFrame(checkForFunction);
+    }
+}
 function exportButtonCreate(){
     uxCreateButton('exportAnywhere','Export Visible Content')
     document.getElementById('exportAnywhere').addEventListener('click', saveExcportJsonToCsv);
