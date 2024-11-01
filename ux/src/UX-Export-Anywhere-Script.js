@@ -64,10 +64,10 @@ function generateExportTableObject(){
     }
 
     tbl.find('tbody tr.plex-grid-row').each(function() {
-        debug('compiling row data')
+        // debug('compiling row data')
         
         var rowData = {}; 
-        var cells = $(this).find('td'); 
+        var cells = $(this).find('td').not('.plex-grid-selection-cell'); //Ignoring the first column if it is a checkbox selector
 
         // Loop through the specified column indices and store the values in the object
         columnIndices.forEach(function(index) {
@@ -76,6 +76,11 @@ function generateExportTableObject(){
                 var headerText = headers[index] || ('column' + (index)); // Fallback to 'columnX' if no header. 
                 if (cells.eq(index).find('i[class^="plex-icon-check"]').length){
                     rowData[headerText] = "x" // Convert checkmarks to x characters
+                } 
+                else if (cells.eq(index).find('input[type="text"]').length) {
+                    rowData[headerText] = cells.eq(index).find('input[type="text"]').val().trim().replaceAll('"','""'); //content from editable fields
+                } else if (cells.eq(index).find('input[type="checkbox"]').length) {
+                    rowData[headerText] = cells.eq(index).find('input[type="checkbox"]')[0].checked.toString()
                 } else {
                     rowData[headerText] = cells.eq(index).text().trim().replaceAll('"','""'); //Not having this will break csv formatting.
                 }
@@ -85,7 +90,7 @@ function generateExportTableObject(){
         // Add the object to the list if it has any data
         if (Object.keys(rowData).length > 0) {
             rowDataList.push(rowData);
-            debug(rowData)
+            // debug(rowData)
         }
     });
 
@@ -150,7 +155,7 @@ async function addExportCheckboxesToTableHeader() {
         debug(table)
         const headerRow = await waitForElement('thead tr.plex-grid-header-row', 60000, tbl, 0);
         debug(headerRow)
-        const headers = headerRow.getElementsByTagName('th');
+        const headers = headerRow.getElementsByClassName('plex-grid-header-cell');
         debug(headers)
         for (let i = 0; i < headers.length; i++) {
             const checkbox = document.createElement('input');

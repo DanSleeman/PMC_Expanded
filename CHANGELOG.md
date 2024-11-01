@@ -10,10 +10,6 @@
 
 * Receiving Log
 
-[x] - Fix export for rows that span multiple columns. Appear to have a 'data-group-header' and 'data-group-footer-index' class
-
-* Inventory
-
 ## [0.13] - 2024-10-30
 
 ### Changed
@@ -25,6 +21,10 @@ Added support for checkboxes on grids to be converted to an 'x' character.
 Fixed export anywhere to not try loading until the utility functions are available.
 
 Fixed export for rows that span multiple columns. Only grabbing rows with "plex-grid-row" class which should omit the summary rows
+
+Fixed export with row selection checkboxes. Now ignoring these columns all together.
+
+Fixed export when cell content was within an editable text field.
 
 ## [0.12] - 2024-10-24
 
