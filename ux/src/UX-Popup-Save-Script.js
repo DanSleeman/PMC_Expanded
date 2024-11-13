@@ -58,7 +58,7 @@ function generateTableObject(){
     var columnIndices = getCheckboxStatus();
     
 
-    var allColumns = false; 
+    var allColumns = true; 
     // Fallback to download all columns if there are no checked columns or there is an issue finding the checked columns.
     if (columnIndices.length < 1){
         allColumns = true;
