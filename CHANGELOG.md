@@ -10,11 +10,31 @@
 
 * Receiving Log
 
+[ ] - Find a way to get the Toggle PCN button on the user customer access screen to work on page load. Currently it creates the cells, but it removes them after loading completely.
+
+## [0.14] - 2024-12-18
+
+### Added
+
+Added buttons on user customer access to toggle the PCN with all options.
+* PCN Enabled
+* Show as employee
+* Allow cross company data access
+* Set sort order = 1
+
+This is currently enabled via an action button to show the values.
+
+### Fixed
+
+Fixed export anywhere to wait until the async function is available to create elements.
+
 ## [0.13] - 2024-10-30
 
 ### Changed
 
 Added support for checkboxes on grids to be converted to an 'x' character.
+
+Changed the PCN names for the new NetShape/Pgrad PCNs.
 
 ### Fixed
 

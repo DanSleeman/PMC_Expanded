@@ -1,7 +1,7 @@
 {
   "update_url": "C:\\Users\\sleemand.SHAPE\\OneDrive - Verplank Enterprises, Inc\\Scripts",
   "name": "Plex EX",
-  "version": "0.13",
+  "version": "0.14",
   "description": "Consolidates the Tampermonkey scripts I use to an addon",
   "background": {
     "service_worker": "background.js"

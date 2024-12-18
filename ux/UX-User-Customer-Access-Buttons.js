@@ -10,8 +10,87 @@ window.addEventListener('message',function(event){
         case "pastePCNs":
             pastePCNs()
             break;
+        case "fullPCNs":
+            tableRowButtons()
+            break;
     }
 })
+
+var toggleButtons = false;
+function tableRowButtons(){
+    if (toggleButtons){
+        return;
+    }
+    const head = document.querySelectorAll('tr.plex-grid-header-row')
+    head.forEach((h, index) => {
+        if (index % 2 === 0){
+            const t = document.createElement('th');
+            const d = document.createElement('div');
+            const a = document.createElement('abbr');
+            t.classList.add('plex-grid-header-cell');
+            t.rowSpan = 2;
+            d.classList.add('plex-grid-header-inner-content');
+            d.style.textAlign = 'center';
+            a.title = 'Toggle PCN';
+            a.textContent = 'Toggle PCN';
+            t.appendChild(d);
+            d.appendChild(a);
+            h.appendChild(t);
+        }
+    })
+    const rows = document.querySelectorAll('tr.plex-grid-row.selectable')
+    rows.forEach(row => {
+        const inputs = {
+            col2: row.children[2].querySelector('input'),
+            col3: row.children[3].querySelector('input'),
+            col4: row.children[4].querySelector('input'),
+            col6: row.children[6].querySelector('input'),
+        };
+        const buttonCell = document.createElement('td');
+        const button = document.createElement('button');
+        button.textContent = 'Toggle PCN';
+        button.classList.add('btn');
+        if (inputs.col2 === null){ //Do not add a button to the home PCN row. This will be denoted by col2 being null since it does not have an input element.
+            row.appendChild(buttonCell);
+            return
+        }
+        button.style.backgroundColor = inputs.col2.checked ? '#0077aa': '';
+        button.addEventListener('click', () =>{
+
+            if (inputs.col2.checked) {
+                inputs.col3.value = '';
+                if (inputs.col4.checked) {
+                    inputs.col4.click();
+                }
+                if (inputs.col6.checked) {
+                    inputs.col6.click();
+                }
+                inputs.col2.click();
+                button.style.backgroundColor = '';
+            } else {
+                inputs.col2.click();
+                inputs.col3.value = 1;
+                if (!inputs.col4.checked) {
+                    inputs.col4.click();
+                }
+                if (!inputs.col6.checked) {
+                    inputs.col6.click();
+                }
+                button.style.backgroundColor = '#0077aa';
+            }
+            //Do the stuff for the other row elements
+        });
+        buttonCell.appendChild(button)
+        row.appendChild(buttonCell);
+    });
+    toggleButtons = true;
+}
+
+
+function fullPCN(){
+
+}
+
 
 function copyPCNs(){
     var a = []
@@ -65,3 +144,13 @@ function pastePCNs(){
     )
     })
 }
+
+// function checkForFunction(){
+//     if (typeof window.uxCreateButton === 'function'){
+//         tableRowButtons();
+//     } else {
+//         requestAnimationFrame(checkForFunction);
+//     }
+// }
+
+// checkForFunction();

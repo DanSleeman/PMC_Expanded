@@ -178,4 +178,13 @@ async function addExportCheckboxesToTableHeader() {
         console.error(error);
     }
 }
-exportWrapper();
+
+function checkForWaitFunction(){
+    if (typeof window.waitForElement === 'function'){
+        exportWrapper();
+    } else {
+        requestAnimationFrame(checkForWaitFunction);
+    }
+}
+
+checkForWaitFunction();
