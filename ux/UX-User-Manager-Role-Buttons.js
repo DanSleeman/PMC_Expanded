@@ -1,5 +1,11 @@
-scriptInject('util/utils.js')
-scriptInject('ux/src/UX-User-Manager-Role-Buttons-Script.js')
+(async () => {
+    const module = await import(chrome.runtime.getURL("config.js"));
+    module.loadSettings((settings) =>{
+        console.log('content.js settings', settings)
+            scriptInject('util/utils.js')
+            scriptInject('ux/src/UX-User-Manager-Role-Buttons-Script.js', settings)
+    });
+})();
 
 window.addEventListener('message',function(event){
     if (event.source != window) return;

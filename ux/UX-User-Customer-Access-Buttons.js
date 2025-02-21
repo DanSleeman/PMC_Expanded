@@ -1,5 +1,9 @@
-scriptInject('util/utils.js')
-scriptInject('ux/src/UX-User-Customer-Access-Buttons-Script.js')
+(async () => {
+    const module = await import(chrome.runtime.getURL("config.js"));
+    module.loadSettings((settings) =>{
+        console.log('content.js settings', settings)
+            scriptInject('util/utils.js')
+            scriptInject('ux/src/UX-User-Customer-Access-Buttons-Script.js', settings)
 
 window.addEventListener('message',function(event){
     if (event.source != window) return;
@@ -154,3 +158,5 @@ function pastePCNs(){
 // }
 
 // checkForFunction();
+});
+})();

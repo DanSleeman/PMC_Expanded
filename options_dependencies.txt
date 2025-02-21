@@ -1,0 +1,91 @@
+Options
+====UX====
+vBoolUxChecklistEditLink
+vBoolUxChecksheetFillButton - Not implemented
+vBoolUxCompareSettings
+vBoolUxEDILogButtons
+vBoolUxFavoritesUnlock
+vBoolUxSQLF5Execute
+vBoolUxLabelDesignerButtons
+vBoolUxFilterPinEnforce
+vBoolUxProjectManagementChecklistLink
+vBoolUxLazyLoading - Option page updated
+    vBoolUxExportAnywhere - Option page updated - Script updated
+    vBoolUxSecurityActionKeys
+    vBoolUxRoleRevisionHistory
+    vBoolUxRoleManagerActionKeys
+    vBoolUxPosRoleAssocTweaks
+        vBoolUxPosRoleAssocRearrangeColumns
+        
+        vBoolUxPosRoleAssocCopyPasteButtons
+    vBoolUxUserManagerTweaks
+        vBoolUxUserManagerCopyPasteButtons
+        vBoolUxSelectAllAdmin
+vBoolUxUserCustomerAccessTweaks - Potentially dependent on no lazy loading with large quantity of PCNs
+    vBoolUxCustAccessCopyPasteButtons
+    vBoolUxCustAccessTogglePCNs
+
+
+====Classic====
+vBoolClassicCalendarMassUpdate
+vBoolClassicChecklistEditLinks
+vBoolClassicChecksheetPopulate
+vBoolClassicCustomerPOButtons
+vBoolClassicEDILogButtons
+vBoolClassicEscapeOverride
+vBoolClassicLabelDesignerButtons
+vBoolClassicLabelDesignerLinks
+vBoolClassicRenaultDelforButton
+vBoolClassicUserManagerTweaks
+    vBoolClassicUserManagerCopy
+    vBoolClassicUserManagerSelectAllAdmin
+    vBoolClassicUserManagerPasteClassic
+    vBoolClassicUserManagerPasteUX
+    vStrClassicUserManagerExcludeText
+    vStrClassicUserManagerUXRolePrefix
+vBoolClassicVPTabIndexFix
+
+
+
+vBoolUxChecklistEditLink
+vBoolUxChecksheetFillButton
+vBoolUxCompareSettings
+vBoolUxEDILogButtons
+vBoolUxFavoritesUnlock
+vBoolUxSQLF5Execute
+vBoolUxLabelDesignerButtons
+vBoolUxFilterPinEnforce
+vBoolUxProjectManagementChecklistLink
+vBoolUxLazyLoading
+vBoolUxExportAnywhere
+vBoolUxSecurityActionKeys
+vBoolUxRoleRevisionHistory
+vBoolUxRoleManagerActionKeys
+vBoolUxPosRoleAssocTweaks
+vBoolUxPosRoleAssocRearrangeColumns
+
+vBoolUxPosRoleAssocCopyPasteButtons
+vBoolUxUserManagerTweaks
+vBoolUxUserManagerCopyPasteButtons
+vBoolUxSelectAllAdmin
+vBoolUxUserCustomerAccessTweaks
+vBoolUxCustAccessCopyPasteButtons
+vBoolUxCustAccessTogglePCNs
+    
+vBoolClassicCalendarMassUpdate
+vBoolClassicChecklistEditLinks
+vBoolClassicChecksheetPopulate
+vBoolClassicCustomerPOButtons
+vBoolClassicEDILogButtons
+vBoolClassicEscapeOverride
+vBoolClassicLabelDesignerButtons
+vBoolClassicLabelDesignerLinks
+vBoolClassicRenaultDelforButton
+vBoolClassicUserManagerTweaks
+vBoolClassicUserManagerCopy
+vBoolClassicUserManagerSelectAllAdmin
+vBoolClassicUserManagerPasteClassic
+vBoolClassicUserManagerPasteUX
+vStrClassicUserManagerExcludeText
+vStrClassicUserManagerUXRolePrefix
+vBoolClassicVPTabIndexFix

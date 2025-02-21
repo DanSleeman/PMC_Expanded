@@ -12,6 +12,24 @@
 
 [ ] - Find a way to get the Toggle PCN button on the user customer access screen to work on page load. Currently it creates the cells, but it removes them after loading completely.
 
+## [0.2] - 2/21/2025
+
+### Added
+
+Added options to enable/disable nearly all functions within the extension.
+
+Linked up options with the content scripts that are relevant.
+
+Added parameter to `utils.injectScript()` to take the settings object if needed.
+
+### Removed
+
+Removed some files which were not used or extremely outdated.
+
+### Changed
+
+Changed background.js dynamic redirect rule creation to be within config.js module script to support config option.
+
 ## [0.14] - 2024-12-18
 
 ### Added

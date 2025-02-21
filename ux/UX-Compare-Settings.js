@@ -1,3 +1,7 @@
+(async () => {
+    const module = await import(chrome.runtime.getURL("config.js"));
+    module.loadSettings((settings) =>{
+        if (settings.vBoolUxCompareSettings){
 //Wrap everything in an onload function in order to get around errors of not finding the elements
 window.onload = function(){
 function getElementByXpath(path) {
@@ -20,3 +24,7 @@ if (y){
     t.insertBefore(xNode, y.nextSibling);
     }
 }
+
+}
+});
+})();

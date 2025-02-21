@@ -1,10 +1,11 @@
 {
   "update_url": "C:\\Users\\sleemand.SHAPE\\OneDrive - Verplank Enterprises, Inc\\Scripts",
   "name": "Plex EX",
-  "version": "0.14",
+  "version": "0.2",
   "description": "Consolidates the Tampermonkey scripts I use to an addon",
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
   "manifest_version": 3,
   "action": {
@@ -19,6 +20,7 @@
     "declarativeNetRequest",
     "declarativeNetRequestWithHostAccess"
   ],
+  "options_page":"options.html",
   "host_permissions":[
     "*://*.plex.com/"
   ],
@@ -239,7 +241,7 @@
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
-      "*cloud.plex.com/Shipping/CustomerLabelDesigner/ViewCustomerLabelElementsGrid*"
+      "*cloud.plex.com/Shipping/customerlabeldesigner/ViewCustomerLabelElementsGrid*"
     ],
     "js": [
       "ux/UX-Label-Designer-Button.js"
@@ -361,22 +363,10 @@
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
-      "*Shipping/CustomerLabelDesigner/ViewCustomerLabelElementsGrid*"
+      "*Shipping/customerlabeldesigner/ViewCustomerLabelElementsGrid*"
     ],
     "js": [
       "ux/UX-Label-Links.js"
-    ]
-  },
-  {
-    "matches": [
-      "*://test.cloud.plex.com/*",
-      "*://cloud.plex.com/*"
-    ],
-    "include_globs": [
-      "*Platform/RevisionTracking?ApplicationKey=1275*"
-    ],
-    "js": [
-      "ux/UX-User-Manager-Revision-History.js"
     ]
   },
   {
@@ -446,18 +436,6 @@
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
-      "*ControlPanel/Dashboard*"
-    ],
-    "js": [
-      "ux/UX-Checksheet-Fill.js"
-    ]
-  },
-  {
-    "matches": [
-      "*://test.cloud.plex.com/*",
-      "*://cloud.plex.com/*"
-    ],
-    "include_globs": [
       "*Security/SecurityAdminManager*"
     ],
     "js": [
@@ -504,6 +482,7 @@
   "web_accessible_resources": [
   {
     "resources":[
+      "config.js",
       "util/jquery-2.2.3.min.js",
       "util/utils.js",
       "classic/src/Plex-Esc-Override-Script.js",

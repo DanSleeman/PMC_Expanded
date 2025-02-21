@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plex Ex Configuration Options</title>
+    <link rel="stylesheet" href="options.css" type="text/css">
+</head>
+<body>
+    <div class="content">
+    <h1>Role Configuration</h1>
+    <span>
+        <label class="parent">
+            Excluded paste terms: 
+            <input type="text" id="vStrClassicUserManagerExcludeText" placeholder="e.g., HR -, Admin">
+            <span class="tooltip">
+                <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12" y2="8"></line>
+                </svg>
+                <span class="tooltiptext">
+                    Comma delimited list of values to exlude when pasting roles. Case sensitive.
+                </span>
+            </span>
+        </label>
+    </span>
+    <span>
+        <label class="parent">
+            UX role prefix:
+            <input type="text" id="vStrClassicUserManagerUXRolePrefix" placeholder="e.g., UX:">
+            <span class="tooltip">
+                <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12" y2="8"></line>
+                </svg>
+                <span class="tooltiptext">
+                    Prefix to detect the "UX" roles on screens that show all roles.</br>There is no standard way to detect the configuration setting for a role being marked UX.
+                </span>
+            </span>
+        </label>
+    </span>
+    <h1>
+        UX Settings
+    </h1>
+    <h4>General QOL</h4>
+    <span>
+        <label>
+            <input type="checkbox" id="vBoolUxFavoritesUnlock">
+            Unlock all the function keys when assigning favorites.
+            <span class="tooltip">
+                <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12" y2="8"></line>
+                </svg>
+                <span class="tooltiptext">
+                    F5 is still reserved for refreshing the browser.
+                </span>
+            </span>
+        </label>
+    </span>
+    <span>    
+        <label>
+            <input type="checkbox" id="vBoolUxCompareSettings">
+            Add a link in the gears dropdown to access the "compare settings" screen.
+        </label>
+    </span>
+    <span>
+        <label>
+            <input type="checkbox" id="vBoolUxFilterPinEnforce">
+            Force the "Pin Filters" option to always be enabled.
+        </label>
+    </span>
+    <label>
+        <input type="checkbox" id="vBoolUxLazyLoading">
+        Disable lazy loading for all UX pages.
+        <span class="tooltip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#faf4a5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+            <span class="tooltiptext tooltipimportant">
+                This is required for many extension features to work properly.
+            </span>
+        </span>
+        </label>
+    <ul>
+        <li>
+            <div class="parent">All Screens</div>
+            <label>
+                <input type="checkbox" id="vBoolUxExportAnywhere">
+                Add button for exporting visible grid data.
+                <span class="tooltip">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="yellow" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 22h20L12 2z"></path>
+                        <line x1="12" y1="9" x2="12" y2="14"></line>
+                        <line x1="12" y1="18" x2="12" y2="18"></line>
+                    </svg>
+                    <span class="tooltiptext tooltipwarning">
+                        May behave oddly on pages with multiple grids.
+                    </span>
+                </span>
+            </label>
+        </li>
+        <li>    
+            <label>
+                <input type="checkbox" id="vBoolUxSavePopupCsv">
+                Add button to save the contents of the upload confirmation/error popup windows to a CSV file.
+            </label>
+        </li>
+        <li>
+            <div class="parent">Security Role Screens</div>
+            <label>
+                <input type="checkbox" id="vBoolUxSecurityActionKeys">
+                Add button to show the action key when viewing the security admin manager.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" id="vBoolUxRoleManagerActionKeys">
+                Add a button to show the action key when viewing the security role actions from security roles manager.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" id="vBoolUxRoleRevisionHistory">
+                Add buttons to the role revision history screen.
+                <span class="tooltip">
+                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    <span class="tooltiptext">
+                            Copy Added Roles</br>
+                            Copy Removed Roles</br>
+                            [Show only] UX roles</br>
+                            [Show only] Classic roles
+                    </span>
+                </span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <div class="parent">
+                    Position and Security Role Associations
+                </div>
+                <input type="checkbox" id="vBoolUxPosRoleAssocRearrangeColumns">
+                Rearrange the columns on the position role association to place the checkbox as the first column instead of the last.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" id="vBoolUxPosRoleAssocCopyPasteButtons">
+                Add buttons to the screen to copy the selected roles and paste the matching roles from the last copy.
+                <span class="tooltip">
+                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    <span class="tooltiptext">
+                        Copy and Paste buttons can be used across all role related screens.
+                    </span>
+                </span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <div class="parent">
+                    User Manager - User Detail
+                </div>
+                <input type="checkbox" id="vBoolUxUserManagerCopyPasteButtons">
+                Add copy and paste role buttons
+                <span class="tooltip">
+                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    <span class="tooltiptext">
+                        Copy and Paste buttons can be used across all role related screens.
+                    </span>
+                </span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" id="vBoolUxSelectAllAdmin">
+                Add a button to select the admin checkbox for all roles.
+            </label>
+        </li>
+    </ul>
+    <label>
+        <div class="parent">
+            User Manager - Company Access (Customer Access)
+            <span class="tooltip">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="yellow" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 22h20L12 2z"></path>
+                    <line x1="12" y1="9" x2="12" y2="14"></line>
+                    <line x1="12" y1="18" x2="12" y2="18"></line>
+                </svg>
+                <span class="tooltiptext tooltipwarning">
+                    These may require the option to disable lazy loading if there are many PCNs.
+                </span>
+            </span>
+        </div>
+        <input type="checkbox" id="vBoolUxCustAccessCopyPasteButtons">
+        Add copy and paste buttons to copy the enabled PCN setup.
+    </label>
+
+    <label>
+        <input type="checkbox" id="vBoolUxCustAccessTogglePCNs">
+        Add a button to quickly enable/disable a PCN per row.
+    </label>
+    <label>
+        <div class="parent">
+            EDI Log
+        </div>
+        <input type="checkbox" id="vBoolUxEDILogButtons">
+        Add buttons to open the "Process ASN" and "EDI Mailboxes" screens.
+    </label>
+    <label>
+        <div class="parent">
+            Employees
+        </div>
+        <input type="checkbox" id="vBoolUxEmployeeSwapNames">
+        Swap the first name and last name fields to match the User Manager screen.
+    </label>
+    <label>
+        <div class="parent">
+            Label Designer - Customer Label Elements
+        </div>
+        <input type="checkbox" id="vBoolUxLabelDesignerButtons">
+        Add a button to "Labels Testing Form" screen.
+        <span class="tooltip">
+            <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+            <span class="tooltiptext">
+                Normally only accessible from the label library screen.
+            </span>
+        </span>
+    </label>
+    <label>
+        <div class="parent">
+            Project Manager - Checklist Step Overviews
+        </div>
+        <input type="checkbox" id="vBoolUxProjectManagementChecklistLink">
+        Add a button to view the full checklist.
+    </label>
+    <label>
+        <div class="parent">
+            Checklist Grid Detail
+        </div>
+        <input type="checkbox" id="vBoolUxChecklistEditLink">
+        Add a button to edit the checklist header details.
+    </label>
+    <label>
+        <div class="parent">
+            SQL Development Environment
+        </div>
+        <input type="checkbox" id="vBoolUxSQLF5Execute">
+        Disable the browser's native F5 functionality and allow the SQL development environment to execute the script instead.
+    </label>
+    <label class="labelNotApplicable">
+        <input type="checkbox" id="vBoolUxChecksheetFillButton">
+        Add a button to checksheets to pencil whip them for quick testing.
+    </label>
+    <h1>
+        Classic Settings
+    </h1>
+    <h4>
+        General QOL
+    </h4>
+    <label>
+        <input type="checkbox" id="vBoolClassicEscapeOverride">
+        Override the mouse's back button to send the escape keyboard command.
+    </label>
+    <label>
+        <input type="checkbox" id="vBoolClassicVPTabIndexFix">
+        Fix VP screen tab index navigation so that all filters get highlighted first
+        <span class="tooltip">
+            <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+            <span class="tooltiptext">
+                Normally, things like the back button and other elements get highlighted before the filters.
+            </span>
+        </span>
+    </label>
+    <div class="parent">
+        User Manager
+    </div>
+    <ul>
+        <li>
+            <label>
+                <input type="checkbox" id="vBoolClassicUserManagerCopy">
+                Add a button to copy enabled roles for a user.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" id="vBoolClassicUserManagerSelectAllAdmin">
+                Add a button to select admin checkbox for all roles.
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" id="vBoolClassicUserManagerPasteClassic">
+                Add a button to paste "classic" security roles.
+                <span class="tooltip">
+                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    <span class="tooltiptext">
+                        Uses the UX role prefix setting to derive the classic roles.
+                    </span>
+                </span>
+            </label>
+        </li>
+        <li>
+            <label>
+                <input type="checkbox" id="vBoolClassicUserManagerPasteUX">
+                Add a button to paste "UX" security roles.
+                <span class="tooltip">
+                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    <span class="tooltiptext">
+                        Uses the UX role prefix setting.
+                    </span>
+                </span>
+            </label>
+        </li>
+    </ul>
+    <label>
+        <div class="parent">
+            Position Security Role Association
+        </div>
+        <input type="checkbox" id="vBoolClassicPosRoleAssocCopyPaste">
+        Add copy and paste role buttons.
+    </label>
+    <label>
+        <div class="parent">
+            Shipping Day Calendars
+        </div>
+        <input type="checkbox" id="vBoolClassicCalendarMassUpdate">
+        Add more year options to be selectable in the calendar mass update screens.
+        <span class="tooltip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#faf4a5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+            <span class="tooltiptext tooltipimportant">
+                This features works in UX by default.
+            </span>
+    </label>
+    <label>
+        <div class="parent">
+            Checklist Details
+        </div>
+        <input type="checkbox" id="vBoolClassicChecklistEditLinks">
+        Add a button to edit the current checklist header details.
+    </label>
+    <label>
+        <div class="parent">
+            Checksheets
+        </div>
+        <input type="checkbox" id="vBoolClassicChecksheetPopulate">
+        Add a button to pencilwip a checksheet for testing.
+    </label>
+    <label>
+        <div class="parent">
+            Customer Orders
+        </div>
+        <input type="checkbox" id="vBoolClassicCustomerPOButtons">
+        Add "Upload" button to the customer PO screen.
+    </label>
+    <label>
+        <div class="parent">
+            EDI Log
+        </div>
+        <input type="checkbox" id="vBoolClassicEDILogButtons">
+        Add "Upload", "Process ASN", and "EDI Mailboxes" buttons to the EDI log screen.
+    </label>
+    <label>
+        <div class="parent">
+            Customer Label Designer - Customer Label Elements
+        </div>
+        <input type="checkbox" id="vBoolClassicLabelDesignerButtons">
+        Add a button to open the label testing screen.
+    </label>
+    <label class="labelNotApplicable">
+        <input type="checkbox" id="vBoolClassicLabelDesignerLinks">
+        Unsure on behavior.
+    </label>
+    <label class="labelNotApplicable">
+        <input type="checkbox" id="vBoolClassicRenaultDelforButton">
+        Add a button to Shape's custom Renault VP screen to navigate to a specific DCS node.
+    </label>
+    </div>
+    <div class="bottom-panel">
+        <span class="status-message" id="statusMessage"></span>
+        <button class="save-button" id="saveButton">Save</button>
+    </div>
+    <script type="module" src="options.js"></script>
+    <script type="module" src="config.js"></script>
+</body>
+</html>

@@ -182,7 +182,7 @@ In UX, this role will be removed from the position association.
 
 ### User Manager Revision History
 
-`UX-User-Manage-Revision-History-Cleanup.js` `UX-User-Manager-Revision-History.js`
+`UX-User-Manage-Revision-History-Cleanup.js`
 
 Intended to clean up the ADP integration revision history garbage.
 
