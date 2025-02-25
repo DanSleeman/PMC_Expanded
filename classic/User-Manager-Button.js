@@ -61,8 +61,8 @@ module.loadSettings((settings) =>{
         for(var i=0;i<x.length;i++){
             var y = x[i].parentElement.nextElementSibling.nextElementSibling.innerText.trim()
             if (b.includes(y) && 
-                y.startsWith(uxRolePrefix) && 
-                !excludeArray.some(excludedWord => y.includes(excludedWord))
+                (y.startsWith(uxRolePrefix) || uxRolePrefix === "") && 
+                (!excludeArray.some(excludedWord => y.includes(excludedWord)) || (excludeArray.length === 1 && excludeArray[0] === ""))
                 ){
                     x[i].checked = 1
             }
@@ -75,11 +75,12 @@ module.loadSettings((settings) =>{
             console.log('Value currently is ' + result.roles);
         var b = result.roles
         var x = document.querySelectorAll('input[name^="Member"]')
+        
         for(var i=0;i<x.length;i++){
             var y = x[i].parentElement.nextElementSibling.nextElementSibling.innerText.trim()
             if (b.includes(y) && 
-                !y.startsWith(uxRolePrefix) && 
-                !excludeArray.some(excludedWord => y.includes(excludedWord))
+                (!y.startsWith(uxRolePrefix) || uxRolePrefix === "") && 
+                (!excludeArray.some(excludedWord => y.includes(excludedWord)) || (excludeArray.length === 1 && excludeArray[0] === ""))
                 ){
                     x[i].checked = 1
             }

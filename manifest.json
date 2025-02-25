@@ -1,18 +1,24 @@
 {
   "update_url": "C:\\Users\\sleemand.SHAPE\\OneDrive - Verplank Enterprises, Inc\\Scripts",
-  "name": "Plex EX",
-  "version": "0.2",
-  "description": "Consolidates the Tampermonkey scripts I use to an addon",
+  "name": "PMC Expanded",
+  "version": "0.3",
+  "description": "Collection of various tweaks and quality of life improvements for the Plex Manufacturing Cloud websites.",
   "background": {
     "service_worker": "background.js",
     "type": "module"
   },
   "manifest_version": 3,
+  "icons": {
+    "16": "icon-16.png",
+    "128": "icon-128.png"
+},
   "action": {
-    "name": "Manipulate DOM",
-    "icons": ["icon-default.png"],
-    "default_icon": "icon-default.png",
-    "default_title": "Plex EX"
+    "default_icon": {
+        "16": "icon-16.png",
+        "128": "icon-128.png"
+    },
+    "default_title": "PMC Expanded",
+    "default_popup": "options.html"
   },
   "permissions":[
     "storage",

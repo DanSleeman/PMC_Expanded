@@ -12,6 +12,26 @@
 
 [ ] - Find a way to get the Toggle PCN button on the user customer access screen to work on page load. Currently it creates the cells, but it removes them after loading completely.
 
+[ ] - Fix popup HTML formatting so the tooltips do not render off screen.
+
+## [0.3] - 2/25/2025
+
+### Changed
+
+Changed extension name from Plex EX to PMC Expanded.
+
+Changed icon.
+
+Set the options page to also be used for the popup.
+
+### Fixed
+
+Fixed user detail role paste when the exclusion setting was an empty value.
+
+Fixed user detail role paste when UX prefix is not populated. Turns both classic paste buttons into "Paste all" buttons.
+
+Fixed manifest icon configuration.
+
 ## [0.2] - 2/21/2025
 
 ### Added

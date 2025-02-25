@@ -35,13 +35,12 @@ export function loadSettings(callback) {
         vBoolClassicLabelDesignerButtons: true,
         vBoolClassicLabelDesignerLinks: true,
         vBoolClassicRenaultDelforButton: false,
-        vBoolClassicUserManagerTweaks: true,
         vBoolClassicUserManagerCopy: true,
         vBoolClassicUserManagerSelectAllAdmin: true,
         vBoolClassicUserManagerPasteClassic: true,
         vBoolClassicUserManagerPasteUX: true,
-        vStrClassicUserManagerExcludeText: "HR",
-        vStrClassicUserManagerUXRolePrefix: "UX",
+        vStrClassicUserManagerExcludeText: "",
+        vStrClassicUserManagerUXRolePrefix: "",
         vBoolClassicVPTabIndexFix: true,
         vBoolClassicPosRoleAssocCopyPaste: true
     };

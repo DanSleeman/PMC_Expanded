@@ -6,6 +6,6 @@ loadSettings((settings) =>{
         removeLazyRule();
     }
 });
-chrome.action.onClicked.addListener(() => {
-    chrome.runtime.openOptionsPage();
-});
+// chrome.action.onClicked.addListener(() => {
+//     chrome.runtime.openOptionsPage();
+// });

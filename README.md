@@ -5,8 +5,40 @@ This addon is a collection of tweaks and QOL improvements I've made over my year
 This addon has features for both Classic and UX environments.  
 I have been slowly working to migrate my classic features to UX.
 
-# UX Features
+- [Plex EX](#plex-ex)
+- [UX Features](#ux-features)
+    - [No Lazy Loading](#no-lazy-loading)
+    - [Export Anywhere](#export-anywhere)
+    - [Security Manager Action Keys](#security-manager-action-keys)
+    - [Checklist edit link](#checklist-edit-link)
+    - [Checksheet Fill](#checksheet-fill)
+    - [Compare Settings](#compare-settings)
+    - [EDI Log Buttons](#edi-log-buttons)
+    - [Favorites F-Key Unlock](#favorites-f-key-unlock)
+    - [SQL Development Environment F5 to Execute](#sql-development-environment-f5-to-execute)
+    - [Label Designer](#label-designer)
+    - [Search Filter Pin Default](#search-filter-pin-default)
+    - [Project management checklist link](#project-management-checklist-link)
+    - [Role Manager Action Keys](#role-manager-action-keys)
+    - [Position Role Association](#position-role-association)
+    - [User Manager Buttons](#user-manager-buttons)
+    - [User Manager Revision History](#user-manager-revision-history)
+    - [Role Revision History](#role-revision-history)
+- [Classic Features](#classic-features)
+    - [Calendar Mass Update](#calendar-mass-update)
+    - [Checklist Edit Links](#checklist-edit-links)
+    - [Checksheet Populate](#checksheet-populate)
+    - [Customer PO Buttons](#customer-po-buttons)
+    - [EDI Log Buttons](#edi-log-buttons-1)
+    - [Escape Override](#escape-override)
+    - [Label Designer Buttons](#label-designer-buttons)
+    - [Label Designer Links](#label-designer-links)
+    - [Renault Delfor Button](#renault-delfor-button)
+    - [User Manager](#user-manager)
+    - [VP Tab Index Fix](#vp-tab-index-fix)
 
+
+# UX Features
 
 TODO - 1/10/2024 - Create links for the user manager "customer access" portion which links to that user's detail screen in the relevant PCN
 
@@ -35,6 +67,16 @@ For example, the Position Role Association column rearrange will have the column
 
 This will increase load times on certain screens, but I find that this is a very acceptable tradeoff to not having to wait for each lazy load chunk to render. (300 rows if i recall correctly).  
 This also allows for browser ctrl+f searching properly instead of the janky Plex implementation.
+
+### Export Anywhere
+
+Adds a button to export the _visible_ text from any grid.
+
+This is a bit janky and doesn't work well on screens with multiple grid elements.
+
+![Example](images/ux-export-anywhere.jpg)
+
+![Example](images/ux-export-anywhere-csv.jpg)
 
 ### Security Manager Action Keys
 
@@ -94,8 +136,6 @@ F5 is still restricted in order to replicate the classic behavor as well as allo
 
 ### SQL Development Environment F5 to Execute
 
-1/10/2024 There is an issue with this which causes all F keys to stop functioning on the SQL development screen.
-
 Allows to use the F5 key to execute a SQL query.  
 This was behavior available in the classic version if using the Cumulus plugin.
 
@@ -109,6 +149,8 @@ Adds action bar button to navigate to the "label testing" screen from the label 
 This is currently only available on the label library screen.
 
 `UX-Label-Links.js`
+
+2/21/2025 - Seems broken. The links show and then get removed immediately.
 
 Adds hyperlinks to the label elements grid to edit that row's element.  
 Behaves like the "pencil" icon in classic.  
@@ -152,8 +194,6 @@ Adds action keys to the grid for the security roles manager. These are needed fo
 `UX-Position-Role-Association-Buttons.js`
 
 Script will rearrange the columns to have the checkboxes in the first position.
-
-Also groups the "companies" column text into a single record for the count of enterprised companies and adds that text as the hover title.  
 
 Custom css which highlights the row you are hovering over. Replicates the behavior in classic.  
 This was something to help with checking the correct boxes before I figured out a way to rearrange them consistently.

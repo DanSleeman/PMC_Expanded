@@ -39,19 +39,30 @@ function copyRoles(){ //
     }
 
 function pasteRoles(){
+    (async () => {
+        const module = await import(chrome.runtime.getURL("config.js"));
+        module.loadSettings((settings) =>{
+    const excludeRoleText = settings.vStrClassicUserManagerExcludeText
+    const excludeArray = (excludeRoleText || "").split(",").map(item => item.trim());
     chrome.storage.local.get(['roles'],function(result){
         console.log('Value currently is '+ result.roles);
-    var b = result.roles
-    $('input[type="checkbox"][name="AssignedToRole"]').each(
-        function(){
-            let y = this.parentElement.parentElement.nextElementSibling.nextElementSibling.innerText.trim()
-            if (b.includes(y) && !this.checked){
-                this.click()
+        var b = result.roles
+        $('input[type="checkbox"][name="AssignedToRole"]').each(
+            function(){
+                let y = this.parentElement.parentElement.nextElementSibling.nextElementSibling.innerText.trim()
+                if (b.includes(y) && 
+                    !this.checked &&
+                    (!excludeArray.some(excludedWord => y.includes(excludedWord)) || (excludeArray.length === 1 && excludeArray[0] === ""))
+                   ){
+                    this.click()
+                }
             }
-        }
-    )
+        )
     })
+    });
+    })();
 }
+
 
 function allAdmin(){
     $('input[type="checkbox"][name="AdminToRole"]').each(
