@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const vBoolUxCustAccessCopyPasteButtons = document.getElementById("vBoolUxCustAccessCopyPasteButtons");
     const vBoolUxCustAccessTogglePCNs = document.getElementById("vBoolUxCustAccessTogglePCNs");
     const vBoolUxSavePopupCsv = document.getElementById("vBoolUxSavePopupCsv");
+    const vBoolUxMenuSearchKeyboard = document.getElementById("vBoolUxMenuSearchKeyboard");
+    const vListEnterprisePCNs = document.getElementById("vListEnterprisePCNs");
     const vBoolClassicCalendarMassUpdate = document.getElementById("vBoolClassicCalendarMassUpdate");
     const vBoolClassicChecklistEditLinks = document.getElementById("vBoolClassicChecklistEditLinks");
     const vBoolClassicChecksheetPopulate = document.getElementById("vBoolClassicChecksheetPopulate");
@@ -41,6 +43,40 @@ document.addEventListener("DOMContentLoaded", function () {
     const vBoolClassicVPTabIndexFix = document.getElementById("vBoolClassicVPTabIndexFix");
     const vBoolClassicPosRoleAssocCopyPaste = document.getElementById("vBoolClassicPosRoleAssocCopyPaste");
     const saveButton = document.getElementById("saveButton");
+
+    // Dunamically sets the tooltip bounds to keep them within the window
+    function tooltipText(){
+        document.querySelectorAll(".tooltip").forEach(tooltip => {
+            tooltip.addEventListener("mouseenter", () => {
+                const tooltipText = tooltip.querySelector(".tooltiptext");
+                const rect = tooltipText.getBoundingClientRect();
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+        
+                // Shift left if tooltip goes beyond the right edge
+                if (rect.right > windowWidth) {
+                    tooltipText.style.left = "auto";
+                    tooltipText.style.right = "0";
+                    tooltipText.style.transform = "none";
+                }
+        
+                // Shift right if tooltip goes beyond the left edge
+                if (rect.left < 0) {
+                    tooltipText.style.left = "0";
+                    tooltipText.style.right = "auto";
+                    tooltipText.style.transform = "none";
+                }
+        
+                // Shift below if too close to top
+                if (rect.top < 0) {
+                    tooltipText.style.bottom = "auto";
+                    tooltipText.style.top = "100%";
+                }
+            });
+        });
+    }
+    tooltipText()
+
 
     // Function to update dependencies
     function updateDependencies() {
@@ -79,6 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
         vBoolUxCustAccessCopyPasteButtons.checked = settings.vBoolUxCustAccessCopyPasteButtons;
         vBoolUxCustAccessTogglePCNs.checked = settings.vBoolUxCustAccessTogglePCNs;
         vBoolUxSavePopupCsv.checked = settings.vBoolUxSavePopupCsv;
+        vBoolUxMenuSearchKeyboard.checked = settings.vBoolUxMenuSearchKeyboard;
+        vListEnterprisePCNs.value = settings.vListEnterprisePCNs;
 
         vBoolClassicCalendarMassUpdate.checked = settings.vBoolClassicCalendarMassUpdate;
         vBoolClassicChecklistEditLinks.checked = settings.vBoolClassicChecklistEditLinks;
@@ -133,6 +171,8 @@ document.addEventListener("DOMContentLoaded", function () {
             vBoolUxCustAccessCopyPasteButtons: vBoolUxCustAccessCopyPasteButtons.checked,
             vBoolUxCustAccessTogglePCNs: vBoolUxCustAccessTogglePCNs.checked,
             vBoolUxSavePopupCsv: vBoolUxSavePopupCsv.checked,
+            vBoolUxMenuSearchKeyboard: vBoolUxMenuSearchKeyboard.checked,
+            vListEnterprisePCNs: vListEnterprisePCNs.value,
             vBoolClassicCalendarMassUpdate: vBoolClassicCalendarMassUpdate.checked,
             vBoolClassicChecklistEditLinks: vBoolClassicChecklistEditLinks.checked,
             vBoolClassicChecksheetPopulate: vBoolClassicChecksheetPopulate.checked,

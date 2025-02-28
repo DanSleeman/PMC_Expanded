@@ -1,5 +1,5 @@
 const exportButton = '#exportAnywhere';
-const exportTag = '[Plex EX Export Anywhere]';
+const exportTag = '[PMC Expanded Export Anywhere]';
 function log(message) {
     console.log(`${exportTag}[${getTimestamp()}] ${message}`);
   }

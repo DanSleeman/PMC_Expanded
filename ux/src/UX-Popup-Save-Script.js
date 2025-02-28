@@ -1,7 +1,7 @@
 const popupWindow = '#uploadValidationDialog'
 const popupFooter = ''
 const saveButton = '#saveJsonBtn'
-const tag = '[Plex EX Popup Save Button]';
+const tag = '[PMC Expanded Popup Save Button]';
 function log(message) {
     console.log(`${tag}[${getTimestamp()}] ${message}`);
   }

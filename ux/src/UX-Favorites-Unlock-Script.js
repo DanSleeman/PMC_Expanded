@@ -1,7 +1,7 @@
 const favoritesDropDown = '#ViewManageFavoritesDialog_Platform select'
 const allFKeys = ['F1','F2','F3','F4','F6','F7','F8','F9','F10','F11','F12'];
 function favoriteWrapper(){
-    const tag = '[Plex EX Favorite F-Key Unlocker]';
+    const tag = '[PMC Expanded Favorite F-Key Unlocker]';
     
     const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     let appObserver = null;

@@ -16,7 +16,7 @@ function actionKeyInsert(){
 // Mutator doesn't work, so just going to use the button action.
 // Not sure how to observe when the grid controller refreshes, but if that is discovered, this can be updated to observe that.
 function actionKeyInsertWrapper(){
-    const tag = '[Plex EX Action Key Insert]'
+    const tag = '[PMC Expanded Action Key Insert]'
     const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     let appObserver = null;
     const appName = '.plex-grid';

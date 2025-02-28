@@ -1,7 +1,7 @@
 // For some reason, Plex 'refreshes' the table body after the table is loaded. 
 // This causes any normal non-mutator script injection to be overwritten.
 function roleAssociationRearrange(){
-    const tag = '[Plex EX Role Association Column Rearrange]'
+    const tag = '[PMC Expanded Role Association Column Rearrange]'
     const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     let appObserver = null;
     const appName = '.plex-grid';

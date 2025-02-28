@@ -1,40 +1,16 @@
 const roleButton = 'enterpriseRoleCopy'
 const popupId = 'enterpriseRolesDialog'
-const pgradPCNs = [
-    "PGrad - NA2",
-    "PGrad - NA3",
-    "PGrad -Grand Haven"
-]
-const enterprisePCNs = [
-    "广州顺普汽车零部件有限公司",
-    "顺普汽车零部件（昆山）有限公司",
-    //"Light Corporation",
-    "Meta Tool Technologies",
-    //"Net Shape Engineering",
-    //"Net Shape International, LLC.",
-    "NetShape Michigan",
-    "NetShape Alabama",
-    "NetShape Mexico",
-    "Pliant Plastics",
-    "Shape - Aluminum",
-    //"Shape - Shape Receivables",
-    "Shape Corp CST",
-    "Shape Corp Czech Republic s.r.o.",
-    "SHAPE CORP MEXICO, S. de R.L. de C.V.",
-    //"SHAPE CORP MEXICO, S. de R.L. de C.V. MST",
-    //"Shape Corp. (Test PCN)",
-    //"Shape Corp. - HEMSAP, S. de R.L. de C.V.",
-    //"Shape Corp. U.K. Limited",
-    //"Shape France",
-    "Shape Germany",
-    "Shape Japan",
-    //"Shape Japan - old",
-    //"Shape NetShape Mexico S. de R.L. de C.V.",
-    //"Shape Staffing, LLC",
-    "Shape/NetShape Korea"
-];
+const dataSettings = document.currentScript.getAttribute('data-settings')
+const settings = JSON.parse(dataSettings);
+const enterprisePCNsString = settings.vListEnterprisePCNs
+const enterprisePCNs = (enterprisePCNsString || "").split(",").map(item => item.trim());
+var emptyList = false
+var allPCNs = false
+if (enterprisePCNs.length === 1 && enterprisePCNs[0] === "") emptyList = true;
+if (enterprisePCNs.length === 1 && enterprisePCNs[0] === "_ALL_") allPCNs = true;
+
 function favoriteWrapper(){
-    const tag = '[Plex EX Enterprise Role Security Setup]';
+    const tag = '[PMC Expanded Enterprise Role Security Setup]';
     
     const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     let appObserver = null;
@@ -72,17 +48,12 @@ function favoriteWrapper(){
       }
 
       function rolesCheck(){
-        // debug('checking for roles pane')
         if (document.querySelector(rolePane) === null) return;
-        // debug('roles pane found, checking if button exists')
         if (document.querySelector(`#${roleButton}`)) return;
-        // debug('button does not exist')
         function checkForFunction(){
             if (typeof window.uxCreateButtonPopup === 'function'){
-                // debug('function is available. creating button')
                 roleButtonCreate();
             } else {
-                // debug('function unavailable, waiting and checking again')
                 requestAnimationFrame(checkForFunction);
             }
         }
@@ -93,70 +64,39 @@ function favoriteWrapper(){
 
 
 function roleEnterprise(){
+    if (emptyList) return;
     var roleTableRows = document.querySelectorAll(`div[id='${popupId}'] tbody tr`);
     var header = document.querySelector('h3').textContent;
-    var reg = /- (UX.+) \(/
+    var reg = /- (.+) \(/
     var found = header.match(reg);
     var roleName = found[1]
     debug(`Role Name: ${roleName}`)
-    roleTableRows.forEach(function(el){
+    roleTableRows.forEach(function(el, key){
         var newRoleBox
         var currentValue
-        var existingRole
         var n = el.children[0].textContent
-        if (enterprisePCNs.includes(n)){
+        var pcn = String(ko.dataFor(el).config.data[key].PlexusCustomerNo)
+        if (enterprisePCNs.includes(n) || enterprisePCNs.includes(pcn) || allPCNs){
             currentValue = el.children[1].querySelector('.plex-picker-selected-items')
             if (currentValue){
                 return
-            }
-            if (pgradPCNs.includes(n)){
-                newRoleBox = el.children[1].querySelector('input')
-                newRoleBox.value = roleName
             }
             else {
                 newRoleBox = el.children[2].querySelector('input')
                 newRoleBox.value = roleName
                 ko.dataFor(newRoleBox).data.NewRoleName = roleName
             }
-            // newRoleBox = el.children[1].querySelector('input')
-            // newRoleBox.value = roleName
             newRoleBox.focus()
             newRoleBox.blur()
-            // var noResults = document.querySelector(".plex-picker-modal.plex-dialog.modal.fade.in")
-            // if (noResults){
-            //     let popupText = noResults.querySelector(".plex-empty-message")
-            //     if (popupText){
-            //         noResults.querySelector("a").click()
-            //     }
-            //     existingRole = false
-            // }
-            // else {
-            //     existingRole = true
-            // }
-            // if (!existingRole){
-            //     newRoleBox = el.children[2].querySelector('input')
-            //     newRoleBox.value = roleName
-            //     ko.dataFor(newRoleBox).data.NewRoleName = roleName
-            // }
         }
     })
 }
 
 function roleButtonCreate(){
-    uxCreateButtonPopup(popupId,roleButton,'Set Roles')
+    uxCreateButtonPopup(popupId,roleButton,'Set New Roles')
     document.getElementById (roleButton).addEventListener (
         "mouseup", roleEnterprise, false
         );
 }
 }
 favoriteWrapper();
-
-// function checkForFunction(){
-//     if (typeof window.uxCreateButton === 'function'){
-//         roleButtonCreate();
-//     } else {
-//         requestAnimationFrame(checkForFunction);
-//     }
-// }
-
-// checkForFunction();

@@ -25,6 +25,8 @@ export function loadSettings(callback) {
         vBoolUxCustAccessCopyPasteButtons: true,
         vBoolUxCustAccessTogglePCNs: true,
         vBoolUxSavePopupCsv: true,
+        vBoolUxMenuSearchKeyboard: true,
+        vListEnterprisePCNs: "",
 
         vBoolClassicCalendarMassUpdate: true,
         vBoolClassicChecklistEditLinks: true,

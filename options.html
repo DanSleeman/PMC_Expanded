@@ -9,48 +9,87 @@
 <body>
     <div class="content">
     <h1>Role Configuration</h1>
-    <span>
-        <label class="parent">
+    <div class="parent">
+        <span class="parent">
+            Enterprise PCNs:
+        </span>
+        <span class="tooltip">
+            <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+            <span class="tooltiptext">
+                Comma delimited list of PCN names or numbers to be used when setting new enterprise security roles.</br>Use "_ALL_" as the only option to set the role in all PCNs.
+            </span>
+        </span>
+        <div>
+            <textarea id="vListEnterprisePCNs" placeholder="e.g., Shape - Corp, 123456" cols="50" rows="4">
+            </textarea>
+        </div>
+    </div>
+    <div class="parent">
+        <span class="parent">
             Excluded paste terms: 
-            <input type="text" id="vStrClassicUserManagerExcludeText" placeholder="e.g., HR -, Admin">
-            <span class="tooltip">
-                <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12" y2="8"></line>
-                </svg>
-                <span class="tooltiptext">
-                    Comma delimited list of values to exlude when pasting roles. Case sensitive.</br>This functions only within the user details paste screens.
-                </span>
+        </span>
+        <span class="tooltip">
+            <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+            <span class="tooltiptext">
+                Comma delimited list of values to exlude when pasting roles. Case sensitive.</br>This functions only within the user details paste screens.
             </span>
-        </label>
-    </span>
-    <span>
-        <label class="parent">
+        </span>
+        <div>
+            <input type="text" size="50" id="vStrClassicUserManagerExcludeText" placeholder="e.g., HR -, Admin">
+        </div>
+    </div>
+    <div class="parent">
+        <span class="parent">
             UX role prefix:
-            <input type="text" id="vStrClassicUserManagerUXRolePrefix" placeholder="e.g., UX:">
-            <span class="tooltip">
-                <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <line x1="12" y1="16" x2="12" y2="12"></line>
-                    <line x1="12" y1="8" x2="12" y2="8"></line>
-                </svg>
-                <span class="tooltiptext">
-                    Prefix to detect the "UX" roles on screens that show all roles.</br>There is no standard way to detect the configuration setting for a role being marked UX.
-                </span>
+        </span>
+        <span class="tooltip">
+            <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12" y2="8"></line>
+            </svg>
+            <span class="tooltiptext">
+                Prefix to detect the "UX" roles on screens that show all roles.</br>There is no standard way to detect the configuration setting for a role being marked UX.
             </span>
-        </label>
-    </span>
+        </span>
+        <div>
+            <input type="text" id="vStrClassicUserManagerUXRolePrefix" placeholder="e.g., UX:">
+        </div>
+    </div>
     <h1>
         UX Settings
     </h1>
     <h4>General QOL</h4>
     <span>
         <label>
-            <input type="checkbox" id="vBoolUxFavoritesUnlock">
-            Unlock all the function keys when assigning favorites.
+            <input type="checkbox" id="vBoolUxMenuSearchKeyboard">
+            Add keyboard navigation to menu search
             <span class="tooltip">
-                <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12" y2="8"></line>
+                </svg>
+                <span class="tooltiptext">
+                    Adds the ability to use up and down arrows to select the screen during a menu search. Enter will then navigate to the selected page.
+                </span>
+            </span>
+        </label>
+    </span>
+    <span>
+        <label>
+            <input type="checkbox" id="vBoolUxFavoritesUnlock">
+            Unlock all* function key options when assigning favorites.
+            <span class="tooltip">
+                <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="12" y1="16" x2="12" y2="12"></line>
                     <line x1="12" y1="8" x2="12" y2="8"></line>
@@ -64,7 +103,7 @@
     <span>    
         <label>
             <input type="checkbox" id="vBoolUxCompareSettings">
-            Add a link in the gears dropdown to access the "compare settings" screen.
+            Add "Compare Settings" link in the gears dropdown menu.
         </label>
     </span>
     <span>
@@ -129,7 +168,7 @@
                 <input type="checkbox" id="vBoolUxRoleRevisionHistory">
                 Add buttons to the role revision history screen.
                 <span class="tooltip">
-                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12" y2="8"></line>
@@ -157,7 +196,7 @@
                 <input type="checkbox" id="vBoolUxPosRoleAssocCopyPasteButtons">
                 Add buttons to the screen to copy the selected roles and paste the matching roles from the last copy.
                 <span class="tooltip">
-                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12" y2="8"></line>
@@ -176,7 +215,7 @@
                 <input type="checkbox" id="vBoolUxUserManagerCopyPasteButtons">
                 Add copy and paste role buttons
                 <span class="tooltip">
-                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12" y2="8"></line>
@@ -237,7 +276,7 @@
         <input type="checkbox" id="vBoolUxLabelDesignerButtons">
         Add a button to "Labels Testing Form" screen.
         <span class="tooltip">
-            <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
                 <line x1="12" y1="16" x2="12" y2="12"></line>
                 <line x1="12" y1="8" x2="12" y2="8"></line>
@@ -284,15 +323,15 @@
     </label>
     <label>
         <input type="checkbox" id="vBoolClassicVPTabIndexFix">
-        Fix VP screen tab index navigation so that all filters get highlighted first
+        Fix VP screen tab keyboard navigation
         <span class="tooltip">
-            <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
                 <line x1="12" y1="16" x2="12" y2="12"></line>
                 <line x1="12" y1="8" x2="12" y2="8"></line>
             </svg>
             <span class="tooltiptext">
-                Normally, things like the back button and other elements get highlighted before the filters.
+                Normally, things like the back button and other elements get highlighted before the filters.</br>This applies a tab index to all the filters.
             </span>
         </span>
     </label>
@@ -317,7 +356,7 @@
                 <input type="checkbox" id="vBoolClassicUserManagerPasteClassic">
                 Add a button to paste "classic" security roles.
                 <span class="tooltip">
-                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12" y2="8"></line>
@@ -333,7 +372,7 @@
                 <input type="checkbox" id="vBoolClassicUserManagerPasteUX">
                 Add a button to paste "UX" security roles.
                 <span class="tooltip">
-                    <svg class="tooltip" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
                         <line x1="12" y1="16" x2="12" y2="12"></line>
                         <line x1="12" y1="8" x2="12" y2="8"></line>

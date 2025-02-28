@@ -1,11 +1,11 @@
-# Plex EX
+# PMC Expanded
 
 This addon is a collection of tweaks and QOL improvements I've made over my years of working with the Plex Manufacturing Cloud systems.
 
 This addon has features for both Classic and UX environments.  
 I have been slowly working to migrate my classic features to UX.
 
-- [Plex EX](#plex-ex)
+- [PMC Expanded](#pmc-expanded)
 - [UX Features](#ux-features)
     - [No Lazy Loading](#no-lazy-loading)
     - [Export Anywhere](#export-anywhere)

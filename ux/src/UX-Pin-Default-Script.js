@@ -1,5 +1,5 @@
 function pinByDefault() {
-    const tag = '[Plex EX Filter Pin By Default]';
+    const tag = '[PMC Expanded Filter Pin By Default]';
 
 
     const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;

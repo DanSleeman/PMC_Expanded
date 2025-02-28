@@ -12,7 +12,23 @@
 
 [ ] - Find a way to get the Toggle PCN button on the user customer access screen to work on page load. Currently it creates the cells, but it removes them after loading completely.
 
-[ ] - Fix popup HTML formatting so the tooltips do not render off screen.
+[x] - Fix popup HTML formatting so the tooltips do not render off screen.
+
+## [0.4] - 2/28/2025
+
+### Added
+
+Added configuration support for quickly entering role names for enterprising security roles in defined PCNs.
+
+Added UX menu search keyboard navigation script. Formerly tampermonkey userscript.
+
+### Changed
+
+Update the enterprise role script to dynamically set the PCNs.
+
+Modified wording to various option entries.
+
+Updated debug script tags to reflect extension name change.
 
 ## [0.3] - 2/25/2025
 

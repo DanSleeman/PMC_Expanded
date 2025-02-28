@@ -8,6 +8,9 @@ body {
 h1 {
     font-size: 20px;
 }
+textarea{
+    display: block;
+}
 
 label {
     display: block;
@@ -27,12 +30,16 @@ label {
 ul {
     list-style-type: none;
 }
+div.parent{
+    margin-top: 5px;
+}
 .parent{
     font-weight: bold;
 }
 .tooltip {
     position: relative;
     cursor: help;
+    display: inline-block;
 }
 
 .tooltiptext {
@@ -50,6 +57,8 @@ ul {
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s;
+    white-space: normal;
+    max-width: 300px;
 }
 
 .tooltipwarning{

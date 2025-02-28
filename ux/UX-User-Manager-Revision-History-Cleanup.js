@@ -25,7 +25,7 @@ Nate Velez is a good example to check. Most recent changes have a lot of roles t
 
 
 function rem(){
-    const tag = '[Plex EX Remove ADP Junk]';
+    const tag = '[PMC Expanded Remove ADP Junk]';
     const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
     let appObserver = null;
     const appName = '.plex-grid-wrapper';
