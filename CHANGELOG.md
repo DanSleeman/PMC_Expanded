@@ -14,7 +14,7 @@
 
 [x] - Fix popup HTML formatting so the tooltips do not render off screen.
 
-## [0.4] - 2/28/2025
+## [0.7] - 2/28/2025
 
 ### Added
 
@@ -30,7 +30,9 @@ Modified wording to various option entries.
 
 Updated debug script tags to reflect extension name change.
 
-## [0.3] - 2/25/2025
+Updated README details.
+
+## [0.16] - 2/25/2025
 
 ### Changed
 
@@ -48,7 +50,7 @@ Fixed user detail role paste when UX prefix is not populated. Turns both classic
 
 Fixed manifest icon configuration.
 
-## [0.2] - 2/21/2025
+## [0.15] - 2/21/2025
 
 ### Added
 
