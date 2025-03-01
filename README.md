@@ -51,10 +51,10 @@ These share functionality and logic between eachother.
     * Copies all the enabled roles into a local storage variable
 * Paste
     * Only *adds* roles from the copied list. Does not remove any roles.
+    * The paste button will show a reference to the place that was used for copying.
+        * E.G. username, position, full name
 
 The paste action looks at the setting for excluded role terms and does not paste any roles even if they are in the copied list.
-
-
 
 
 # UX Features
@@ -327,6 +327,9 @@ In UX, this role will be removed from the position association.
 `ux\UX-Role-History-Buttons.js`  
 `ux\src\UX-Role-History-Buttons-Script.js`
 </details>
+
+[ ] TODO - Add a link to this page directly without needing to open a role first.  
+This will allow easier usage for these features. Otherwise you can't see all roles for a user.
 
 Adds a number of features to this screen.
 
