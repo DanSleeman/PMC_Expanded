@@ -1,4 +1,4 @@
-/* 
+/* WIP Script
 process which will rearrange the query panes to mimic the classic layout a bit more 
 Create DIV container for query and properties tabs
 Move these tabs into that container
@@ -7,6 +7,13 @@ move results tab to below new container
     Should this be triggered by the F5/execute function?
     Should it be hidden again with a close action?
 Add a resize element to the results container.
+
+
+Logical process that should take place.
+Only process this for the currently active query tab.
+Move the Properties sub-pane to the Query sub-pane.
+When the Results are triggered, create a container and move the reults sub-pane to it.
+Create a close button to remove the results container and move it back to the sub-pane.
 */
 
 
