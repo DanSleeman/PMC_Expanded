@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const vBoolUxCustAccessTogglePCNs = document.getElementById("vBoolUxCustAccessTogglePCNs");
     const vBoolUxSavePopupCsv = document.getElementById("vBoolUxSavePopupCsv");
     const vBoolUxMenuSearchKeyboard = document.getElementById("vBoolUxMenuSearchKeyboard");
+    const vBoolUxRoleRevHistory = document.getElementById("vBoolUxRoleRevHistory");
     const vListEnterprisePCNs = document.getElementById("vListEnterprisePCNs");
+    const vStrSecurityManagerGlossary = document.getElementById("vStrSecurityManagerGlossary");
+    const vStrSettingsManagerGlossary = document.getElementById("vStrSettingsManagerGlossary");
     const vBoolClassicCalendarMassUpdate = document.getElementById("vBoolClassicCalendarMassUpdate");
     const vBoolClassicChecklistEditLinks = document.getElementById("vBoolClassicChecklistEditLinks");
     const vBoolClassicChecksheetPopulate = document.getElementById("vBoolClassicChecksheetPopulate");
@@ -116,7 +119,10 @@ document.addEventListener("DOMContentLoaded", function () {
         vBoolUxCustAccessTogglePCNs.checked = settings.vBoolUxCustAccessTogglePCNs;
         vBoolUxSavePopupCsv.checked = settings.vBoolUxSavePopupCsv;
         vBoolUxMenuSearchKeyboard.checked = settings.vBoolUxMenuSearchKeyboard;
+        vBoolUxRoleRevHistory.checked = settings.vBoolUxRoleRevHistory;
         vListEnterprisePCNs.value = settings.vListEnterprisePCNs;
+        vStrSecurityManagerGlossary.value = settings.vStrSecurityManagerGlossary;
+        vStrSettingsManagerGlossary.value = settings.vStrSettingsManagerGlossary;
 
         vBoolClassicCalendarMassUpdate.checked = settings.vBoolClassicCalendarMassUpdate;
         vBoolClassicChecklistEditLinks.checked = settings.vBoolClassicChecklistEditLinks;
@@ -172,7 +178,10 @@ document.addEventListener("DOMContentLoaded", function () {
             vBoolUxCustAccessTogglePCNs: vBoolUxCustAccessTogglePCNs.checked,
             vBoolUxSavePopupCsv: vBoolUxSavePopupCsv.checked,
             vBoolUxMenuSearchKeyboard: vBoolUxMenuSearchKeyboard.checked,
+            vBoolUxRoleRevHistory: vBoolUxRoleRevHistory.checked,
             vListEnterprisePCNs: vListEnterprisePCNs.value,
+            vStrSecurityManagerGlossary: vStrSecurityManagerGlossary.value,
+            vStrSettingsManagerGlossary: vStrSettingsManagerGlossary.value,
             vBoolClassicCalendarMassUpdate: vBoolClassicCalendarMassUpdate.checked,
             vBoolClassicChecklistEditLinks: vBoolClassicChecklistEditLinks.checked,
             vBoolClassicChecksheetPopulate: vBoolClassicChecksheetPopulate.checked,

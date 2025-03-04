@@ -12,9 +12,19 @@
 
 [ ] - Find a way to get the Toggle PCN button on the user customer access screen to work on page load. Currently it creates the cells, but it removes them after loading completely.
 
-[x] - Fix popup HTML formatting so the tooltips do not render off screen.
+## [0.18] - 3/4/2025
 
-## [0.7] - 2/28/2025
+### Added
+
+Added option to add link to Role Revision History screen for navigating there without accessing a role first.
+
+Added config settings for the drop-down insert scripts so they can get a user's glossary terms.
+
+### Changed
+
+Updated compare settings script to use the glossary term setting when searching for where to insert the value.
+
+## [0.17] - 2/28/2025
 
 ### Added
 
@@ -229,7 +239,3 @@ Added toast alerts to the UX User manager role buttons.
 
 Reworked the user manager buttons functions to `window.postMessage`. Added event handler to extension to monitor for these messages and execute the original functions.  
 This method allows the buttons to use the Plex toast alert function when pressed and still allows the extension to store the roles to copy/paste between screens.
-
-### TODO
-Fix SQL Development Environment F5 override to still allow other F keys to function.
-

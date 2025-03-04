@@ -1,7 +1,7 @@
 {
   "update_url": "C:\\Users\\sleemand.SHAPE\\OneDrive - Verplank Enterprises, Inc\\Scripts",
   "name": "PMC Expanded",
-  "version": "0.17",
+  "version": "0.18",
   "description": "Collection of various tweaks and quality of life improvements for the Plex Manufacturing Cloud websites.",
   "background": {
     "service_worker": "background.js",
@@ -10,11 +10,15 @@
   "manifest_version": 3,
   "icons": {
     "16": "icon-16.png",
+    "32": "icon-32.png",
+    "64": "icon-64.png",
     "128": "icon-128.png"
 },
   "action": {
     "default_icon": {
         "16": "icon-16.png",
+        "32": "icon-32.png",
+        "64": "icon-64.png",
         "128": "icon-128.png"
     },
     "default_title": "PMC Expanded",
@@ -48,7 +52,7 @@
     "run_at":"document_start"
   },
   {
-    "matches": [ 
+    "matches": [
       "*://test.plexus-online.com/*",
       "*://www.plexus-online.com/*",
       "*://test.plexonline.com/*",
@@ -397,7 +401,8 @@
       "*login*"
     ],
     "js": [
-      "ux/UX-Compare-Settings.js"
+      "ux/UX-Compare-Settings.js",
+      "ux/UX-Role-Revision-History.js"
     ]
   },
   {

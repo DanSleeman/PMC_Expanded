@@ -16,6 +16,9 @@ label {
     display: block;
     margin: 10px 0;
 }
+label.indent-1{
+    padding-left: 20px;
+}
 .labelNotApplicable{
     display: none;
 }

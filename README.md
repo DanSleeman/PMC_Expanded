@@ -172,8 +172,6 @@ Intended to be a button that can fill out an entire production checksheet. It do
 Adds a button on the dropdown gears which opens the settings compare screen. This is normally only accessible when on the settings manager screen.  
 Used to be a navigatable screen in classic.
 
-TODO - 1/2/2024 - Doesn't always work. Need a more consistent approach.
-
 ![Example](images/ux-compare-settings.jpg)
 
 ### EDI Log Buttons
@@ -327,9 +325,6 @@ In UX, this role will be removed from the position association.
 `ux\UX-Role-History-Buttons.js`  
 `ux\src\UX-Role-History-Buttons-Script.js`
 </details>
-
-[ ] TODO - Add a link to this page directly without needing to open a role first.  
-This will allow easier usage for these features. Otherwise you can't see all roles for a user.
 
 Adds a number of features to this screen.
 

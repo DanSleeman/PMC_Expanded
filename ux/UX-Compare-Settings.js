@@ -2,12 +2,14 @@
     const module = await import(chrome.runtime.getURL("config.js"));
     module.loadSettings((settings) =>{
         if (settings.vBoolUxCompareSettings){
+            const settingsManagerGlossary = settings.vStrSettingsManagerGlossary
+
 //Wrap everything in an onload function in order to get around errors of not finding the elements
 window.onload = function(){
 function getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     }
-const XPathSearch = "//span[text()='Settings Manager']"
+const XPathSearch = `//span[text()='${settingsManagerGlossary}']`
 
 y = getElementByXpath(XPathSearch)
 // Sometimes the function fails to find an element.

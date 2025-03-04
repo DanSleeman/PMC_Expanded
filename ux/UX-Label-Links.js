@@ -1,13 +1,3 @@
-//ko.dataFor(document.getElementsByClassName("plex-filter-pin-icon")[0]).isPinned(true)
-/*	
-var s = document.createElement('script');
-// TODO: add "script.js" to web_accessible_resources in manifest.json
-s.src = chrome.extension.getURL('label-script.js');
-s.onload = function() {
-    this.remove();
-};
-(document.head || document.documentElement).appendChild(s);
-*/
 //Label designer move edit link from column 0 to column 15
 
 function waitForElementToDisplay(selector, time) {

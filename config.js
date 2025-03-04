@@ -26,7 +26,10 @@ export function loadSettings(callback) {
         vBoolUxCustAccessTogglePCNs: true,
         vBoolUxSavePopupCsv: true,
         vBoolUxMenuSearchKeyboard: true,
+        vBoolUxRoleRevHistory: true,
         vListEnterprisePCNs: "",
+        vStrSecurityManagerGlossary: "Security Manager",
+        vStrSettingsManagerGlossary: "Settings Manager",
 
         vBoolClassicCalendarMassUpdate: true,
         vBoolClassicChecklistEditLinks: true,

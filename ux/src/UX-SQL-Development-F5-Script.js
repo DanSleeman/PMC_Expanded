@@ -1,4 +1,3 @@
-// TODO 1/10/2024 Figure out why this overrides the other favorites F keys
 function f5Refresh(){
     var actionButtons = document.querySelectorAll('ul.plex-actions > li')
     actionButtons.forEach(function(a){
