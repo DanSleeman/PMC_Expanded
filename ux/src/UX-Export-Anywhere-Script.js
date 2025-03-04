@@ -169,9 +169,6 @@ async function addExportCheckboxesToTableHeader() {
             checkboxContainer.appendChild(checkbox);
             
             // Placing the checkbox under the column text is more consistently formatted.
-            // TODO Want to more elegantly handle the checkbox placement.
-            // The layout is bad for columns that are themselves a checkbox.
-            // Want to see if there can be a DIV or SPAN inserted to align them.
             headers[i].appendChild(checkboxContainer);
         }
     } catch (error){

@@ -59,18 +59,6 @@ The paste action looks at the setting for excluded role terms and does not paste
 
 # UX Features
 
-TODO - 1/10/2024 - Create links for the user manager "customer access" portion which links to that user's detail screen in the relevant PCN
-
-`https://cloud.plex.com/Security/UserManagement/ViewUserManagerCustomerForm?__sk=21&__sak=81&__actionKey=10473&__asid=&UserValue=&UserCustomerKey=&__features=novirtual`  
-`https://cloud.plex.com/Security/UserManagement/ViewUserManagerCustomerForm?__sk=21&__sak=81&__actionKey=10473&__asid=&UserValue=&UserCustomerKey=&__features=novirtual`
-
-__sk and __sak appear to be different for different submenus in the user manager. These are consistent from user to user and PCN to PCN.  
-UserValue is the same. This is the PUN  
-UserCustomerKey is different based on the PCN that is selected. Need to figure out if this is available on the screen or not.
-
-datasource.raw is an array of each row which has a lot of detail. Does not have the usercustomerkey though.  
-This same detail is avaialable on each checkbox data as well.
-
 ### No Lazy Loading
 
 <details>
@@ -157,8 +145,6 @@ I use this to enable "N/A" support since UX does not enable this by default like
 </details>
 
 **Not currently implemented**
-
-TODO - 1/2/2024 - Make this function like the classic version. Need to use mutators to detect if the checksheet window is loaded.
 
 Intended to be a button that can fill out an entire production checksheet. It doesn't work in UX at this time. This is only intended to be used for testing purposes.
 

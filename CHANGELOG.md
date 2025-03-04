@@ -1,17 +1,5 @@
 # Change Log
 
-## TODO
-
-[ ] - Fix or modify exports on 'grouped' grids to handle row data which isn't present due to hidden repeating cell content.  
-
-* Inventory
-
-[ ] - Fix export for situations where the first header row spans the length of all the columns below.
-
-* Receiving Log
-
-[ ] - Find a way to get the Toggle PCN button on the user customer access screen to work on page load. Currently it creates the cells, but it removes them after loading completely.
-
 ## [0.18] - 3/4/2025
 
 ### Added
@@ -23,6 +11,8 @@ Added config settings for the drop-down insert scripts so they can get a user's 
 ### Changed
 
 Updated compare settings script to use the glossary term setting when searching for where to insert the value.
+
+Created TODO.md and removed all TODO statements from specific scripts.
 
 ## [0.17] - 2/28/2025
 

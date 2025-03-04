@@ -1,7 +1,7 @@
 // Removes the revision history on UX user manager that is added by ADP integration.
 // Every time it updates, it adds change entries for each role equal to the total number of roles.
 
-// TODO - Figure out a way to identify all of the duplicates and remove these.
+// Figure out a way to identify all of the duplicates and remove these.
 /*
 For instance, if "Original Value" has a record with a matching "New Value" then remove all rows with a matching "Original Value" entry.
 This would allow for cleaning up all the entries which have not actually changed.

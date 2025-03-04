@@ -1,5 +1,3 @@
-// TODO - 1/4/2024 Update functions to search for the Security Role column rather than the next sibling.
-
 (async () => {
     const module = await import(chrome.runtime.getURL("config.js"));
     module.loadSettings((settings) =>{

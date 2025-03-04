@@ -164,9 +164,6 @@ function classicCreateButton(type,anchorClass,id,name,title=null,touchscreen=fal
 }
 
 function sortTable(e) {
-    // TODO - 1/10/2024 - add toggling for visibility to the indicator element when sorting.
-    // Need to also remove visibility to any of the other TH inidcator elements when clicked.
-    // Alternatively, figure out how to implement the Plex sorting for the grid. All the elements appear to be present, but the table is not sortable.
     e.currentTarget.toggleAttribute('sorted')
     var tbody = $(e.currentTarget).closest('table').find('tbody'),
         sortIndex = e.currentTarget.cellIndex;
