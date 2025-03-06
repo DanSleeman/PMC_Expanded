@@ -4,6 +4,8 @@
 
 ### Added
 
+Added privacy policy
+
 Added option to add link to Role Revision History screen for navigating there without accessing a role first.
 
 Added config settings for the drop-down insert scripts so they can get a user's glossary terms.
