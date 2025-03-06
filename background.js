@@ -5,7 +5,5 @@ loadSettings((settings) =>{
     } else {
         removeLazyRule();
     }
+    chrome.runtime.onSuspend.addListener(removeLazyRule);
 });
-// chrome.action.onClicked.addListener(() => {
-//     chrome.runtime.openOptionsPage();
-// });

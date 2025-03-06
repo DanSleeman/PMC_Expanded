@@ -1,8 +1,8 @@
 const dataset = document.currentScript.getAttribute('data-params')
 function createTheButtons(){
-    console.log('script.js - dataset: ', dataset)
+    // console.log('script.js - dataset: ', dataset)
     const params = JSON.parse(dataset);
-    console.log('script.js - createTheButtons function - injected params: ', params);
+    // console.log('script.js - createTheButtons function - injected params: ', params);
     let pasteText = params.pasted
         uxCreateButton('copyRoles','Copy Roles',null,null,false,'Roles Copied');
         uxCreateButton('pasteRoles',`Paste Roles (${pasteText})`,null,null,false,'Roles Pasted');

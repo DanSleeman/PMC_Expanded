@@ -6,6 +6,9 @@ This addon has features for both Classic and UX environments.
 I have been slowly working to migrate my classic features to UX.
 
 - [PMC Expanded](#pmc-expanded)
+- [Installation](#installation)
+  - [Building From Source](#building-from-source)
+  - [Loading as an unpacked extension](#loading-as-an-unpacked-extension)
 - [General Features](#general-features)
     - [Role Copy/Paste Buttons](#role-copypaste-buttons)
 - [UX Features](#ux-features)
@@ -38,6 +41,32 @@ I have been slowly working to migrate my classic features to UX.
     - [User Manager](#user-manager)
     - [VP Tab Index Fix](#vp-tab-index-fix)
 
+# Installation
+
+Chrome Addon Store: [Link to be determined]('')
+
+Edge Addon Store: [Link to be determined]('')
+
+## Building From Source
+
+Requirements
+* terser
+* python
+  * htmlmin
+  * rcssmin
+
+To build, clone the repo and run:
+
+```bash
+python build.py
+```
+This will package the required files into a zip file.
+
+## Loading as an unpacked extension
+
+* Clone the repo.
+* Enable developer mode on your chromium browser of choice.
+* Load the extension from the repo's main directory.
 
 # General Features
 

@@ -8,6 +8,8 @@ Added option to add link to Role Revision History screen for navigating there wi
 
 Added config settings for the drop-down insert scripts so they can get a user's glossary terms.
 
+Added build script for minifying code and packaging.
+
 ### Changed
 
 Updated compare settings script to use the glossary term setting when searching for where to insert the value.
@@ -19,6 +21,12 @@ Reworked compare settings and role revision history scripts to prevent clobberin
 Reworked compare settings and role revision history scripts to create elements rather than set innerHtml attribute.
 
 Removed console logs from utils functions.
+
+Replaced jquery file with fresh minified copy from website.
+
+### Fixed
+
+Fixed lazy loading rule to be removed if the addon is disabled.
 
 ## [0.17] - 2/28/2025
 
