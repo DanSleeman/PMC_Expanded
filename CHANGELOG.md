@@ -14,6 +14,12 @@ Updated compare settings script to use the glossary term setting when searching 
 
 Created TODO.md and removed all TODO statements from specific scripts.
 
+Reworked compare settings and role revision history scripts to prevent clobbering other onload events.
+
+Reworked compare settings and role revision history scripts to create elements rather than set innerHtml attribute.
+
+Removed console logs from utils functions.
+
 ## [0.17] - 2/28/2025
 
 ### Added
