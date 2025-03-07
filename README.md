@@ -7,8 +7,8 @@ I have been slowly working to migrate my classic features to UX.
 
 - [PMC Expanded](#pmc-expanded)
 - [Installation](#installation)
-  - [Building From Source](#building-from-source)
   - [Loading as an unpacked extension](#loading-as-an-unpacked-extension)
+  - [Building From Source](#building-from-source)
 - [General Features](#general-features)
     - [Role Copy/Paste Buttons](#role-copypaste-buttons)
 - [UX Features](#ux-features)
@@ -47,6 +47,17 @@ Chrome Addon Store: [Link to be determined]('')
 
 Edge Addon Store: [Link to be determined]('')
 
+## Loading as an unpacked extension
+
+* Download the latest release zip file
+* Unzip to a folder
+* Enable developer mode on your chromium browser of choice.
+* Load this directory as an unpacked extension.
+
+Alternatively:
+* Clone the repo.
+* Load this directory as an unpacked extension.
+
 ## Building From Source
 
 Requirements
@@ -61,12 +72,6 @@ To build, clone the repo and run:
 python build.py
 ```
 This will package the required files into a zip file.
-
-## Loading as an unpacked extension
-
-* Clone the repo.
-* Enable developer mode on your chromium browser of choice.
-* Load the extension from the repo's main directory.
 
 # General Features
 
