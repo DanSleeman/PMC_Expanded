@@ -24,7 +24,8 @@ subtabList.tabs.forEach(function(subtab){
 Maybe we can override the property?
 */
 //Replace the function with an identical function that uses a different callback
-plex.SqlDevelopmentEnvironmentLayoutController.prototype.ExecuteAdHocQuery = function () {
+
+function ExecuteAdHocQuery() {
     var tab = this.tabList.getActiveTab();
     var unblock = function () { $(document).unblock(); };
     if (tab) {
@@ -34,7 +35,7 @@ plex.SqlDevelopmentEnvironmentLayoutController.prototype.ExecuteAdHocQuery = fun
       this.ValidateAdHocQuery(
         query,
          () => {// changing this to an arrow function will allow 'this' variable to propogate through to the callback.
-            console.log("Type of CreateResultsContainer_:", typeof this.CreateResultsContainer_);
+            console.log("Type of resultsPaneHandler_:", typeof this.resultsPaneHandler_);
             console.log("This variable before callback:",this)
 
           plex.loadHtml(
@@ -42,7 +43,7 @@ plex.SqlDevelopmentEnvironmentLayoutController.prototype.ExecuteAdHocQuery = fun
             "/BusinessIntelligence/SqlDevelopmentEnvironment/ExecuteAdHocQuery",
             query,
             { method: "post", showOverlay: false })
-            .done(this.CreateResultsContainer_.bind(this))
+            .done(this.resultsPaneHandler_.bind(this))
             .done(function () {
                 //Removed the original code that focuses the results tab.
               var messageInput = $("#" + tab.results().id + " [id$='BannerMessage']")[0];
@@ -59,11 +60,12 @@ plex.SqlDevelopmentEnvironmentLayoutController.prototype.ExecuteAdHocQuery = fun
   }
 
 //Add a new function that controls creating the results container within the query tab
-plex.SqlDevelopmentEnvironmentLayoutController.prototype.CreateResultsContainer_ = function (n) {
+// plex.SqlDevelopmentEnvironmentLayoutController.prototype.CreateResultsContainer_ = function (n) {
+function CreateResultsContainer_(){
     try{
     console.log("I'm in. Callback")
     // console.log(n)
-    console.log("n variable:",n)
+    // console.log("n variable:",n)
     console.log("this variable:",this)
     // console.log(plex.SqlDevelopmentEnvironmentLayoutController.prototype)
     var tab = this.tabList.getActiveTab();
@@ -79,22 +81,15 @@ plex.SqlDevelopmentEnvironmentLayoutController.prototype.CreateResultsContainer_
             subTab.style = 'display: flex; flex-direction: column;'
             console.log("I'm in.")
             
-        }
-    });}catch(error){
-        console.error("Error in callback:", error);
-    }
-}
-
-
-    const subTabs = document.querySelectorAll('.query-sub-tab')
-    subTabs[0].style = 'display: flex; flex-direction: column;'
-    //Replace with:
-    const subTab = this.$element[0].querySelector('.query-sub-tab')
-    subTab.style = 'display: flex; flex-direction: column;'
-    
-    
-
 // create and move the results pane into the main display
+// TODO 3/11/2025 Clean up script.
+// Need to add a close button.
+// Need to separate the functionality of the properties pane getting moved.
+//      Ideally would have one setting to control having the results pane show in the query tab
+//      Another setting to control the properties tab in the query tab.
+//          Should the properties tab button functionality embed the pane rather than switch tabs? Clicking it will toggle between embedded and not.
+// Need to handle the activities of switching tabs. (Should we remove the results container if the user clicks on the results tab?)
+// Likewise with the properties tab
 const noSelectStyle = document.createElement('style');
 noSelectStyle.textContent = `
 .no-select{
@@ -106,6 +101,7 @@ const subTabs = document.querySelectorAll('.query-sub-tab')
 subTabs[0].style = 'display: flex; flex-direction: column;'
 const d = document.createElement('div');
 d.style = 'display: flex; gap: 10px;'
+d.classList = ['pmcExpandedResultsContainer']
 const div1 = subTabs[0].children[0]
 div1.style = 'flex: 1;'
 const div2 = subTabs[0].children[1]
@@ -144,3 +140,22 @@ function stopResize() {
     document.documentElement.removeEventListener("mousemove", resize);
     document.documentElement.removeEventListener("mouseup", stopResize);
 }
+        }
+    });}catch(error){
+        console.error("Error in callback:", error);
+    }
+}
+
+
+
+function resultsPaneHandler_(){
+    var x = this.$element[0].querySelector('.pmcExpandedResultsContainer')
+    console.log("x var:", x)
+    if (x) return;
+    console.log('Executing Function CreateResultsContainer_', typeof this.CreateResultsContainer_)
+    this.CreateResultsContainer_.bind(this);
+    this.CreateResultsContainer_();
+}
+plex.SqlDevelopmentEnvironmentLayoutController.prototype.ExecuteAdHocQuery = ExecuteAdHocQuery
+plex.SqlDevelopmentEnvironmentLayoutController.prototype.resultsPaneHandler_ = resultsPaneHandler_
+plex.SqlDevelopmentEnvironmentLayoutController.prototype.CreateResultsContainer_ = CreateResultsContainer_
