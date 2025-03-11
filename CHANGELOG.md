@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.18.1] - 3/11/2025
+
+### Changed
+
+Removed activeTab permission after chrome store rejection. Apparently it wasn't used.
+
 ## [0.18] - 3/4/2025
 
 ### Added
