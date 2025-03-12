@@ -44,6 +44,10 @@ function ExecuteAdHocQuery() {
             query,
             { method: "post", showOverlay: false })
             .done(this.resultsPaneHandler_.bind(this))
+            .done(() => {
+                const historyEvent = new CustomEvent("pmcExpandedHistory",{detail: query});
+                window.dispatchEvent(historyEvent)
+            })
             .done(function () {
                 //Removed the original code that focuses the results tab.
               var messageInput = $("#" + tab.results().id + " [id$='BannerMessage']")[0];
