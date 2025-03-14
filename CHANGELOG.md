@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.18.2] - 3/12/2025
+
+### Fixed
+
+Fixed manifest configuration for UX Menu search script. Was accidentally included in classic screens.
+
 ## [0.18.1] - 3/11/2025
 
 ### Changed

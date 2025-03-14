@@ -1,3 +1,28 @@
+### Role copy 
+
+[ ] Change copy storage from sync to session so it resets each time the browser launches.
+
+### SQL Development Environment Sproc History
+
+[ ] Save executed queries to a local storage variable
+
+[ ] Display the SQL history to the user
+
+[ ] Create method to load this data into a new query panel
+
+### SQL Development Environment Rearrange
+
+[ ] Change execute query action to create a results panel within the main query panel
+
+[ ] Allow the properties panel to render within the main query panel
+
+### SQL Development Environment Additional Hotkeys
+
+[ ] Add support for saving the sproc with ctrl+s
+
+* Should check if this is a new sproc or existing sproc.
+* Prompt the user to set a name if there is none defined yet.
+
 ### Checksheet Fill - UX
 
 [ ] Make this function like the classic version. Need to use mutators to detect if the checksheet window is loaded.

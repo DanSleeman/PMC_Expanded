@@ -44,7 +44,16 @@
     ],
     "js":[
       "util/jquery-2.2.3.min.js",
-      "util/utils.js",
+      "util/utils.js"
+    ],
+    "run_at":"document_start"
+  },
+  {
+    "matches":[
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "js":[
       "ux/UX-Menu-Search-Keyboard-Nav.js"
     ],
     "run_at":"document_start"
