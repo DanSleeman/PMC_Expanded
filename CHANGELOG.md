@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.18.2] - 3/14/2025
+
+### Changed
+
+Fixed issue with manifest for UX Menu search navigation throwing errors. It was set to load on classic pages as well as UX.
+
+### Removed
+
+Moved in-dev scripts to dev branch while being worked on.
+
 ## [0.18.1] - 3/11/2025
 
 ### Changed
