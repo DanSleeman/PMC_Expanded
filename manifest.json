@@ -1,6 +1,6 @@
 {
   "name": "PMC Expanded",
-  "version": "0.19.0",
+  "version": "0.18.2",
   "description": "Collection of various tweaks and quality of life improvements for the Plex Manufacturing Cloud websites.",
   "background": {
     "service_worker": "background.js",
@@ -44,7 +44,16 @@
     ],
     "js":[
       "util/jquery-2.2.3.min.js",
-      "util/utils.js",
+      "util/utils.js"
+    ],
+    "run_at":"document_start"
+  },
+  {
+    "matches":[
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "js":[
       "ux/UX-Menu-Search-Keyboard-Nav.js"
     ],
     "run_at":"document_start"
@@ -473,18 +482,6 @@
     ],
     "js": [
       "ux/UX-Enterprise-Roles.js"
-    ]
-  },
-  {
-    "matches": [
-      "*://test.cloud.plex.com/*",
-      "*://cloud.plex.com/*"
-    ],
-    "include_globs": [
-      "*BusinessIntelligence/SqlDevelopmentEnvironment*"
-    ],
-    "js": [
-      "ux/UX-SQL-History.js"
     ]
   },
   {
