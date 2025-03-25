@@ -6,7 +6,6 @@ module.loadSettings((settings) =>{
     const uxRolePrefix = settings.vStrClassicUserManagerUXRolePrefix
     const excludeRoleText = settings.vStrClassicUserManagerExcludeText
     const excludeArray = (excludeRoleText || "").split(",").map(item => item.trim());
-    if (!settings.vBoolClassicUserManagerTweaks) return;
     if (settings.vBoolClassicUserManagerSelectAllAdmin){
         classicCreateButton('UL','Left','adminRoles','Select All Admin')
         document.getElementById ("adminRoles").addEventListener (

@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.18.3] - 3/25/2025
+
+Fixed settings issue with classic user manager after "tweaks" settings were removed.
+
 ## [0.18.2] - 3/12/2025
 
 ### Fixed
