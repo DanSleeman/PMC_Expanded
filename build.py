@@ -7,7 +7,7 @@ import rcssmin
 import htmlmin
 SRC_DIR = os.getcwd()
 BUILD_DIR = os.path.join(SRC_DIR, 'build')
-ZIP_NAME = "PMC_Expanded.zip"
+ZIP_NAME = os.path.join(BUILD_DIR, "PMC_Expanded.zip")
 INCLUDE_FILES = [
     "manifest.json",
     "background.js",
