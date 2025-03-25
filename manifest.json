@@ -1,6 +1,6 @@
 {
   "name": "PMC Expanded",
-  "version": "0.18.2",
+  "version": "0.18.3",
   "description": "Collection of various tweaks and quality of life improvements for the Plex Manufacturing Cloud websites.",
   "background": {
     "service_worker": "background.js",

@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.18.3] - 3/25/2025
+
+Fixed settings issue after removal of "tweaks" settings for classic user manager buttons.
+
 ## [0.18.2] - 3/14/2025
 
 ### Changed
