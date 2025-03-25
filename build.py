@@ -6,8 +6,9 @@ from pathlib import Path
 import rcssmin
 import htmlmin
 SRC_DIR = os.getcwd()
+DIST_DIR = os.path.join(SRC_DIR, 'dist')
 BUILD_DIR = os.path.join(SRC_DIR, 'build')
-ZIP_NAME = "PMC_Expanded.zip"
+ZIP_NAME = os.path.join(DIST_DIR, "PMC_Expanded.zip")
 INCLUDE_FILES = [
     "manifest.json",
     "background.js",
@@ -57,6 +58,8 @@ def min_html(in_file, out_file):
 
 
 def clean_build():
+    if os.path.exists(ZIP_NAME):
+        os.remove(ZIP_NAME)
     if os.path.exists(BUILD_DIR):
         shutil.rmtree(BUILD_DIR,ignore_errors=True)
     os.makedirs(BUILD_DIR, exist_ok=True)
@@ -90,6 +93,7 @@ def minify_or_copy(src, dest, minifiers):
 
 
 def create_zip():
+    os.makedirs(DIST_DIR, exist_ok=True)
     with zipfile.ZipFile(ZIP_NAME, "w", zipfile.ZIP_DEFLATED) as zipf:
         for root, _, files in os.walk(BUILD_DIR):
             for file in files:
