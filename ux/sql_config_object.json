@@ -1,0 +1,790 @@
+{
+    "title": "Stored Procedures",
+    "elements": [
+        {
+            "data": {
+                "AuthorName": "",
+                "IncludePartnerProcedures": false,
+                "PCN": 0,
+                "StoredProcedureName": "",
+                "DirtyProperties": [
+                    "IncludePartnerProcedures"
+                ],
+                "SecuredData": null
+            },
+            "elements": [
+                {
+                    "viewName": "Elements/_FilterElement",
+                    "isSearchCriteria": true,
+                    "label": {
+                        "originalText": "Stored Procedure",
+                        "text": "Stored Procedure",
+                        "viewName": "Elements/_Label",
+                        "visible": true,
+                        "labelFor": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID4",
+                        "clientVisible": true,
+                        "printVisible": true,
+                        "designerTemplateName": "elements-label.designer",
+                        "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID3",
+                        "events": [],
+                        "features": []
+                    },
+                    "elements": [
+                        {
+                            "viewName": "Elements/_Input",
+                            "size": "medium",
+                            "type": "text",
+                            "valueUpdate": 0,
+                            "advanceOnEnter": false,
+                            "showReadOnlyAsDisabled": false,
+                            "readOnly": false,
+                            "disabled": false,
+                            "trackRevisions": true,
+                            "propertyName": "StoredProcedureName",
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "designerTemplateName": "elements-input.designer",
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID4",
+                            "events": [],
+                            "features": []
+                        }
+                    ],
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "designerTemplateName": "elements-filterelement.designer",
+                    "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID2",
+                    "events": [],
+                    "features": [
+                        {
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID22",
+                            "bindings": [],
+                            "sourceId": "",
+                            "name": "ChildrenDependentVisibility",
+                            "invertCondition": false,
+                            "applyToChildren": false
+                        }
+                    ]
+                },
+                {
+                    "viewName": "Elements/_FilterElement",
+                    "isSearchCriteria": true,
+                    "label": {
+                        "originalText": "Author",
+                        "text": "Author",
+                        "viewName": "Elements/_Label",
+                        "visible": true,
+                        "labelFor": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID7",
+                        "clientVisible": true,
+                        "printVisible": true,
+                        "designerTemplateName": "elements-label.designer",
+                        "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID6",
+                        "events": [],
+                        "features": []
+                    },
+                    "elements": [
+                        {
+                            "viewName": "Elements/_Input",
+                            "size": "medium",
+                            "type": "text",
+                            "valueUpdate": 0,
+                            "advanceOnEnter": false,
+                            "showReadOnlyAsDisabled": false,
+                            "readOnly": false,
+                            "disabled": false,
+                            "trackRevisions": true,
+                            "propertyName": "AuthorName",
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "designerTemplateName": "elements-input.designer",
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID7",
+                            "events": [],
+                            "features": []
+                        }
+                    ],
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "designerTemplateName": "elements-filterelement.designer",
+                    "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID5",
+                    "events": [],
+                    "features": [
+                        {
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID23",
+                            "bindings": [],
+                            "sourceId": "",
+                            "name": "ChildrenDependentVisibility",
+                            "invertCondition": false,
+                            "applyToChildren": false
+                        }
+                    ]
+                }
+            ],
+            "searchAction": {
+                "actions": [
+                    {
+                        "applyRecordLimits": true,
+                        "type": "Search",
+                        "authorized": true,
+                        "validatable": true,
+                        "address": "/BusinessIntelligence/SqlDevelopmentEnvironment/SearchSavedProcedures?__asid=OJGEp7TByECA9XWtYjwM",
+                        "executionType": 0,
+                        "tokens": [],
+                        "bindings": [],
+                        "dataTransforms": [],
+                        "sourceId": "",
+                        "id": "78203d9e62a84eb984d25f466a1e2759",
+                        "disabled": false
+                    }
+                ],
+                "viewName": "Elements/_Button",
+                "text": "Search",
+                "disabled": false,
+                "clientVisible": true,
+                "printVisible": true,
+                "designerTemplateName": "elements-button.designer",
+                "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID8",
+                "events": [],
+                "features": []
+            },
+            "canSaveDefaults": true,
+            "loadDefaultFilters": true,
+            "viewName": "_Filters",
+            "hideFiltersText": "Hide Filters",
+            "displayFiltersText": "Show all filters",
+            "saveAsDefaultText": "Save As Default",
+            "clearDefaultsText": "Clear Defaults",
+            "autoSearch": false,
+            "cloudApplicationActionKey": 21925,
+            "clientVisible": true,
+            "printVisible": true,
+            "designerTemplateName": "elements-filter.designer",
+            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID1",
+            "events": [],
+            "features": []
+        },
+        {
+            "groups": [
+                {
+                    "actions": [
+                        {
+                            "referencedActionId": "",
+                            "viewName": "",
+                            "action": {
+                                "type": "Controller",
+                                "postAction": {
+                                    "type": "Back",
+                                    "cancelling": false,
+                                    "validatable": false,
+                                    "executionType": 0,
+                                    "tokens": [],
+                                    "bindings": [],
+                                    "dataTransforms": [],
+                                    "sourceId": "",
+                                    "id": "048df02ee8884af5ab906566c44298a3",
+                                    "disabled": false
+                                },
+                                "authorizableApplicationLinks": [],
+                                "validatable": false,
+                                "address": "LoadProcedure",
+                                "executionType": 0,
+                                "tokens": [],
+                                "bindings": [],
+                                "dataTransforms": [],
+                                "sourceId": "",
+                                "id": "3d19557422be4f3e80ee1c1d55688bcc",
+                                "disabled": false
+                            },
+                            "clientViewName": "actionbar-action-item",
+                            "designerTemplateName": "actionbar-action-item.designer",
+                            "iconClass": "",
+                            "disabled": false,
+                            "text": "Edit",
+                            "selectionContext": 2,
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID10",
+                            "events": [],
+                            "features": []
+                        },
+                        {
+                            "referencedActionId": "",
+                            "viewName": "",
+                            "action": {
+                                "type": "Controller",
+                                "postAction": {
+                                    "type": "Controller",
+                                    "authorizableApplicationLinks": [],
+                                    "validatable": false,
+                                    "address": "ReloadGrid",
+                                    "executionType": 0,
+                                    "tokens": [],
+                                    "bindings": [],
+                                    "dataTransforms": [],
+                                    "sourceId": "",
+                                    "id": "a4e14eed08364ccdb20aeeab2cf9d267",
+                                    "disabled": false
+                                },
+                                "authorizableApplicationLinks": [],
+                                "validatable": false,
+                                "address": "RegisterDataSource",
+                                "executionType": 0,
+                                "tokens": [],
+                                "bindings": [],
+                                "dataTransforms": [],
+                                "sourceId": "",
+                                "id": "15ce6c9af0a34baf9931760b745db91e",
+                                "disabled": false
+                            },
+                            "clientViewName": "actionbar-action-item",
+                            "designerTemplateName": "actionbar-action-item.designer",
+                            "iconClass": "",
+                            "disabled": false,
+                            "text": "Register Data Source",
+                            "selectionContext": 2,
+                            "enableExpression": {
+                                "expressionText": "(DataSourceKey == null)",
+                                "parameters": [
+                                    "r"
+                                ]
+                            },
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID11",
+                            "events": [],
+                            "features": []
+                        },
+                        {
+                            "referencedActionId": "",
+                            "viewName": "",
+                            "action": {
+                                "type": "Controller",
+                                "authorizableApplicationLinks": [],
+                                "validatable": false,
+                                "address": "RegisterSynonym",
+                                "executionType": 0,
+                                "tokens": [],
+                                "bindings": [],
+                                "dataTransforms": [],
+                                "sourceId": "",
+                                "id": "50d876829206439cb0bf865ac8e430a8",
+                                "disabled": false
+                            },
+                            "clientViewName": "actionbar-action-item",
+                            "designerTemplateName": "actionbar-action-item.designer",
+                            "iconClass": "",
+                            "disabled": false,
+                            "text": "Register IntelliPlex Synonym",
+                            "selectionContext": 2,
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID12",
+                            "events": [],
+                            "features": []
+                        }
+                    ],
+                    "viewName": "",
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "designerTemplateName": "elements-actionbargroup.designer",
+                    "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID9",
+                    "events": [],
+                    "features": []
+                }
+            ],
+            "viewName": "_ActionBar",
+            "parentId": "SavedProceduresDialogGrid1",
+            "clientVisible": true,
+            "printVisible": true,
+            "designerTemplateName": "elements-actionbar.designer",
+            "id": "savedProceduresActionBar",
+            "events": [],
+            "features": []
+        },
+        {
+            "rowLayouts": [
+                {
+                    "columns": [
+                        {
+                            "propertyName": "StoredProcedureName",
+                            "isEditable": false,
+                            "action": {
+                                "type": "Controller",
+                                "postAction": {
+                                    "type": "Back",
+                                    "cancelling": false,
+                                    "validatable": false,
+                                    "executionType": 0,
+                                    "tokens": [],
+                                    "bindings": [],
+                                    "dataTransforms": [],
+                                    "sourceId": "",
+                                    "id": "5d00123634254dc79aa789d2e378d6e9",
+                                    "disabled": false
+                                },
+                                "authorizableApplicationLinks": [],
+                                "validatable": false,
+                                "address": "LoadProcedure",
+                                "executionType": 0,
+                                "tokens": [],
+                                "bindings": [],
+                                "dataTransforms": [],
+                                "sourceId": "",
+                                "id": "a38c144a3df84a4b8d8e3ceb221d31af",
+                                "disabled": false
+                            },
+                            "headerName": "Stored Procedure",
+                            "originalHeaderName": "Stored Procedure",
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "isSortable": true,
+                            "sortAlias": [],
+                            "isSearchable": true,
+                            "features": [],
+                            "valueProvider": {
+                                "address": "DefaultValueProvider",
+                                "trackClientUpdates": false
+                            },
+                            "type": "Text",
+                            "headerElement": {
+                                "viewName": "Elements/_Abbr",
+                                "text": "Stored Procedure",
+                                "title": "Stored Procedure",
+                                "clientVisible": true,
+                                "printVisible": true,
+                                "designerTemplateName": "elements-abbr.designer",
+                                "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID14",
+                                "events": [],
+                                "features": []
+                            },
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID13",
+                            "clientComponentName": "grid-column",
+                            "writerProvider": {
+                                "address": "CellWriter"
+                            },
+                            "printWriterProvider": {
+                                "address": "CellPrintWriter"
+                            }
+                        },
+                        {
+                            "format": "LastName, FirstName",
+                            "formatter": {
+                                "format": "LastName, FirstName",
+                                "address": "PersonNameFormatter"
+                            },
+                            "headerName": "Author",
+                            "glossaryTokens": [],
+                            "originalHeaderName": "Author",
+                            "isSortable": true,
+                            "isSearchable": true,
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "features": [],
+                            "valueProvider": {
+                                "address": "PersonNameValueProvider",
+                                "trackClientUpdates": false
+                            },
+                            "writerProvider": {
+                                "address": "CellWriter"
+                            },
+                            "printWriterProvider": {
+                                "address": "CellPrintWriter"
+                            },
+                            "bindableProperties": [
+                                {
+                                    "propertyName": "FirstName",
+                                    "alias": "FirstName",
+                                    "directOutput": false
+                                },
+                                {
+                                    "propertyName": "LastName",
+                                    "alias": "LastName",
+                                    "directOutput": false
+                                }
+                            ],
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID15",
+                            "type": "Text",
+                            "headerElement": {
+                                "viewName": "Elements/_Abbr",
+                                "text": "Author",
+                                "title": "Author",
+                                "clientVisible": true,
+                                "printVisible": true,
+                                "designerTemplateName": "elements-abbr.designer",
+                                "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID16",
+                                "events": [],
+                                "features": []
+                            },
+                            "clientComponentName": "grid-column"
+                        },
+                        {
+                            "propertyName": "DataSourceName",
+                            "isEditable": false,
+                            "headerName": "SQL Snippet",
+                            "originalHeaderName": "SQL Snippet",
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "isSortable": true,
+                            "sortAlias": [],
+                            "isSearchable": true,
+                            "features": [],
+                            "valueProvider": {
+                                "address": "DefaultValueProvider",
+                                "trackClientUpdates": false
+                            },
+                            "type": "Text",
+                            "headerElement": {
+                                "viewName": "Elements/_Abbr",
+                                "text": "SQL Snippet",
+                                "title": "SQL Snippet",
+                                "clientVisible": true,
+                                "printVisible": true,
+                                "designerTemplateName": "elements-abbr.designer",
+                                "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID18",
+                                "events": [],
+                                "features": []
+                            },
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID17",
+                            "clientComponentName": "grid-column",
+                            "writerProvider": {
+                                "address": "CellWriter"
+                            },
+                            "printWriterProvider": {
+                                "address": "CellPrintWriter"
+                            }
+                        },
+                        {
+                            "enableToggleAll": false,
+                            "propertyName": "DataSourceKey",
+                            "isEditable": false,
+                            "headerName": "VisionPlex Data Source",
+                            "originalHeaderName": "VisionPlex Data Source",
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "isSortable": true,
+                            "sortAlias": [],
+                            "isSearchable": false,
+                            "features": [],
+                            "valueProvider": {
+                                "address": "BooleanValueProvider",
+                                "trackClientUpdates": false
+                            },
+                            "type": "Boolean",
+                            "headerElement": {
+                                "viewName": "Elements/_Abbr",
+                                "text": "VisionPlex Data Source",
+                                "title": "VisionPlex Data Source",
+                                "clientVisible": true,
+                                "printVisible": true,
+                                "designerTemplateName": "elements-abbr.designer",
+                                "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID20",
+                                "events": [],
+                                "features": []
+                            },
+                            "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID19",
+                            "clientComponentName": "grid-boolean-column",
+                            "writerProvider": {
+                                "address": "CellWriter"
+                            },
+                            "printWriterProvider": {
+                                "address": "CellPrintWriter"
+                            }
+                        }
+                    ],
+                    "features": [],
+                    "primary": true,
+                    "writerProvider": {
+                        "address": "RowWriter"
+                    },
+                    "printWriterProvider": {
+                        "address": "RowPrintWriter"
+                    }
+                }
+            ],
+            "dataProvider": {
+                "searchActionId": "78203d9e62a84eb984d25f466a1e2759",
+                "computedProperties": []
+            },
+            "dataSource": {
+                "searchActionId": "78203d9e62a84eb984d25f466a1e2759",
+                "computedProperties": []
+            },
+            "groups": [],
+            "isSortable": true,
+            "emptyRecord": {
+                "DataSourceKey": null,
+                "DataSourceName": "",
+                "FirstName": "",
+                "LastName": "",
+                "OwnerPCN": 0,
+                "PlexusUserNo": 0,
+                "StoredProcedureKey": 0,
+                "StoredProcedureName": "",
+                "StoredProcedureSpecificName": "",
+                "SecuredData": null
+            },
+            "revisionApplicationKey": 0,
+            "footers": [],
+            "rowFeatures": [],
+            "gridFeatures": [],
+            "initialSort": [],
+            "baseSort": [],
+            "writerProvider": {
+                "address": "GridWriter"
+            },
+            "rowWriterProvider": {
+                "address": "RowWriter"
+            },
+            "rowPrintWriterProvider": {
+                "address": "RowPrintWriter"
+            },
+            "headerRowPrintWriterProvider": {
+                "address": "HeaderRowPrintWriter"
+            },
+            "printWriterProvider": {
+                "address": "GridPrintWriter"
+            },
+            "footerCount": 0,
+            "selectionMode": 1,
+            "selectionTarget": 0,
+            "gridActions": [
+                {
+                    "action": {
+                        "type": "Back",
+                        "cancelling": true,
+                        "validatable": false,
+                        "executionType": 0,
+                        "tokens": [],
+                        "bindings": [],
+                        "dataTransforms": [],
+                        "sourceId": "",
+                        "id": "30d72d7810ba424d91f00d8659405386",
+                        "disabled": false
+                    },
+                    "disabled": false,
+                    "viewName": "Elements/_Link",
+                    "originalText": "Cancel",
+                    "text": "Cancel",
+                    "visible": true,
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "designerTemplateName": "elements-link.designer",
+                    "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID21",
+                    "events": [],
+                    "features": []
+                }
+            ],
+            "startSearchText": "Type your search criteria above, then press Search to find matching items.",
+            "emptyText": "No records were found. Refine your search criteria and search again.",
+            "columns": [
+                {
+                    "propertyName": "StoredProcedureName",
+                    "isEditable": false,
+                    "action": {
+                        "type": "Controller",
+                        "postAction": {
+                            "type": "Back",
+                            "cancelling": false,
+                            "validatable": false,
+                            "executionType": 0,
+                            "tokens": [],
+                            "bindings": [],
+                            "dataTransforms": [],
+                            "sourceId": "",
+                            "id": "5d00123634254dc79aa789d2e378d6e9",
+                            "disabled": false
+                        },
+                        "authorizableApplicationLinks": [],
+                        "validatable": false,
+                        "address": "LoadProcedure",
+                        "executionType": 0,
+                        "tokens": [],
+                        "bindings": [],
+                        "dataTransforms": [],
+                        "sourceId": "",
+                        "id": "a38c144a3df84a4b8d8e3ceb221d31af",
+                        "disabled": false
+                    },
+                    "headerName": "Stored Procedure",
+                    "originalHeaderName": "Stored Procedure",
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "isSortable": true,
+                    "sortAlias": [],
+                    "isSearchable": true,
+                    "features": [],
+                    "valueProvider": {
+                        "address": "DefaultValueProvider",
+                        "trackClientUpdates": false
+                    },
+                    "type": "Text",
+                    "headerElement": {
+                        "viewName": "Elements/_Abbr",
+                        "text": "Stored Procedure",
+                        "title": "Stored Procedure",
+                        "clientVisible": true,
+                        "printVisible": true,
+                        "designerTemplateName": "elements-abbr.designer",
+                        "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID14",
+                        "events": [],
+                        "features": []
+                    },
+                    "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID13",
+                    "clientComponentName": "grid-column",
+                    "writerProvider": {
+                        "address": "CellWriter"
+                    },
+                    "printWriterProvider": {
+                        "address": "CellPrintWriter"
+                    }
+                },
+                {
+                    "format": "LastName, FirstName",
+                    "formatter": {
+                        "format": "LastName, FirstName",
+                        "address": "PersonNameFormatter"
+                    },
+                    "headerName": "Author",
+                    "glossaryTokens": [],
+                    "originalHeaderName": "Author",
+                    "isSortable": true,
+                    "isSearchable": true,
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "features": [],
+                    "valueProvider": {
+                        "address": "PersonNameValueProvider",
+                        "trackClientUpdates": false
+                    },
+                    "writerProvider": {
+                        "address": "CellWriter"
+                    },
+                    "printWriterProvider": {
+                        "address": "CellPrintWriter"
+                    },
+                    "bindableProperties": [
+                        {
+                            "propertyName": "FirstName",
+                            "alias": "FirstName",
+                            "directOutput": false
+                        },
+                        {
+                            "propertyName": "LastName",
+                            "alias": "LastName",
+                            "directOutput": false
+                        }
+                    ],
+                    "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID15",
+                    "type": "Text",
+                    "headerElement": {
+                        "viewName": "Elements/_Abbr",
+                        "text": "Author",
+                        "title": "Author",
+                        "clientVisible": true,
+                        "printVisible": true,
+                        "designerTemplateName": "elements-abbr.designer",
+                        "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID16",
+                        "events": [],
+                        "features": []
+                    },
+                    "clientComponentName": "grid-column"
+                },
+                {
+                    "propertyName": "DataSourceName",
+                    "isEditable": false,
+                    "headerName": "SQL Snippet",
+                    "originalHeaderName": "SQL Snippet",
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "isSortable": true,
+                    "sortAlias": [],
+                    "isSearchable": true,
+                    "features": [],
+                    "valueProvider": {
+                        "address": "DefaultValueProvider",
+                        "trackClientUpdates": false
+                    },
+                    "type": "Text",
+                    "headerElement": {
+                        "viewName": "Elements/_Abbr",
+                        "text": "SQL Snippet",
+                        "title": "SQL Snippet",
+                        "clientVisible": true,
+                        "printVisible": true,
+                        "designerTemplateName": "elements-abbr.designer",
+                        "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID18",
+                        "events": [],
+                        "features": []
+                    },
+                    "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID17",
+                    "clientComponentName": "grid-column",
+                    "writerProvider": {
+                        "address": "CellWriter"
+                    },
+                    "printWriterProvider": {
+                        "address": "CellPrintWriter"
+                    }
+                },
+                {
+                    "enableToggleAll": false,
+                    "propertyName": "DataSourceKey",
+                    "isEditable": false,
+                    "headerName": "VisionPlex Data Source",
+                    "originalHeaderName": "VisionPlex Data Source",
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "isSortable": true,
+                    "sortAlias": [],
+                    "isSearchable": false,
+                    "features": [],
+                    "valueProvider": {
+                        "address": "BooleanValueProvider",
+                        "trackClientUpdates": false
+                    },
+                    "type": "Boolean",
+                    "headerElement": {
+                        "viewName": "Elements/_Abbr",
+                        "text": "VisionPlex Data Source",
+                        "title": "VisionPlex Data Source",
+                        "clientVisible": true,
+                        "printVisible": true,
+                        "designerTemplateName": "elements-abbr.designer",
+                        "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID20",
+                        "events": [],
+                        "features": []
+                    },
+                    "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064_autoID19",
+                    "clientComponentName": "grid-boolean-column",
+                    "writerProvider": {
+                        "address": "CellWriter"
+                    },
+                    "printWriterProvider": {
+                        "address": "CellPrintWriter"
+                    }
+                }
+            ],
+            "allowEmptySubmit": false,
+            "allowWhiteSpace": false,
+            "exportHeader": true,
+            "viewName": "_Grid",
+            "disableTrackClientProperties": false,
+            "searchActionId": "78203d9e62a84eb984d25f466a1e2759",
+            "customDataResults": [],
+            "clientVisible": true,
+            "printVisible": true,
+            "designerTemplateName": "elements-grid.designer",
+            "id": "SavedProceduresDialogGrid1",
+            "events": [],
+            "features": []
+        }
+    ],
+    "viewName": "Dialog",
+    "persistentBanners": [],
+    "routes": {},
+    "allowOpenInNewWindow": false,
+    "displayNavbarMessagesIcon": false,
+    "clientVisible": true,
+    "printVisible": true,
+    "designerTemplateName": "dialog.designer",
+    "id": "PMCEX_Dialog_7be832035b8f4e9dbc4d6e21bc62d064",
+    "events": [],
+    "features": []
+}

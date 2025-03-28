@@ -30,3 +30,19 @@ function loadSprocFromHistory_(sprocData) {
     }
 }
 */
+
+// test function to try and load a html file for popup rendering
+scriptInject('ux/sql_modal_inject.js') //Inject a script which adds an event listener to trigger a native function to create the dialog window
+uxCreateButton('sendBtn', 'See History?') // create a button that will send the event
+//add the event to the button
+document.getElementById("sendBtn").addEventListener("click", async () => {
+    let fileUrl = chrome.runtime.getURL("ux/SQL_Modal_Dialog.html");
+    console.log(fileUrl)
+    injectFilePath(fileUrl)
+
+});
+
+//function that passes the extension filepath for the popup HTML data
+function injectFilePath(fileUrl) {
+    window.postMessage({ type: "FROM_EXTENSION", fileUrl: fileUrl }, "*");
+}
