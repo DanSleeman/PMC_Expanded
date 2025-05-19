@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.18.4] - 5/19/2025
+
+Fixed include glob case sensitivity issue for Role Member List script
+
 ## [0.18.3] - 3/25/2025
 
 Fixed settings issue after removal of "tweaks" settings for classic user manager buttons.

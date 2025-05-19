@@ -1,6 +1,6 @@
 {
   "name": "PMC Expanded",
-  "version": "0.18.3",
+  "version": "0.18.4",
   "description": "Collection of various tweaks and quality of life improvements for the Plex Manufacturing Cloud websites.",
   "background": {
     "service_worker": "background.js",
@@ -430,7 +430,8 @@
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
-      "*cloud.plex.com/Security/RoleMemberList*"
+      "*cloud.plex.com/Security/RoleMemberList*",
+      "*cloud.plex.com/Security/rolememberlist*"
     ],
     "js": [
       "ux/UX-Role-Member-Sort.js"
