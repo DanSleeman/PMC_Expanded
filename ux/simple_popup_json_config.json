@@ -1,0 +1,322 @@
+{
+    "title": "Security Role Members",
+    "elements": [
+        {
+            "rowLayouts": [
+                {
+                    "columns": [
+                        {
+                            "format": "LastName, FirstName",
+                            "autoSetFormat": true,
+                            "formatter": {
+                                "format": "LastName, FirstName",
+                                "address": "PersonNameFormatter"
+                            },
+                            "headerName": "Role Member",
+                            "glossaryTokens": [],
+                            "originalHeaderName": "Role Member",
+                            "isSortable": true,
+                            "isSearchable": true,
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "autoApplyCustomerSettings": true,
+                            "features": [],
+                            "valueProvider": {
+                                "trackClientUpdates": false,
+                                "address": "PersonNameValueProvider"
+                            },
+                            "writerProvider": {
+                                "address": "CellWriter"
+                            },
+                            "printWriterProvider": {
+                                "address": "CellPrintWriter"
+                            },
+                            "bindableProperties": [
+                                {
+                                    "propertyName": "RoleMemberFirstName",
+                                    "alias": "FirstName",
+                                    "directOutput": false
+                                },
+                                {
+                                    "propertyName": "RoleMemberMiddleName",
+                                    "alias": "MiddleName",
+                                    "directOutput": false
+                                },
+                                {
+                                    "propertyName": "RoleMemberLastName",
+                                    "alias": "LastName",
+                                    "directOutput": false
+                                }
+                            ],
+                            "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID3",
+                            "type": "Text",
+                            "headerElement": {
+                                "viewName": "Elements/_Abbr",
+                                "text": "Role Member",
+                                "title": "Role Member",
+                                "clientVisible": true,
+                                "printVisible": true,
+                                "designerTemplateName": "elements-abbr.designer",
+                                "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID4",
+                                "events": [],
+                                "features": []
+                            },
+                            "clientComponentName": "grid-column"
+                        },
+                        {
+                            "format": "g",
+                            "formatter": {
+                                "format": "g",
+                                "address": "DateTimeFormatter"
+                            },
+                            "propertyName": "ChangeDate",
+                            "isEditable": false,
+                            "headerName": "Date Added",
+                            "glossaryTokens": [],
+                            "originalHeaderName": "Date Added",
+                            "clientVisible": true,
+                            "printVisible": true,
+                            "isSortable": true,
+                            "sortAlias": [],
+                            "isSearchable": true,
+                            "features": [],
+                            "valueProvider": {
+                                "trackClientUpdates": false,
+                                "address": "DateTimeValueProvider"
+                            },
+                            "type": "DateTime",
+                            "headerElement": {
+                                "viewName": "Elements/_Abbr",
+                                "text": "Date Added",
+                                "title": "Date Added",
+                                "clientVisible": true,
+                                "printVisible": true,
+                                "designerTemplateName": "elements-abbr.designer",
+                                "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID6",
+                                "events": [],
+                                "features": []
+                            },
+                            "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID5",
+                            "clientComponentName": "grid-column",
+                            "writerProvider": {
+                                "address": "CellWriter"
+                            },
+                            "printWriterProvider": {
+                                "address": "CellPrintWriter"
+                            }
+                        }
+                    ],
+                    "features": [],
+                    "primary": true,
+                    "writerProvider": {
+                        "address": "RowWriter"
+                    },
+                    "printWriterProvider": {
+                        "address": "RowPrintWriter"
+                    }
+                }
+            ],
+            "data": [
+                {
+                    "ChangeDate": "2022-02-18T21:38:27.090Z",
+                    "PlexusUserNo": 9999999,
+                    "RoleMemberFirstName": "FIRST_NAME",
+                    "RoleMemberLastName": "LAST NAME",
+                    "RoleMemberMiddleName": "",
+                    "SecuredData": null
+                }
+            ],
+            "groups": [],
+            "isSortable": true,
+            "emptyRecord": {
+                "ChangeDate": null,
+                "PlexusUserNo": 0,
+                "RoleMemberFirstName": null,
+                "RoleMemberLastName": null,
+                "RoleMemberMiddleName": null,
+                "SecuredData": null
+            },
+            "emptyText": "No Records Were Found.",
+            "revisionApplicationKey": 0,
+            "footers": [],
+            "rowFeatures": [],
+            "gridFeatures": [],
+            "initialSort": [],
+            "baseSort": [],
+            "writerProvider": {
+                "address": "GridWriter"
+            },
+            "rowWriterProvider": {
+                "address": "RowWriter"
+            },
+            "rowPrintWriterProvider": {
+                "address": "RowPrintWriter"
+            },
+            "headerRowPrintWriterProvider": {
+                "address": "HeaderRowPrintWriter"
+            },
+            "printWriterProvider": {
+                "address": "GridPrintWriter"
+            },
+            "footerCount": 0,
+            "selectionMode": 0,
+            "selectionTarget": 0,
+            "gridActions": [
+                {
+                    "action": {
+                        "cancelling": true,
+                        "type": "Back",
+                        "validatable": false,
+                        "executionType": 0,
+                        "tokens": [],
+                        "bindings": [],
+                        "dataTransforms": [],
+                        "sourceId": "",
+                        "id": "31a44942a1ed4d21ad42eb2bc85b6b65",
+                        "disabled": false
+                    },
+                    "disabled": false,
+                    "viewName": "Elements/_Link",
+                    "ignoreSecurityProcessing": false,
+                    "originalText": "Cancel",
+                    "text": "Cancel",
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "designerTemplateName": "elements-link.designer",
+                    "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID2",
+                    "events": [],
+                    "features": []
+                }
+            ],
+            "startSearchText": "Type your search criteria above, then press Search to find matching items.",
+            "columns": [
+                {
+                    "format": "LastName, FirstName",
+                    "autoSetFormat": true,
+                    "formatter": {
+                        "format": "LastName, FirstName",
+                        "address": "PersonNameFormatter"
+                    },
+                    "headerName": "Role Member",
+                    "glossaryTokens": [],
+                    "originalHeaderName": "Role Member",
+                    "isSortable": true,
+                    "isSearchable": true,
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "autoApplyCustomerSettings": true,
+                    "features": [],
+                    "valueProvider": {
+                        "trackClientUpdates": false,
+                        "address": "PersonNameValueProvider"
+                    },
+                    "writerProvider": {
+                        "address": "CellWriter"
+                    },
+                    "printWriterProvider": {
+                        "address": "CellPrintWriter"
+                    },
+                    "bindableProperties": [
+                        {
+                            "propertyName": "RoleMemberFirstName",
+                            "alias": "FirstName",
+                            "directOutput": false
+                        },
+                        {
+                            "propertyName": "RoleMemberMiddleName",
+                            "alias": "MiddleName",
+                            "directOutput": false
+                        },
+                        {
+                            "propertyName": "RoleMemberLastName",
+                            "alias": "LastName",
+                            "directOutput": false
+                        }
+                    ],
+                    "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID3",
+                    "type": "Text",
+                    "headerElement": {
+                        "viewName": "Elements/_Abbr",
+                        "text": "Role Member",
+                        "title": "Role Member",
+                        "clientVisible": true,
+                        "printVisible": true,
+                        "designerTemplateName": "elements-abbr.designer",
+                        "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID4",
+                        "events": [],
+                        "features": []
+                    },
+                    "clientComponentName": "grid-column"
+                },
+                {
+                    "format": "g",
+                    "formatter": {
+                        "format": "g",
+                        "address": "DateTimeFormatter"
+                    },
+                    "propertyName": "ChangeDate",
+                    "isEditable": false,
+                    "headerName": "Date Added",
+                    "glossaryTokens": [],
+                    "originalHeaderName": "Date Added",
+                    "clientVisible": true,
+                    "printVisible": true,
+                    "isSortable": true,
+                    "sortAlias": [],
+                    "isSearchable": true,
+                    "features": [],
+                    "valueProvider": {
+                        "trackClientUpdates": false,
+                        "address": "DateTimeValueProvider"
+                    },
+                    "type": "DateTime",
+                    "headerElement": {
+                        "viewName": "Elements/_Abbr",
+                        "text": "Date Added",
+                        "title": "Date Added",
+                        "clientVisible": true,
+                        "printVisible": true,
+                        "designerTemplateName": "elements-abbr.designer",
+                        "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID6",
+                        "events": [],
+                        "features": []
+                    },
+                    "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID5",
+                    "clientComponentName": "grid-column",
+                    "writerProvider": {
+                        "address": "CellWriter"
+                    },
+                    "printWriterProvider": {
+                        "address": "CellPrintWriter"
+                    }
+                }
+            ],
+            "allowEmptySubmit": false,
+            "allowWhiteSpace": false,
+            "exportHeader": true,
+            "viewName": "_Grid",
+            "designerTemplateName": "elements-grid.designer",
+            "disableTrackClientProperties": false,
+            "searchActionId": "",
+            "customDataResults": [],
+            "clientVisible": true,
+            "printVisible": true,
+            "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8_autoID1",
+            "events": [],
+            "features": []
+        }
+    ],
+    "viewName": "Dialog",
+    "persistentBanners": [],
+    "routes": {},
+    "allowOpenInNewWindow": false,
+    "customer": "Shape - Corp",
+    "userName": "Sleeman, Daniel",
+    "displayNavbarMessagesIcon": true,
+    "clientVisible": true,
+    "printVisible": true,
+    "designerTemplateName": "dialog.designer",
+    "id": "Dialog_8d2dee79fd584a45974df5f1ae3fc2b8",
+    "events": [],
+    "features": []
+}

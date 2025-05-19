@@ -430,7 +430,8 @@
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
-      "*cloud.plex.com/Security/RoleMemberList*"
+      "*cloud.plex.com/Security/RoleMemberList*",
+      "*cloud.plex.com/Security/rolememberlist*"
     ],
     "js": [
       "ux/UX-Role-Member-Sort.js"
