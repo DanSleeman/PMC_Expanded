@@ -1,8 +1,10 @@
 # Change Log
 
-## [0.18.4] - 5/19/2025
+## [0.18.4] - 6/3/2025
 
 Fixed include glob case sensitivity issue for Role Member List script
+
+Fixed export anywhere cell content detection when "image" checkboxes are used instead of read-only input elements. Setup tables are one example of where this occurs.
 
 ## [0.18.3] - 3/25/2025
 
