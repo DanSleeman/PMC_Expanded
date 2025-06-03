@@ -74,9 +74,14 @@ function generateExportTableObject(){
             if (cells.eq(index).length) {
                 // Use the header text as the key and the cell content as the value
                 var headerText = headers[index] || ('column' + (index)); // Fallback to 'columnX' if no header. 
-                if (cells.eq(index).find('i[class^="plex-icon-check"]').length){
-                    rowData[headerText] = "x" // Convert checkmarks to x characters
-                } 
+                var boolean_check = cells.eq(index).find('i[class^="plex-icon-check"]')
+                if (boolean_check.length){ 
+                    //There is a style applied for display: none if a plex-icon-check3 element exists.
+                    if (boolean_check.attr('style')){
+                        rowData[headerText] = false.toString() 
+                } else{
+                    rowData[headerText] = true.toString() 
+                }}
                 else if (cells.eq(index).find('input[type="text"]').length) {
                     rowData[headerText] = cells.eq(index).find('input[type="text"]').val().trim().replaceAll('"','""'); //content from editable fields
                 } else if (cells.eq(index).find('input[type="checkbox"]').length) {
