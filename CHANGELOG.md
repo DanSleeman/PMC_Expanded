@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.18.5] - 6/24/2025
+
+### Fixed
+
+Fixed export anywhere issue when the first row's cell contents were zero length, causing that entire column to be excluded.
+
+## [0.18.4] - 6/3/2025
+
+Fixed include glob case sensitivity issue for Role Member List script
+
+Fixed export anywhere cell content detection when "image" checkboxes are used instead of read-only input elements. Setup tables are one example of where this occurs.
+
 ## [0.18.3] - 3/25/2025
 
 Fixed settings issue with classic user manager after "tweaks" settings were removed.

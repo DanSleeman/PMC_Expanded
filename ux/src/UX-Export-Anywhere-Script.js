@@ -4,7 +4,7 @@ function log(message) {
     console.log(`${exportTag}[${getTimestamp()}] ${message}`);
   }
 
-function debug(message) {
+function exportDebug(message) {
     console.debug(`${exportTag}[${getTimestamp()}] ${message}`);
   }
 function asDoubleDigit(value) {
@@ -30,7 +30,7 @@ function exportWrapper(){
 
 function generateExportTableObject(){
     var tbl = $(jQuery('div.plex-grid-wrapper > table')[0]);
-    debug(tbl)
+    exportDebug(tbl)
     var columnIndices = getCheckboxStatus();
     
 
@@ -50,12 +50,12 @@ function generateExportTableObject(){
         var columnText = ''
         if (this.querySelector('div abbr')){
             columnText = $(this.querySelector('div abbr')).text().trim();
-            debug('Column has abbr tag')
+            exportDebug('Column has abbr tag')
         } else {
             columnText = 'column' + (index)
-            debug('Column does not have abbr tag')
+            exportDebug('Column does not have abbr tag')
         }
-        debug(`Column text: ${columnText}`)
+        exportDebug(`Column text: ${columnText}`)
         headers[index] = columnText
     });
 
@@ -64,7 +64,7 @@ function generateExportTableObject(){
     }
 
     tbl.find('tbody tr.plex-grid-row').each(function() {
-        // debug('compiling row data')
+        // exportDebug('compiling row data')
         
         var rowData = {}; 
         var cells = $(this).find('td').not('.plex-grid-selection-cell'); //Ignoring the first column if it is a checkbox selector
@@ -87,19 +87,22 @@ function generateExportTableObject(){
                 } else if (cells.eq(index).find('input[type="checkbox"]').length) {
                     rowData[headerText] = cells.eq(index).find('input[type="checkbox"]')[0].checked.toString()
                 } else {
-                    rowData[headerText] = cells.eq(index).text().trim().replaceAll('"','""'); //Not having this will break csv formatting.
+                    rowData[headerText] = cells.eq(index).text().trim().replaceAll('"','""') || ''; //Not having this will break csv formatting.
                 }
+            } else {
+                var headerText = headers[index] || ('column' + (index)); // Fallback to 'columnX' if no header.
+                rowData[headerText] = ''
             }
         });
 
         // Add the object to the list if it has any data
         if (Object.keys(rowData).length > 0) {
             rowDataList.push(rowData);
-            // debug(rowData)
+            // exportDebug(rowData)
         }
     });
 
-    debug('Extracted row data with headers as keys:', rowDataList);
+    exportDebug('Extracted row data with headers as keys:', rowDataList);
     return rowDataList
 }
 
@@ -157,11 +160,11 @@ async function addExportCheckboxesToTableHeader() {
     try {
         const table = await waitForElement(exportButton, 60000, document, 0)
         var tbl = jQuery('div.plex-grid-wrapper > table')[0]
-        debug(table)
+        exportDebug(table)
         const headerRow = await waitForElement('thead tr.plex-grid-header-row', 60000, tbl, 0);
-        debug(headerRow)
+        exportDebug(headerRow)
         const headers = headerRow.getElementsByClassName('plex-grid-header-cell');
-        debug(headers)
+        exportDebug(headers)
         for (let i = 0; i < headers.length; i++) {
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
