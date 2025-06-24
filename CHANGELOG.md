@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.18.5] - 6/24/2025
+
+### Fixed
+
+Fixed export anywhere issue when the first row's cell contents were zero length, causing that entire column to be excluded.
+
 ## [0.18.4] - 6/3/2025
 
 Fixed include glob case sensitivity issue for Role Member List script
