@@ -1,5 +1,14 @@
 # Change Log
 
+## [0.18.6] - 6/26/2025
+
+### Added
+
+Added UX hotkey for ctrl+space to launch a new session.  
+This replicates the Cumulus browser plugin functionality.
+
+Classic is not currently supported as the UX site has a purpose built call for launching sessions already and this was a quick addition for UX.
+
 ## [0.18.5] - 6/24/2025
 
 ### Fixed
