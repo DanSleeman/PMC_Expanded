@@ -54,7 +54,8 @@
       "*://cloud.plex.com/*"
     ],
     "js":[
-      "ux/UX-Menu-Search-Keyboard-Nav.js"
+      "ux/UX-Menu-Search-Keyboard-Nav.js",
+      "util/new-session.js"
     ],
     "run_at":"document_start"
   },
@@ -534,7 +535,8 @@
       "ux/src/UX-Enterprise-Roles-Script.js",
       "ux/src/UX-User-Customer-Access-Buttons-Script.js",
       "ux/SQL_Modal_Dialog.html",
-      "ux/sql_modal_inject.js"
+      "ux/sql_modal_inject.js",
+      "util/new-session-script.js"
     ],
     "matches":[
       "*://test.plexus-online.com/*",
