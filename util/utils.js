@@ -101,16 +101,15 @@ async function waitForElement(selector, timeout = 3000, parentNode = document, n
     const pollingInterval = 100; // Check every 100ms
     const maxTime = timeout / pollingInterval;
     let timePassed = 0;
-
+    const returnAll = nodeIndex === 999 // This is a trick for allowing functionality to return all elements of a search when needed.
     return new Promise((resolve, reject) => {
         const interval = setInterval(() => {
             const elements = parentNode.querySelectorAll(selector);
             console.log(`Checking for elements: ${selector}. Found:`, elements.length);
-
             if (elements.length > workaroundLength) {
                 clearInterval(interval); // Stop checking when the element is found
                 console.log(`Element ${selector} found!`, elements);
-                resolve(elements[nodeIndex]); // Resolve the promise with the found element
+                resolve(returnAll ? elements : elements[nodeIndex]); // Resolve the promise with the found element. If returnAll is true, return all the elements
             }
             timePassed++;
             if (timePassed >= maxTime) {

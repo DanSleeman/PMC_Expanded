@@ -1,5 +1,17 @@
 # Change Log
 
+## [0.18.7] - 6/30/2025
+
+### Fixed
+
+Fixed export anywhere functionality for tables which have "grouped" columns.
+
+The export will now use the grouping column name as part of the sub-columns when exporting.
+
+All sub columns will now be able to be selectable.
+
+Fixed issue with text that was styled with `display:none` to no longer be part of the exported data.
+
 ## [0.18.6] - 6/26/2025
 
 ### Added
