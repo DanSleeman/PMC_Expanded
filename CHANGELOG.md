@@ -1,5 +1,26 @@
 # Change Log
 
+## [0.18.7] - 6/30/2025
+
+### Fixed
+
+Fixed export anywhere functionality for tables which have "grouped" columns.
+
+The export will now use the grouping column name as part of the sub-columns when exporting.
+
+All sub columns will now be able to be selectable.
+
+Fixed issue with text that was styled with `display:none` to no longer be part of the exported data.
+
+## [0.18.6] - 6/26/2025
+
+### Added
+
+Added UX hotkey for ctrl+space to launch a new session.  
+This replicates the Cumulus browser plugin functionality.
+
+Classic is not currently supported as the UX site has a purpose built call for launching sessions already and this was a quick addition for UX.
+
 ## [0.18.5] - 6/24/2025
 
 ### Fixed
@@ -14,13 +35,17 @@ Fixed export anywhere cell content detection when "image" checkboxes are used in
 
 ## [0.18.3] - 3/25/2025
 
-Fixed settings issue with classic user manager after "tweaks" settings were removed.
+Fixed settings issue after removal of "tweaks" settings for classic user manager buttons.
 
-## [0.18.2] - 3/12/2025
+## [0.18.2] - 3/14/2025
 
-### Fixed
+### Changed
 
-Fixed manifest configuration for UX Menu search script. Was accidentally included in classic screens.
+Fixed issue with manifest for UX Menu search navigation throwing errors. It was set to load on classic pages as well as UX.
+
+### Removed
+
+Moved in-dev scripts to dev branch while being worked on.
 
 ## [0.18.1] - 3/11/2025
 
