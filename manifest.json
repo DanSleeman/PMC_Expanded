@@ -49,6 +49,21 @@
     "run_at":"document_start"
   },
   {
+    "matches": [
+      "*://*.plexus-online.com/*modules/systemadministration/login/*",
+      "*://*.plexonline.com/*modules/systemadministration/login/*",
+      "*://*.plexus-online.com/*Modules/SystemAdministration/Login/*",
+      "*://*.plexonline.com/*Modules/SystemAdministration/Login/*",
+      "*://*.plexus-online.com/signon/views/launcher.aspx",
+      "*://*.plexonline.com/signon/views/launcher.aspx"
+    ],
+    "js": [
+      "Login/login.js"
+    ],
+    "all_frames": true,
+    "run_at": "document_start"
+  },
+  {
     "matches":[
       "*://test.cloud.plex.com/*",
       "*://cloud.plex.com/*"

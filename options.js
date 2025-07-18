@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const vStrClassicUserManagerUXRolePrefix = document.getElementById("vStrClassicUserManagerUXRolePrefix");
     const vBoolClassicVPTabIndexFix = document.getElementById("vBoolClassicVPTabIndexFix");
     const vBoolClassicPosRoleAssocCopyPaste = document.getElementById("vBoolClassicPosRoleAssocCopyPaste");
+    const vBoolClassicPreventLoginPopup = document.getElementById("vBoolClassicPreventLoginPopup");
     const saveButton = document.getElementById("saveButton");
 
     // Dunamically sets the tooltip bounds to keep them within the window
@@ -141,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
         vStrClassicUserManagerUXRolePrefix.value = settings.vStrClassicUserManagerUXRolePrefix;
         vBoolClassicVPTabIndexFix.checked = settings.vBoolClassicVPTabIndexFix;
         vBoolClassicPosRoleAssocCopyPaste.checked = settings.vBoolClassicPosRoleAssocCopyPaste;
+        vBoolClassicPreventLoginPopup.checked = settings.vBoolClassicPreventLoginPopup;
         updateDependencies();
     });
 
@@ -198,7 +200,8 @@ document.addEventListener("DOMContentLoaded", function () {
             vStrClassicUserManagerExcludeText: vStrClassicUserManagerExcludeText.value,
             vStrClassicUserManagerUXRolePrefix: vStrClassicUserManagerUXRolePrefix.value,
             vBoolClassicVPTabIndexFix: vBoolClassicVPTabIndexFix.checked,
-            vBoolClassicPosRoleAssocCopyPaste: vBoolClassicPosRoleAssocCopyPaste.checked
+            vBoolClassicPosRoleAssocCopyPaste: vBoolClassicPosRoleAssocCopyPaste.checked,
+            vBoolClassicPreventLoginPopup: vBoolClassicPreventLoginPopup.checked
         }, () =>
         {
             const statusMessage = document.getElementById("statusMessage");

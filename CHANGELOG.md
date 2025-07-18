@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.18.8] - 7/18/2025
+
+### Added
+
+Added classic login popup prevention based on the Cumulus browser extension.  
+Cumulus now no longer works on Chrome, and this is one of the big benefits.
+
 ## [0.18.7] - 6/30/2025
 
 ### Fixed

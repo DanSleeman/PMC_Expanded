@@ -44,7 +44,8 @@ export function loadSettings(callback) {
         vStrClassicUserManagerExcludeText: "",
         vStrClassicUserManagerUXRolePrefix: "",
         vBoolClassicVPTabIndexFix: true,
-        vBoolClassicPosRoleAssocCopyPaste: true
+        vBoolClassicPosRoleAssocCopyPaste: true,
+        vBoolClassicPreventLoginPopup: true
     };
     const STORAGE_KEYS = Object.keys(DEFAULT_SETTINGS);
     chrome.storage.sync.get(STORAGE_KEYS, (data) => {
