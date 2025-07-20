@@ -58,7 +58,7 @@
       "*://*.plexonline.com/signon/views/launcher.aspx"
     ],
     "js": [
-      "Login/login.js"
+      "classic/Login/login.js"
     ],
     "all_frames": true,
     "run_at": "document_start"
