@@ -1,6 +1,6 @@
 {
   "name": "PMC Expanded",
-  "version": "0.19.0",
+  "version": "0.18.8",
   "description": "Collection of various tweaks and quality of life improvements for the Plex Manufacturing Cloud websites.",
   "background": {
     "service_worker": "background.js",
@@ -49,20 +49,20 @@
     "run_at":"document_start"
   },
   {
-      "matches": [
-        "*://*.plexus-online.com/*modules/systemadministration/login/*",
-        "*://*.plexonline.com/*modules/systemadministration/login/*",
-        "*://*.plexus-online.com/*Modules/SystemAdministration/Login/*",
-        "*://*.plexonline.com/*Modules/SystemAdministration/Login/*",
-        "*://*.plexus-online.com/signon/views/launcher.aspx",
-        "*://*.plexonline.com/signon/views/launcher.aspx"
-      ],
-      "js": [
-        "classic/Login/login.js"
-      ],
-      "all_frames": true,
-      "run_at": "document_start"
-    },
+    "matches": [
+      "*://*.plexus-online.com/*modules/systemadministration/login/*",
+      "*://*.plexonline.com/*modules/systemadministration/login/*",
+      "*://*.plexus-online.com/*Modules/SystemAdministration/Login/*",
+      "*://*.plexonline.com/*Modules/SystemAdministration/Login/*",
+      "*://*.plexus-online.com/signon/views/launcher.aspx",
+      "*://*.plexonline.com/signon/views/launcher.aspx"
+    ],
+    "js": [
+      "classic/Login/login.js"
+    ],
+    "all_frames": true,
+    "run_at": "document_start"
+  },
   {
     "matches":[
       "*://test.cloud.plex.com/*",

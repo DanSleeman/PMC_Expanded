@@ -24,6 +24,7 @@ INCLUDE_FILES = [
     "ux/src",
     "classic",
     "classic/src",
+    "classic/Login",
     "util"
 ]
 
