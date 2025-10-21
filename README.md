@@ -43,7 +43,7 @@ I have been slowly working to migrate my classic features to UX.
 
 # Installation
 
-Chrome Addon Store: [Link to be determined]('')
+[Chrome Addon Store](https://chromewebstore.google.com/detail/pmc-expanded/ifmhlcojcnkhmbaanbpiegpibfdolehm')
 
 Edge Addon Store: [Link to be determined]('')
 
