@@ -562,8 +562,6 @@
       "ux/src/UX-Enterprise-Roles-Script.js",
       "ux/src/UX-User-Customer-Access-Buttons-Script.js",
       "ux/src/UX-Checksheet-Fill-Script.js",
-      "ux/SQL_Modal_Dialog.html",
-      "ux/sql_modal_inject.js",
       "util/new-session-script.js"
     ],
     "matches":[
