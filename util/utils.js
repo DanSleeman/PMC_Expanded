@@ -30,7 +30,7 @@ function uxCreateButton(id,name,link=null,title=null,newTab=false,notificationTe
 
 function uxCreateButtonPopup(parentId,id,name,link=null,title=null,newTab=false,notificationText=null){
     let plexBase = window.location.origin;
-    let t = document.querySelector(`#${parentId} .plex-actions`);
+    let t = document.querySelector(`#${parentId} .plex-actions`) || document.querySelector(`#${parentId}.plex-actions`); //jank fix for some popups not having consistent parent element identifiers. I.E. Checksheets have a static ID for the action bar but not the popup window.
     let z = document.createElement ('li');
     // "<!-- ko template: { name: $data.clientViewName, data: $data } -->"
     // z.setAttribute('data-bind',"title: $data.title, click: $data.executeAction, css: { 'disabled': !$data.isEnabled() }, visible: $data.visible()")
