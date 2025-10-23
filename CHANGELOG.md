@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.19.0] - 10/21/2025
+
+### Added
+
+Added UX functionality for pencil whipping control panel checksheets.
+
 ## [0.18.8] - 7/18/2025
 
 ### Added
