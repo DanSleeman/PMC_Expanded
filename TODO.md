@@ -25,7 +25,7 @@
 
 ### Checksheet Fill - UX
 
-[ ] Make this function like the classic version. Need to use mutators to detect if the checksheet window is loaded.
+[x] Make this function like the classic version. Need to use mutators to detect if the checksheet window is loaded.
 
 ### Export Anywhere
 
