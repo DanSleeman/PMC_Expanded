@@ -22,78 +22,51 @@ Things to do with this script
     * 
 */
 
-// adding a new rule to the validator? This didn't seem to do anything. We still need to figure out how to control the computed observable for the field.
-ctx.$root.elements['autoID29'].parent.validator.rules.push({
-    message: "Specify {0}.",
-    name: "required",
-    propertyName: "EquipmentKey",
-    type: "Boolean"
-});
+function deepCloneWithFunctions(obj) {
+    //Clones rule object with get/set methods that do not normally get copied
+  if (obj === null || typeof obj !== 'object') {
+    return obj;
+  }
 
-///===========10/28/2025 this script is working visibly
+  const clone = Array.isArray(obj) ? [] : {};
+
+  for (const key of Reflect.ownKeys(obj)) {
+    const descriptor = Object.getOwnPropertyDescriptor(obj, key);
+
+    if (descriptor.get || descriptor.set) {
+      // Preserve getters/setters exactly
+      Object.defineProperty(clone, key, descriptor);
+    } else if (typeof descriptor.value === 'object' && descriptor.value !== null) {
+      descriptor.value = deepCloneWithFunctions(descriptor.value);
+      Object.defineProperty(clone, key, descriptor);
+    } else {
+      Object.defineProperty(clone, key, descriptor);
+    }
+  }
+
+  return clone;
+}
+
+//=========10/28/2025 Working example of applying requirement to equipment field.
 var targetEl = document.querySelector('input[name="EquipmentKey"]');
 var referenceEl = document.querySelector('input[name="AccountNo"]');
-var ctx = ko.contextFor(targetEl);
-
-if (ctx && ctx.$parent && ctx.$parent.validator) {
-  var controller = ctx.$parent.validator;
-  var existing = controller.rules.some(r => r.propertyName === "EquipmentKey" && r.name === "required");
-
-  if (!existing) {
-    let refRules = controller.rules[0]
-    refRules.propertyName = 'EquipmentKey'
-    controller.rules.push(refRules);
-    console.log("Added required rule to ValidationController for EquipmentKey");
-  } else {
-    console.log("Rule already exists for EquipmentKey");
-  }
-
-  // also set up data("rules") for the UI
-  var refRules = $(referenceEl).data("rules");
-  if (refRules) {
-    let rulesCopy = refRules;
-    rulesCopy.required.propertyName = "EquipmentKey";
-    $(targetEl).data("rules", rulesCopy);
-    $(targetEl).data("valPropertyName", "EquipmentKey");
-  }
-
-  // revalidate the form
-  controller.validator.element(targetEl);
-} else {
-  console.warn("Validator controller not found for", targetEl);
-}
-//=============
-
-//=========10/28/2025 running this after the above code now actually triggers the required validation alert.
-var targetEl = document.querySelector('input[name="EquipmentKey"]');
+var refRules = $(referenceEl).data("rules");
 var ctx = ko.contextFor(targetEl);
 var validator = ctx?.$parent?.validator?.validator;
 
 if (validator) {
-    /*
   var name = targetEl.getAttribute("name");
+    var clonedRules = deepCloneWithFunctions(refRules);
+    for (let rule of Object.values(clonedRules)) {
+        if (rule.propertyName) rule.propertyName = "EquipmentKey";
+  }
 
-  // Add the rule to the validator's rule set
-  $(targetEl).rules("add", { required: true });
-
-  // Rebuild Plex's rule cache for that element
-  $(targetEl).data("rules", {
-    required: {
-      name: "required",
-      message: "Specify {0}.",
-      type: "Boolean",
-      propertyName: name
-    }
-  });
+  $(targetEl).data("rules", clonedRules);
   $(targetEl).data("valPropertyName", name);
-*/
-  // Tell jQuery Validate it has a new field
+
   validator.settings.rules[name] = { required: true };
   validator.settings.messages[name] = { required: "Specify Equipment / Tooling ID." };
 
-
-  // Force Plex’s validator to recheck this specific element
-  //   validator.element(targetEl);
 
   console.log("Attached 'required' validation to", name);
 } else {
@@ -101,3 +74,4 @@ if (validator) {
 }
 
 //===============
+
