@@ -55,20 +55,20 @@ var ctx = ko.contextFor(targetEl);
 var validator = ctx?.$parent?.validator?.validator;
 
 if (validator) {
-  var name = targetEl.getAttribute("name");
+  var n = targetEl.getAttribute("name");
     var clonedRules = deepCloneWithFunctions(refRules);
     for (let rule of Object.values(clonedRules)) {
         if (rule.propertyName) rule.propertyName = "EquipmentKey";
   }
 
   $(targetEl).data("rules", clonedRules);
-  $(targetEl).data("valPropertyName", name);
+  $(targetEl).data("valPropertyName", n);
 
-  validator.settings.rules[name] = { required: true };
-  validator.settings.messages[name] = { required: "Specify Equipment / Tooling ID." };
+  validator.settings.rules[n] = { required: true };
+  validator.settings.messages[n] = { required: "Specify Equipment / Tooling ID." };
 
 
-  console.log("Attached 'required' validation to", name);
+  console.log("Attached 'required' validation to", n);
 } else {
   console.warn("Could not find active jQuery validator for", targetEl);
 }
