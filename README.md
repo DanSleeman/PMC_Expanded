@@ -64,6 +64,7 @@ Requirements
 * terser
 * python
   * htmlmin
+    * htmlmin4 if using python 3.13+
   * rcssmin
 
 To build, clone the repo and run:

@@ -78,9 +78,9 @@ def copy_files():
         
         if not src_path.exists():
             continue
-        dest_path.parent.mkdir(parents=True, exist_ok=True)
 
         if src_path.is_dir():
+            dest_path.mkdir(parents=True, exist_ok=True)
             for x in src_path.iterdir():
                 if x.is_file():
                     minify_or_copy(x, dest_path / x.name, minifiers)
