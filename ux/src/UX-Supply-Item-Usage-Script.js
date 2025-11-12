@@ -56,16 +56,16 @@ var validator = ctx?.$parent?.validator?.validator;
 
 if (validator) {
   var n = targetEl.getAttribute("name");
-    var clonedRules = deepCloneWithFunctions(refRules);
+    var clonedRules = deepCloneWithFunctions(refRules); //Create a cloned copy of required rule object from the Account No field
     for (let rule of Object.values(clonedRules)) {
-        if (rule.propertyName) rule.propertyName = "EquipmentKey";
+        if (rule.propertyName) rule.propertyName = "EquipmentKey"; //Change the rule's name to reflect the appropriate new element name
   }
 
   $(targetEl).data("rules", clonedRules);
   $(targetEl).data("valPropertyName", n);
 
-  validator.settings.rules[n] = { required: true };
-  validator.settings.messages[n] = { required: "Specify Equipment / Tooling ID." };
+  validator.settings.rules[n] = { required: true }; //Add a required rule to the validator settings
+  validator.settings.messages[n] = { required: "Specify Equipment / Tooling ID." }; //Set the message for failing the rule
 
 
   console.log("Attached 'required' validation to", n);
