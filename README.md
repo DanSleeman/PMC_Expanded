@@ -29,6 +29,7 @@ I have been slowly working to migrate my classic features to UX.
     - [Position Role Association](#position-role-association)
     - [User Manager Buttons](#user-manager-buttons)
     - [Role Revision History](#role-revision-history)
+    - [Available Reports Buttons](#available-reports-buttons)
 - [Classic Features](#classic-features)
     - [Calendar Mass Update](#calendar-mass-update)
     - [Checklist Edit Links](#checklist-edit-links)
@@ -360,6 +361,20 @@ The sproc is removing any access that is not directly assigned to the person's p
 The expected behavior is to keep anything manual, as well as any additional position role association.
 
 By filtering for a certain date and user, you can copy all the entries removed by integration for easy re-adding.
+
+### Available Reports Buttons
+<details>
+<summary>Reference Files</summary>
+
+`ux\UX-Available-Reports-Buttons.js`  
+`ux\src\UX-Available-Reports-Buttons-Script.js`
+</details>
+
+Adds copy and paste buttons to the Available Reports screen allowing easy enabling of reports across PCNs.
+
+The paste button will show the filters used when the copy button was pressed on hover.
+
+![Example](images/ux-available-reports-buttons.jpg)
 
 # Classic Features
 
