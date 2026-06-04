@@ -1,5 +1,15 @@
 # Change Log
 
+## [0.20.0] - 6/4/2026
+
+### Added
+
+Added UX copy/paste buttons for available reports screen.
+
+### Changed
+
+Set UX Menu search keyboard navigation functionality to off by default. This is now an in-built Plex feature. Keeping the option in case Plex ever breaks it.
+
 ## [0.19.0] - 10/21/2025
 
 ### Added

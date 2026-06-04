@@ -1,7 +1,7 @@
 (async () => {
     const module = await import(chrome.runtime.getURL("config.js"));
     module.loadSettings((settings) =>{
-        if (settings.vBoolUxMenuSearchKeyboard){
+        if (settings.vBoolUxMenuSearchKeyboardOBS){
             let resultIndex = -1;
             document.addEventListener('keyup', (e) => {
                 let x = document.getElementsByClassName('plex-search-menu plex-navbar-panel');

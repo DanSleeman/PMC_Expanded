@@ -85,11 +85,18 @@ async function scriptInject(scriptPath, settings={}){
         //console.log(`variable copiedPCNs: ${val}`)
         copyText.pasteTextPCN = val
     })
+    await readStorage('reportCopied').then(val => {
+        copyText.reportPasted = val
+    })
     //console.log(`utils.js - copyText.pasteText variable: ${copyText.pasteText}`)
     //console.log(`utils.js - copyText.pasteTextPCN variable: ${copyText.pasteTextPCN}`)
     //console.log(`utils.js - settings variable: ${settings}`)
     let s = document.createElement('script');
-    s.dataset.params = JSON.stringify({pasted:copyText.pasteText,pastedPCN:copyText.pasteTextPCN});
+    s.dataset.params = JSON.stringify({
+        pasted:copyText.pasteText,
+        pastedPCN:copyText.pasteTextPCN,
+        reportPasted:copyText.reportPasted
+    });
     s.dataset.settings = JSON.stringify(settings)
     s.src = chrome.runtime.getURL(scriptPath);
     s.onload = function() {

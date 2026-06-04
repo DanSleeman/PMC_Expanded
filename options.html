@@ -70,16 +70,16 @@
     <h4>General QOL</h4>
     <span>
         <label>
-            <input type="checkbox" id="vBoolUxMenuSearchKeyboard">
+            <input type="checkbox" id="vBoolUxMenuSearchKeyboardOBS">
             Add keyboard navigation to menu search
             <span class="tooltip">
-                <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="#faf4a5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="12" y1="16" x2="12" y2="12"></line>
                     <line x1="12" y1="8" x2="12" y2="8"></line>
                 </svg>
-                <span class="tooltiptext">
-                    Adds the ability to use up and down arrows to select the screen during a menu search. Enter will then navigate to the selected page.
+                <span class="tooltiptext tooltipimportant">
+                    <b>This is now native Plex functionality. Keeping the option in case Plex ever breaks it.</b><br>Adds the ability to use up and down arrows to select the screen during a menu search. Enter will then navigate to the selected page.
                 </span>
             </span>
         </label>
@@ -264,6 +264,15 @@
             <label>
                 <input type="checkbox" id="vBoolUxSelectAllAdmin">
                 Add a button to select the admin checkbox for all roles.
+            </label>
+        </li>
+        <li>
+            <label>
+                <div class="parent">
+                    Available Reports
+                </div>
+                <input type="checkbox" id="vBoolUxAvailableRolesCopyPasteButtons">
+                Add copy and paste report buttons
             </label>
         </li>
     </ul>

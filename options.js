@@ -20,10 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const vBoolUxPosRoleAssocCopyPasteButtons = document.getElementById("vBoolUxPosRoleAssocCopyPasteButtons");
     const vBoolUxUserManagerCopyPasteButtons = document.getElementById("vBoolUxUserManagerCopyPasteButtons");
     const vBoolUxSelectAllAdmin = document.getElementById("vBoolUxSelectAllAdmin");
+    const vBoolUxAvailableRolesCopyPasteButtons = document.getElementById("vBoolUxAvailableRolesCopyPasteButtons");
     const vBoolUxCustAccessCopyPasteButtons = document.getElementById("vBoolUxCustAccessCopyPasteButtons");
     const vBoolUxCustAccessTogglePCNs = document.getElementById("vBoolUxCustAccessTogglePCNs");
     const vBoolUxSavePopupCsv = document.getElementById("vBoolUxSavePopupCsv");
-    const vBoolUxMenuSearchKeyboard = document.getElementById("vBoolUxMenuSearchKeyboard");
+    const vBoolUxMenuSearchKeyboardOBS = document.getElementById("vBoolUxMenuSearchKeyboardOBS");
     const vBoolUxRoleRevHistory = document.getElementById("vBoolUxRoleRevHistory");
     const vListEnterprisePCNs = document.getElementById("vListEnterprisePCNs");
     const vStrSecurityManagerGlossary = document.getElementById("vStrSecurityManagerGlossary");
@@ -93,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         vBoolUxPosRoleAssocCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxUserManagerCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxSelectAllAdmin.disabled = !isvBoolUxLazyLoadingEnabled;
+        vBoolUxAvailableRolesCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxSavePopupCsv.disabled = !isvBoolUxLazyLoadingEnabled;
     }
     // Load saved settings
@@ -116,10 +118,11 @@ document.addEventListener("DOMContentLoaded", function () {
         vBoolUxPosRoleAssocCopyPasteButtons.checked = settings.vBoolUxPosRoleAssocCopyPasteButtons;
         vBoolUxUserManagerCopyPasteButtons.checked = settings.vBoolUxUserManagerCopyPasteButtons;
         vBoolUxSelectAllAdmin.checked = settings.vBoolUxSelectAllAdmin;
+        vBoolUxAvailableRolesCopyPasteButtons.checked = settings.vBoolUxAvailableRolesCopyPasteButtons;
         vBoolUxCustAccessCopyPasteButtons.checked = settings.vBoolUxCustAccessCopyPasteButtons;
         vBoolUxCustAccessTogglePCNs.checked = settings.vBoolUxCustAccessTogglePCNs;
         vBoolUxSavePopupCsv.checked = settings.vBoolUxSavePopupCsv;
-        vBoolUxMenuSearchKeyboard.checked = settings.vBoolUxMenuSearchKeyboard;
+        vBoolUxMenuSearchKeyboardOBS.checked = settings.vBoolUxMenuSearchKeyboardOBS;
         vBoolUxRoleRevHistory.checked = settings.vBoolUxRoleRevHistory;
         vListEnterprisePCNs.value = settings.vListEnterprisePCNs;
         vStrSecurityManagerGlossary.value = settings.vStrSecurityManagerGlossary;
@@ -176,10 +179,11 @@ document.addEventListener("DOMContentLoaded", function () {
             vBoolUxPosRoleAssocCopyPasteButtons: vBoolUxPosRoleAssocCopyPasteButtons.checked,
             vBoolUxUserManagerCopyPasteButtons: vBoolUxUserManagerCopyPasteButtons.checked,
             vBoolUxSelectAllAdmin: vBoolUxSelectAllAdmin.checked,
+            vBoolUxAvailableRolesCopyPasteButtons: vBoolUxAvailableRolesCopyPasteButtons.checked,
             vBoolUxCustAccessCopyPasteButtons: vBoolUxCustAccessCopyPasteButtons.checked,
             vBoolUxCustAccessTogglePCNs: vBoolUxCustAccessTogglePCNs.checked,
             vBoolUxSavePopupCsv: vBoolUxSavePopupCsv.checked,
-            vBoolUxMenuSearchKeyboard: vBoolUxMenuSearchKeyboard.checked,
+            vBoolUxMenuSearchKeyboardOBS: vBoolUxMenuSearchKeyboardOBS.checked,
             vBoolUxRoleRevHistory: vBoolUxRoleRevHistory.checked,
             vListEnterprisePCNs: vListEnterprisePCNs.value,
             vStrSecurityManagerGlossary: vStrSecurityManagerGlossary.value,

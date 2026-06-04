@@ -1,6 +1,6 @@
 {
   "name": "PMC Expanded",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "description": "Collection of various tweaks and quality of life improvements for the Plex Manufacturing Cloud websites.",
   "background": {
     "service_worker": "background.js",
@@ -360,6 +360,18 @@
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
+      "*cloud.plex.com/Management/CustomerReport/ViewAvailableReports*"
+    ],
+    "js": [
+        "ux/UX-Available-Reports-Buttons.js"
+    ]
+  },
+  {
+    "matches": [
+      "*://test.cloud.plex.com/*",
+      "*://cloud.plex.com/*"
+    ],
+    "include_globs": [
         "*VisionPlex/Screen*actionKey=8086*"
     ],
     "js": [
@@ -542,6 +554,7 @@
       "ux/src/UX-Security-Manager-Action-Keys-Script.js",
       "ux/src/UX-Role-Manager-Action-Keys-Script.js",
       "ux/src/UX-User-Manager-Role-Buttons-Script.js",
+      "ux/src/UX-Available-Reports-Buttons-Script.js",
       "ux/src/UX-Role-History-Buttons-Script.js",
       "ux/src/UX-Position-Role-Association-Buttons-Script.js",
       "ux/src/UX-Position-Role-Association-Grid-Buttons-Script.js",
