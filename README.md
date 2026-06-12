@@ -30,6 +30,7 @@ I have been slowly working to migrate my classic features to UX.
     - [User Manager Buttons](#user-manager-buttons)
     - [Role Revision History](#role-revision-history)
     - [Available Reports Buttons](#available-reports-buttons)
+    - [Truck Shipping Unexpected Banner Fix](#truck-shipping-unexpected-banner-fix)
 - [Classic Features](#classic-features)
     - [Calendar Mass Update](#calendar-mass-update)
     - [Checklist Edit Links](#checklist-edit-links)
@@ -375,6 +376,18 @@ Adds copy and paste buttons to the Available Reports screen allowing easy enabli
 The paste button will show the filters used when the copy button was pressed on hover.
 
 ![Example](images/ux-available-reports-buttons.jpg)
+
+### Truck Shipping Unexpected Banner Fix
+<details>
+<summary>Reference Files</summary>
+
+`ux\UX-Truck-Ship-Banner-Fix.js`  
+`ux\src\UX-Truck-Ship-Banner-Fix-Script.js`
+</details>
+
+Fixes the "unexpected error" banner that appears whenever there is a warning on the truck shipping confirmation popup.
+
+With this enabled, it should properly show the warning banner instead.
 
 # Classic Features
 

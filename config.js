@@ -25,6 +25,7 @@ export function loadSettings(callback) {
         vBoolUxSavePopupCsv: true,
         vBoolUxMenuSearchKeyboardOBS: false,
         vBoolUxRoleRevHistory: true,
+        vBoolUxTruckBannerFix: true,
         vListEnterprisePCNs: "",
         vStrSecurityManagerGlossary: "Security Manager",
         vStrSettingsManagerGlossary: "Settings Manager",
