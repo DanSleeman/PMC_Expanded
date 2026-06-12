@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.21.0] - 6/12/2026
+
+### Added
+
+Added fix for UX truck shipping confirmation popup banner unexpected error.
+
 ## [0.20.0] - 6/4/2026
 
 ### Added

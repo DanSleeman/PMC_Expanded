@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const vBoolUxFilterPinEnforce = document.getElementById("vBoolUxFilterPinEnforce");
     const vBoolUxProjectManagementChecklistLink = document.getElementById("vBoolUxProjectManagementChecklistLink");
     const vBoolUxLazyLoading = document.getElementById("vBoolUxLazyLoading");
+    const vBoolUxTruckBannerFix = document.getElementById("vBoolUxTruckBannerFix");
     const vBoolUxExportAnywhere = document.getElementById("vBoolUxExportAnywhere");
     const vBoolUxSecurityActionKeys = document.getElementById("vBoolUxSecurityActionKeys");
     const vBoolUxRoleRevisionHistory = document.getElementById("vBoolUxRoleRevisionHistory");
@@ -109,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
         vBoolUxFilterPinEnforce.checked = settings.vBoolUxFilterPinEnforce;
         vBoolUxProjectManagementChecklistLink.checked = settings.vBoolUxProjectManagementChecklistLink;
         vBoolUxLazyLoading.checked = settings.vBoolUxLazyLoading;
+        vBoolUxTruckBannerFix.checked = settings.vBoolUxTruckBannerFix;
         vBoolUxExportAnywhere.checked = settings.vBoolUxExportAnywhere;
         vBoolUxSecurityActionKeys.checked = settings.vBoolUxSecurityActionKeys;
         vBoolUxRoleRevisionHistory.checked = settings.vBoolUxRoleRevisionHistory;
@@ -170,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
             vBoolUxFilterPinEnforce: vBoolUxFilterPinEnforce.checked,
             vBoolUxProjectManagementChecklistLink: vBoolUxProjectManagementChecklistLink.checked,
             vBoolUxLazyLoading: vBoolUxLazyLoading.checked,
+            vBoolUxTruckBannerFix: vBoolUxTruckBannerFix.checked,
             vBoolUxExportAnywhere: vBoolUxExportAnywhere.checked,
             vBoolUxSecurityActionKeys: vBoolUxSecurityActionKeys.checked,
             vBoolUxRoleRevisionHistory: vBoolUxRoleRevisionHistory.checked,
