@@ -55,7 +55,6 @@
   {
     "resources":[
       "config.js",
-      "util/jquery-2.2.3.min.js",
       "util/utils.js",
       "ux/src/UX-Truck-Ship-Banner-Fix-Script.js"
     ],
