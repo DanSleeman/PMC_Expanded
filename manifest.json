@@ -27,9 +27,6 @@
     "storage"
   ],
   "options_page":"options.html",
-  "host_permissions":[
-    "*://*.plex.com/"
-  ],
   "content_scripts": [ 
   {
     "matches":[
