@@ -19,6 +19,7 @@ export function loadSettings(callback) {
         vBoolUxPosRoleAssocCopyPasteButtons: true,
         vBoolUxUserManagerCopyPasteButtons: true,
         vBoolUxRoleManagerHighlightButtons: true,
+        vBoolUxSecurityRoleBinaryToggleButtons: true,
         vBoolUxSelectAllAdmin: true,
         vBoolUxAvailableRolesCopyPasteButtons: true,
         vBoolUxCustAccessCopyPasteButtons: true,

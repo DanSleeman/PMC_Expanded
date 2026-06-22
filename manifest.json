@@ -510,7 +510,8 @@
       "*Security/SecurityRolesActionList*"
     ],
     "js": [
-      "ux/UX-Role-Manager-Action-Keys.js"
+      "ux/UX-Role-Manager-Action-Keys.js",
+      "ux/UX-Security-Role-Actions-Buttons.js"
     ]
   },
   {
@@ -581,6 +582,7 @@
       "ux/src/UX-Checksheet-Fill-Script.js",
       "ux/src/UX-Truck-Ship-Banner-Fix-Script.js",
       "ux/src/UX-Role-Manager-Highlight-Copied-Script.js",
+      "ux/src/UX-Security-Role-Actions-Buttons-Script.js",
       "util/new-session-script.js"
     ],
     "matches":[

@@ -25,7 +25,9 @@ I have been slowly working to migrate my classic features to UX.
     - [Label Designer](#label-designer)
     - [Search Filter Pin Default](#search-filter-pin-default)
     - [Project management checklist link](#project-management-checklist-link)
-    - [Role Manager Action Keys](#role-manager-action-keys)
+    - [Security Role Actions Buttons](#security-role-actions-buttons)
+      - [Show Action Keys](#show-action-keys)
+      - [Toggle Half Selected](#toggle-half-selected)
     - [Position Role Association](#position-role-association)
     - [User Manager Buttons](#user-manager-buttons)
     - [Role Revision History](#role-revision-history)
@@ -287,7 +289,9 @@ The project management screen only allows checklist sections to be opened via th
 ![Example](images/ux-project-manager.jpg)
 
 
-### Role Manager Action Keys
+### Security Role Actions Buttons
+
+#### Show Action Keys
 <details>
 <summary>Reference Files</summary>
 
@@ -300,6 +304,16 @@ Adds action keys to the grid for the security roles manager.
 These are needed for VP screen navigation.
 
 ![Example](images/ux-action-keys.jpg)
+
+#### Toggle Half Selected
+<details>
+<summary>Reference Files</summary>
+
+`ux\UX-Security-Role-Actions-Buttons.js`  
+`ux\src\UX-Security-Role-Actions-Buttons-Script.js`
+</details>
+
+Adds button to select half of the displayed actions for performing a binary search.
 
 ### Position Role Association
 <details>
