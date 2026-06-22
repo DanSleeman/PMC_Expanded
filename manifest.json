@@ -1,6 +1,6 @@
 {
   "name": "PMC Expanded",
-  "version": "0.21.0",
+  "version": "0.22.0",
   "description": "Collection of various tweaks and quality of life improvements for the Plex Manufacturing Cloud websites.",
   "background": {
     "service_worker": "background.js",
@@ -522,7 +522,11 @@
       "*Security/SecurityRolesManager*"
     ],
     "js": [
-      "ux/UX-Enterprise-Roles.js"
+      "ux/UX-Enterprise-Roles.js",
+      "ux/UX-Role-Manager-Highlight-Copied.js"
+    ],
+    "css": [
+      "ux/UX-Role-Manager-Highlight-Copied.css"
     ]
   },
   {
@@ -576,6 +580,7 @@
       "ux/src/UX-User-Customer-Access-Buttons-Script.js",
       "ux/src/UX-Checksheet-Fill-Script.js",
       "ux/src/UX-Truck-Ship-Banner-Fix-Script.js",
+      "ux/src/UX-Role-Manager-Highlight-Copied-Script.js",
       "util/new-session-script.js"
     ],
     "matches":[

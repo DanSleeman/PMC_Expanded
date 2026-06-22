@@ -1,4 +1,11 @@
 # Change Log
+## [0.22.0] - 6/22/2026
+
+### Added
+
+Added buttons for functionality to highlight rows of roles in the security roles manager based on what has been copied previously.
+* Button to add highlight class to row
+* Button to toggle visibility of non-highlight rows
 
 ## [0.21.0] - 6/12/2026
 
