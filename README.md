@@ -31,6 +31,7 @@ I have been slowly working to migrate my classic features to UX.
     - [Role Revision History](#role-revision-history)
     - [Available Reports Buttons](#available-reports-buttons)
     - [Truck Shipping Unexpected Banner Fix](#truck-shipping-unexpected-banner-fix)
+    - [Security Roles Manager Buttons](#security-roles-manager-buttons)
 - [Classic Features](#classic-features)
     - [Calendar Mass Update](#calendar-mass-update)
     - [Checklist Edit Links](#checklist-edit-links)
@@ -388,6 +389,17 @@ The paste button will show the filters used when the copy button was pressed on 
 Fixes the "unexpected error" banner that appears whenever there is a warning on the truck shipping confirmation popup.
 
 With this enabled, it should properly show the warning banner instead.
+
+### Security Roles Manager Buttons
+<details>
+<summary>Reference Files</summary>
+
+`ux\UX-Role-Manager-Highlight-Copied.js`  
+`ux\src\UX-Role-Manager-Highlight-Copied-Script.js`
+`ux\Role-Manager-Highlight-Copied.css`
+</details>
+
+Adds buttons to highlight and toggle display of role rows which were copied via other functionality.
 
 # Classic Features
 
