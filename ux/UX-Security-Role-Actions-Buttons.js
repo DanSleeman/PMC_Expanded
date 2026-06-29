@@ -23,14 +23,17 @@ function binarySettingsToggleHalf(){ //
     const firstHalf = checkboxes.slice(0, halfLength);
     const secondHalf = checkboxes.slice(halfLength);
     
-    if (firstHalfActive) {
-        // First half checked, second half unchecked
-        firstHalf.forEach(checkbox => checkbox.checked = true);
-        secondHalf.forEach(checkbox => checkbox.checked = false);
-    } else {
-        // Second half checked, first half unchecked
-        firstHalf.forEach(checkbox => checkbox.checked = false);
-        secondHalf.forEach(checkbox => checkbox.checked = true);
-    }
-    firstHalfActive  = !firstHalfActive ;
+    const targetChecked = firstHalfActive;
+    
+    firstHalf.forEach(checkbox => {
+        checkbox.checked = targetChecked;
+        checkbox.dispatchEvent(new MouseEvent('click', { bubbles: true, composed: true }));
+    });
+    
+    secondHalf.forEach(checkbox => {
+        checkbox.checked = !targetChecked;
+        checkbox.dispatchEvent(new MouseEvent('click', { bubbles: true, composed: true }));
+    });
+    
+    firstHalfActive = !firstHalfActive;
 }
