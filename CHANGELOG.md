@@ -7,7 +7,7 @@ Added buttons for functionality to highlight rows of roles in the security roles
 * Button to add highlight class to row
 * Button to toggle visibility of non-highlight rows
 
-Added button to security role actions screen to check/uncheck half of the visible actions.
+Added context menu entry to check/uncheck half of the checkboxes on any given page.
 
 ## [0.21.0] - 6/12/2026
 

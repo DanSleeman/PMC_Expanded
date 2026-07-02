@@ -14,6 +14,7 @@ I have been slowly working to migrate my classic features to UX.
 - [UX Features](#ux-features)
     - [No Lazy Loading](#no-lazy-loading)
     - [Export Anywhere](#export-anywhere)
+      - [Toggle Half Selected](#toggle-half-selected)
     - [Enterprise Enabled Security Roles](#enterprise-enabled-security-roles)
     - [Security Manager Action Keys](#security-manager-action-keys)
     - [Checklist edit link](#checklist-edit-link)
@@ -27,7 +28,6 @@ I have been slowly working to migrate my classic features to UX.
     - [Project management checklist link](#project-management-checklist-link)
     - [Security Role Actions Buttons](#security-role-actions-buttons)
       - [Show Action Keys](#show-action-keys)
-      - [Toggle Half Selected](#toggle-half-selected)
     - [Position Role Association](#position-role-association)
     - [User Manager Buttons](#user-manager-buttons)
     - [Role Revision History](#role-revision-history)
@@ -136,6 +136,15 @@ This is a bit janky and doesn't work well on screens with multiple grid elements
 ![Example](images/ux-export-anywhere.jpg)
 
 ![Example](images/ux-export-anywhere-csv.jpg)
+
+#### Toggle Half Selected
+<details>
+<summary>Reference Files</summary>
+
+`utils\checkbox-binary-selector.js`
+</details>
+
+Adds context menu button to select half of the checkboxes for performing a binary search.
 
 ### Enterprise Enabled Security Roles
 
@@ -304,16 +313,6 @@ Adds action keys to the grid for the security roles manager.
 These are needed for VP screen navigation.
 
 ![Example](images/ux-action-keys.jpg)
-
-#### Toggle Half Selected
-<details>
-<summary>Reference Files</summary>
-
-`ux\UX-Security-Role-Actions-Buttons.js`  
-`ux\src\UX-Security-Role-Actions-Buttons-Script.js`
-</details>
-
-Adds button to select half of the displayed actions for performing a binary search.
 
 ### Position Role Association
 <details>
