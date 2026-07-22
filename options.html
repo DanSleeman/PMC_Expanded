@@ -194,6 +194,45 @@
                 </span>
             </label>
         </li>
+        <li>
+            <label>
+                <input type="checkbox" id="vBoolUxSelectHalfCheckboxes">
+                Add a context menu item to do a 'binary selection' for checkboxes.
+                <span class="tooltip">
+                    <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    <span class="tooltiptext">
+                            Allows testing for various areas controlled by checkboxes by easily selecting and unselecting half of the checkboxes. This can be helpful to narrow down which security action actually does what you're looking for.
+                    </span>
+                </span>
+            </label>
+            <ul><li><label>
+                <span>
+                    Checkbox selection preference: 
+                </span>
+                <select id="vOptUxSelectHalfCheckboxesType">
+                    <option value=0>Prefer grid</option>
+                    <option value=1>Prefer standalone</option>
+                    <option value=2>Use both</option>
+                </select>
+                <span class="tooltip">
+                    <svg class="tooltipicon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                    <span class="tooltiptext">
+                            <b>Prefer grid</b><br>Only use table grid checkboxes when calculating. Fallback to standalone checkboxes if none.<br><br>
+                            <b>Prefer standalone</b><br>Only use standalone checkboxes when calculating. Fallback to grid checkboxes if none.<br><br>
+                            <b>Use both</b><br>Uses both types of checkboxes together.
+                    </span>
+            </label>
+            </li>
+            </ul>
+        </li>
         <li>    
             <label>
                 <input type="checkbox" id="vBoolUxSavePopupCsv">

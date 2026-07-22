@@ -19,6 +19,8 @@ export function loadSettings(callback) {
         vBoolUxPosRoleAssocCopyPasteButtons: true,
         vBoolUxUserManagerCopyPasteButtons: true,
         vBoolUxRoleManagerHighlightButtons: true,
+        vBoolUxSelectHalfCheckboxes: true,
+        vOptUxSelectHalfCheckboxesType: 0,
         vBoolUxSelectAllAdmin: true,
         vBoolUxAvailableRolesCopyPasteButtons: true,
         vBoolUxCustAccessCopyPasteButtons: true,

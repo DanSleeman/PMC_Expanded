@@ -7,6 +7,12 @@ Added buttons for functionality to highlight rows of roles in the security roles
 * Button to add highlight class to row
 * Button to toggle visibility of non-highlight rows
 
+Added context menu entry to check/uncheck half of the checkboxes on any given page.
+
+### Changed
+
+Removed UX production from sites for checksheet pencil whipping button.
+
 ## [0.21.0] - 6/12/2026
 
 ### Added

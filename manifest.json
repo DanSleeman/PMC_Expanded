@@ -25,7 +25,8 @@
   },
   "permissions":[
     "storage",
-    "declarativeNetRequestWithHostAccess"
+    "declarativeNetRequestWithHostAccess",
+    "contextMenus"
   ],
   "options_page":"options.html",
   "host_permissions":[
@@ -44,7 +45,8 @@
     ],
     "js":[
       "util/jquery-2.2.3.min.js",
-      "util/utils.js"
+      "util/utils.js",
+      "util/checkbox-binary-selector.js"
     ],
     "run_at":"document_start"
   },
@@ -282,7 +284,6 @@
   },
     {
     "matches": [
-      "*://test.cloud.plex.com/*",
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
@@ -578,7 +579,6 @@
       "ux/src/UX-Employees-Swap-Name-Script.js",
       "ux/src/UX-Enterprise-Roles-Script.js",
       "ux/src/UX-User-Customer-Access-Buttons-Script.js",
-      "ux/src/UX-Checksheet-Fill-Script.js",
       "ux/src/UX-Truck-Ship-Banner-Fix-Script.js",
       "ux/src/UX-Role-Manager-Highlight-Copied-Script.js",
       "util/new-session-script.js"
