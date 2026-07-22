@@ -284,7 +284,6 @@
   },
     {
     "matches": [
-      "*://test.cloud.plex.com/*",
       "*://cloud.plex.com/*"
     ],
     "include_globs": [
@@ -580,7 +579,6 @@
       "ux/src/UX-Employees-Swap-Name-Script.js",
       "ux/src/UX-Enterprise-Roles-Script.js",
       "ux/src/UX-User-Customer-Access-Buttons-Script.js",
-      "ux/src/UX-Checksheet-Fill-Script.js",
       "ux/src/UX-Truck-Ship-Banner-Fix-Script.js",
       "ux/src/UX-Role-Manager-Highlight-Copied-Script.js",
       "util/new-session-script.js"
