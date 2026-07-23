@@ -17,6 +17,7 @@ export function loadSettings(callback) {
         vBoolUxPosRoleAssocRearrangeColumns: true,
         vBoolUxEmployeeSwapNames: false,
         vBoolUxPosRoleAssocCopyPasteButtons: true,
+        vBoolUxSecurityRoleCopyPasteButtons: true,
         vBoolUxUserManagerCopyPasteButtons: true,
         vBoolUxRoleManagerHighlightButtons: true,
         vBoolUxSelectHalfCheckboxes: true,

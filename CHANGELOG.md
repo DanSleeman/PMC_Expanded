@@ -9,6 +9,8 @@ Added buttons for functionality to highlight rows of roles in the security roles
 
 Added context menu entry to check/uncheck half of the checkboxes on any given page.
 
+Added copy/paste buttons to the security role actions screen.
+
 ### Changed
 
 Removed UX production from sites for checksheet pencil whipping button.

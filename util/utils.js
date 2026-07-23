@@ -81,6 +81,10 @@ async function scriptInject(scriptPath, settings={}){
         //console.log(`variable copied: ${val}`)
         copyText.pasteText = val
     })
+    await readStorage('actionCopiedRole').then(val => {
+        //console.log(`variable copied: ${val}`)
+        copyText.actionCopiedRole = val
+    })
     await readStorage('copiedPCNs').then(val => {
         //console.log(`variable copiedPCNs: ${val}`)
         copyText.pasteTextPCN = val
@@ -94,6 +98,7 @@ async function scriptInject(scriptPath, settings={}){
     let s = document.createElement('script');
     s.dataset.params = JSON.stringify({
         pasted:copyText.pasteText,
+        actionCopiedRole:copyText.actionCopiedRole,
         pastedPCN:copyText.pasteTextPCN,
         reportPasted:copyText.reportPasted
     });

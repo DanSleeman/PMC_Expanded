@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const vBoolUxPosRoleAssocRearrangeColumns = document.getElementById("vBoolUxPosRoleAssocRearrangeColumns");
     
     const vBoolUxPosRoleAssocCopyPasteButtons = document.getElementById("vBoolUxPosRoleAssocCopyPasteButtons");
+    const vBoolUxSecurityRoleCopyPasteButtons = document.getElementById("vBoolUxSecurityRoleCopyPasteButtons");
     const vBoolUxUserManagerCopyPasteButtons = document.getElementById("vBoolUxUserManagerCopyPasteButtons");
     const vBoolUxRoleManagerHighlightButtons = document.getElementById("vBoolUxRoleManagerHighlightButtons");
     const vBoolUxSelectHalfCheckboxes = document.getElementById("vBoolUxSelectHalfCheckboxes");
@@ -96,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
         vBoolUxRoleManagerActionKeys.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxPosRoleAssocRearrangeColumns.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxPosRoleAssocCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
+        vBoolUxSecurityRoleCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxUserManagerCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxRoleManagerHighlightButtons.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxSelectHalfCheckboxes.disabled = !isvBoolUxLazyLoadingEnabled;
@@ -123,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         vBoolUxPosRoleAssocRearrangeColumns.checked = settings.vBoolUxPosRoleAssocRearrangeColumns;
         vBoolUxEmployeeSwapNames.checked = settings.vBoolUxEmployeeSwapNames;
         vBoolUxPosRoleAssocCopyPasteButtons.checked = settings.vBoolUxPosRoleAssocCopyPasteButtons;
+        vBoolUxSecurityRoleCopyPasteButtons.checked = settings.vBoolUxSecurityRoleCopyPasteButtons;
         vBoolUxUserManagerCopyPasteButtons.checked = settings.vBoolUxUserManagerCopyPasteButtons;
         vBoolUxRoleManagerHighlightButtons.checked = settings.vBoolUxRoleManagerHighlightButtons;
         vBoolUxSelectHalfCheckboxes.checked = settings.vBoolUxSelectHalfCheckboxes;
@@ -188,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
             vBoolUxPosRoleAssocRearrangeColumns: vBoolUxPosRoleAssocRearrangeColumns.checked,
             vBoolUxEmployeeSwapNames: vBoolUxEmployeeSwapNames.checked,
             vBoolUxPosRoleAssocCopyPasteButtons: vBoolUxPosRoleAssocCopyPasteButtons.checked,
+            vBoolUxSecurityRoleCopyPasteButtons: vBoolUxSecurityRoleCopyPasteButtons.checked,
             vBoolUxUserManagerCopyPasteButtons: vBoolUxUserManagerCopyPasteButtons.checked,
             vBoolUxRoleManagerHighlightButtons: vBoolUxRoleManagerHighlightButtons.checked,
             vBoolUxSelectHalfCheckboxes: vBoolUxSelectHalfCheckboxes.checked,
