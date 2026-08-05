@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="options.css" type="text/css">
 </head>
 <body>
-    <div style="display:none" class="content" id="settingsContainer"></div>
     <div class="content">
     <h1>Role Configuration</h1>
     <div class="parent">

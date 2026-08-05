@@ -1,58 +1,10 @@
+import { SETTINGS } from "./settings-schema.js";
 export function loadSettings(callback) {
-    const DEFAULT_SETTINGS = {
-        vBoolUxChecklistEditLink: true,
-        vBoolUxChecksheetFillButton: true,
-        vBoolUxCompareSettings: true,
-        vBoolUxEDILogButtons: true,
-        vBoolUxFavoritesUnlock: true,
-        vBoolUxSQLF5Execute: false,
-        vBoolUxLabelDesignerButtons: true,
-        vBoolUxFilterPinEnforce: false,
-        vBoolUxProjectManagementChecklistLink: true,
-        vBoolUxLazyLoading: true,
-        vBoolUxExportAnywhere: false,
-        vBoolUxSecurityActionKeys: true,
-        vBoolUxRoleRevisionHistory: true,
-        vBoolUxRoleManagerActionKeys: true,
-        vBoolUxPosRoleAssocRearrangeColumns: true,
-        vBoolUxEmployeeSwapNames: false,
-        vBoolUxPosRoleAssocCopyPasteButtons: true,
-        vBoolUxSecurityRoleCopyPasteButtons: true,
-        vBoolUxUserManagerCopyPasteButtons: true,
-        vBoolUxRoleManagerHighlightButtons: true,
-        vBoolUxSelectHalfCheckboxes: true,
-        vOptUxSelectHalfCheckboxesType: 0,
-        vBoolUxSelectAllAdmin: true,
-        vBoolUxAvailableRolesCopyPasteButtons: true,
-        vBoolUxCustAccessCopyPasteButtons: true,
-        vBoolUxCustAccessTogglePCNs: true,
-        vBoolUxSavePopupCsv: true,
-        vBoolUxMenuSearchKeyboardOBS: false,
-        vBoolUxRoleRevHistory: true,
-        vBoolUxTruckBannerFix: true,
-        vListEnterprisePCNs: "",
-        vStrSecurityManagerGlossary: "Security Manager",
-        vStrSettingsManagerGlossary: "Settings Manager",
 
-        vBoolClassicCalendarMassUpdate: true,
-        vBoolClassicChecklistEditLinks: true,
-        vBoolClassicChecksheetPopulate: true,
-        vBoolClassicCustomerPOButtons: true,
-        vBoolClassicEDILogButtons: true,
-        vBoolClassicEscapeOverride: true,
-        vBoolClassicLabelDesignerButtons: true,
-        vBoolClassicLabelDesignerLinks: true,
-        vBoolClassicRenaultDelforButton: false,
-        vBoolClassicUserManagerCopy: true,
-        vBoolClassicUserManagerSelectAllAdmin: true,
-        vBoolClassicUserManagerPasteClassic: true,
-        vBoolClassicUserManagerPasteUX: true,
-        vStrClassicUserManagerExcludeText: "",
-        vStrClassicUserManagerUXRolePrefix: "",
-        vBoolClassicVPTabIndexFix: true,
-        vBoolClassicPosRoleAssocCopyPaste: true,
-        vBoolClassicPreventLoginPopup: true
-    };
+    const DEFAULT_SETTINGS = Object.fromEntries(
+    SETTINGS.map(setting => [setting.key, setting.default])
+    );
+
     const STORAGE_KEYS = Object.keys(DEFAULT_SETTINGS);
     chrome.storage.sync.get(STORAGE_KEYS, (data) => {
         // Merge with default values

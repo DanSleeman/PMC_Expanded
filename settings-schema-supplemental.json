@@ -1,0 +1,198 @@
+[
+    {
+        "key": "vBoolUxMenuSearchKeyboardOBS",
+        "label": "Add keyboard navigation to menu search",
+        "tooltipText": "This is now native Plex functionality. Keeping the option in case Plex ever breaks it.Adds the ability to use up and down arrows to select the screen during a menu search. Enter will then navigate to the selected page."
+    },
+    {
+        "key": "vBoolUxTruckBannerFix",
+        "label": "Fix \"Unexpected Error\" banner when shipping a truck.",
+        "tooltipText": "This occurs inconsistently when shipping a truck that has issues that would normally cause a warning. I.E. PPAP missing/expired, customer on credit hold. This should override the broken function to show the actual warning instead of an unexpected error."
+    },
+    {
+        "key": "vBoolUxFavoritesUnlock",
+        "label": "Unlock all* function key options when assigning favorites.",
+        "tooltipText": "F5 is still reserved for refreshing the browser."
+    },
+    {
+        "key": "vBoolUxCompareSettings",
+        "label": "Add \"Compare Settings\" link in the gears dropdown menu."
+    },
+    {
+        "key": "vBoolUxRoleRevHistory",
+        "label": "Add \"Role Revision History\" link in the gears dropdown menu."
+    },
+    {
+        "key": "vBoolUxFilterPinEnforce",
+        "label": "Force the \"Pin Filters\" option to always be enabled."
+    },
+    {
+        "key": "vBoolUxLazyLoading",
+        "label": "Disable lazy loading for all UX pages.",
+        "tooltipText": "This is required for many extension features to work properly."
+    },
+    {
+        "key": "vBoolUxExportAnywhere",
+        "label": "Add button for exporting visible grid data.",
+        "tooltipText": "May behave oddly on pages with multiple grids."
+    },
+    {
+        "key": "vBoolUxSelectHalfCheckboxes",
+        "label": "Add a context menu item to do a 'binary selection' for checkboxes.",
+        "tooltipText": "Allows testing for various areas controlled by checkboxes by easily selecting and unselecting half of the checkboxes. This can be helpful to narrow down which security action actually does what you're looking for."
+    },
+    {
+        "key": "vBoolUxSavePopupCsv",
+        "label": "Add button to save the contents of the upload confirmation/error popup windows to a CSV file."
+    },
+    {
+        "key": "vBoolUxSecurityActionKeys",
+        "label": "Add button to show the action key when viewing the security admin manager."
+    },
+    {
+        "key": "vBoolUxRoleManagerActionKeys",
+        "label": "Add a button to show the action key when viewing the security role actions from security roles manager."
+    },
+    {
+        "key": "vBoolUxSecurityRoleCopyPasteButtons",
+        "label": "Add copy/paste buttons to the security role actions from security roles manager."
+    },
+    {
+        "key": "vBoolUxRoleRevisionHistory",
+        "label": "Add buttons to the role revision history screen.",
+        "tooltipText": "Copy Added Roles\n                            Copy Removed Roles\n                            [Show only] UX roles\n                            [Show only] Classic roles"
+    },
+    {
+        "key": "vBoolUxRoleManagerHighlightButtons",
+        "label": "Add button to highlight previously copied roles"
+    },
+    {
+        "key": "vBoolUxPosRoleAssocRearrangeColumns",
+        "label": "Position and Security Role Associations"
+    },
+    {
+        "key": "vBoolUxPosRoleAssocCopyPasteButtons",
+        "label": "Add buttons to the screen to copy the selected roles and paste the matching roles from the last copy.",
+        "tooltipText": "Copy and Paste buttons can be used across all role related screens."
+    },
+    {
+        "key": "vBoolUxUserManagerCopyPasteButtons",
+        "label": "User Manager - User Detail",
+        "tooltipText": "Copy and Paste buttons can be used across all role related screens."
+    },
+    {
+        "key": "vBoolUxSelectAllAdmin",
+        "label": "Add a button to select the admin checkbox for all roles."
+    },
+    {
+        "key": "vBoolUxAvailableRolesCopyPasteButtons",
+        "label": "Available Reports"
+    },
+    {
+        "key": "vBoolUxCustAccessCopyPasteButtons",
+        "label": "User Manager - Company Access (Customer Access)",
+        "tooltipText": "These may require the option to disable lazy loading if there are many PCNs."
+    },
+    {
+        "key": "vBoolUxCustAccessTogglePCNs",
+        "label": "Add a button to quickly enable/disable a PCN per row."
+    },
+    {
+        "key": "vBoolUxEDILogButtons",
+        "label": "EDI Log"
+    },
+    {
+        "key": "vBoolUxEmployeeSwapNames",
+        "label": "Employees"
+    },
+    {
+        "key": "vBoolUxLabelDesignerButtons",
+        "label": "Label Designer - Customer Label Elements",
+        "tooltipText": "Normally only accessible from the label library screen."
+    },
+    {
+        "key": "vBoolUxProjectManagementChecklistLink",
+        "label": "Project Manager - Checklist Step Overviews"
+    },
+    {
+        "key": "vBoolUxChecklistEditLink",
+        "label": "Checklist Grid Detail"
+    },
+    {
+        "key": "vBoolUxSQLF5Execute",
+        "label": "SQL Development Environment"
+    },
+    {
+        "key": "vBoolUxChecksheetFillButton",
+        "label": "Checksheets",
+        "tooltipText": "This may require the option to disable lazy loading if a checksheet has many items."
+    },
+    {
+        "key": "vBoolClassicPreventLoginPopup",
+        "label": "Prevent classic popup window during login."
+    },
+    {
+        "key": "vBoolClassicEscapeOverride",
+        "label": "Override the mouse's back button to send the escape keyboard command."
+    },
+    {
+        "key": "vBoolClassicVPTabIndexFix",
+        "label": "Fix VP screen tab keyboard navigation",
+        "tooltipText": "Normally, things like the back button and other elements get highlighted before the filters.This applies a tab index to all the filters."
+    },
+    {
+        "key": "vBoolClassicUserManagerCopy",
+        "label": "Add a button to copy enabled roles for a user."
+    },
+    {
+        "key": "vBoolClassicUserManagerSelectAllAdmin",
+        "label": "Add a button to select admin checkbox for all roles."
+    },
+    {
+        "key": "vBoolClassicUserManagerPasteClassic",
+        "label": "Add a button to paste \"classic\" security roles.",
+        "tooltipText": "Uses the UX role prefix setting to derive the classic roles."
+    },
+    {
+        "key": "vBoolClassicUserManagerPasteUX",
+        "label": "Add a button to paste \"UX\" security roles.",
+        "tooltipText": "Uses the UX role prefix setting."
+    },
+    {
+        "key": "vBoolClassicPosRoleAssocCopyPaste",
+        "label": "Position Security Role Association"
+    },
+    {
+        "key": "vBoolClassicCalendarMassUpdate",
+        "label": "Shipping Day Calendars",
+        "tooltipText": "This features works in UX by default."
+    },
+    {
+        "key": "vBoolClassicChecklistEditLinks",
+        "label": "Checklist Details"
+    },
+    {
+        "key": "vBoolClassicChecksheetPopulate",
+        "label": "Checksheets"
+    },
+    {
+        "key": "vBoolClassicCustomerPOButtons",
+        "label": "Customer Orders"
+    },
+    {
+        "key": "vBoolClassicEDILogButtons",
+        "label": "EDI Log"
+    },
+    {
+        "key": "vBoolClassicLabelDesignerButtons",
+        "label": "Customer Label Designer - Customer Label Elements"
+    },
+    {
+        "key": "vBoolClassicLabelDesignerLinks",
+        "label": "Unsure on behavior."
+    },
+    {
+        "key": "vBoolClassicRenaultDelforButton",
+        "label": "Add a button to Shape's custom Renault VP screen to navigate to a specific DCS node."
+    }
+]

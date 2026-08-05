@@ -1,57 +1,37 @@
 import { loadSettings, saveSettings, addLazyRule, removeLazyRule} from "./config.js"
+import { SETTINGS } from "./settings-schema.js";
 document.addEventListener("DOMContentLoaded", function () {
-    const vBoolUxChecklistEditLink = document.getElementById("vBoolUxChecklistEditLink");
-    const vBoolUxChecksheetFillButton = document.getElementById("vBoolUxChecksheetFillButton");
-    const vBoolUxCompareSettings = document.getElementById("vBoolUxCompareSettings");
-    const vBoolUxEDILogButtons = document.getElementById("vBoolUxEDILogButtons");
-    const vBoolUxFavoritesUnlock = document.getElementById("vBoolUxFavoritesUnlock");
-    const vBoolUxEmployeeSwapNames = document.getElementById("vBoolUxEmployeeSwapNames");
-    const vBoolUxSQLF5Execute = document.getElementById("vBoolUxSQLF5Execute");
-    const vBoolUxLabelDesignerButtons = document.getElementById("vBoolUxLabelDesignerButtons");
-    const vBoolUxFilterPinEnforce = document.getElementById("vBoolUxFilterPinEnforce");
-    const vBoolUxProjectManagementChecklistLink = document.getElementById("vBoolUxProjectManagementChecklistLink");
-    const vBoolUxLazyLoading = document.getElementById("vBoolUxLazyLoading");
-    const vBoolUxTruckBannerFix = document.getElementById("vBoolUxTruckBannerFix");
-    const vBoolUxExportAnywhere = document.getElementById("vBoolUxExportAnywhere");
-    const vBoolUxSecurityActionKeys = document.getElementById("vBoolUxSecurityActionKeys");
-    const vBoolUxRoleRevisionHistory = document.getElementById("vBoolUxRoleRevisionHistory");
-    const vBoolUxRoleManagerActionKeys = document.getElementById("vBoolUxRoleManagerActionKeys");
-    const vBoolUxPosRoleAssocRearrangeColumns = document.getElementById("vBoolUxPosRoleAssocRearrangeColumns");
-    
-    const vBoolUxPosRoleAssocCopyPasteButtons = document.getElementById("vBoolUxPosRoleAssocCopyPasteButtons");
-    const vBoolUxSecurityRoleCopyPasteButtons = document.getElementById("vBoolUxSecurityRoleCopyPasteButtons");
-    const vBoolUxUserManagerCopyPasteButtons = document.getElementById("vBoolUxUserManagerCopyPasteButtons");
-    const vBoolUxRoleManagerHighlightButtons = document.getElementById("vBoolUxRoleManagerHighlightButtons");
-    const vBoolUxSelectHalfCheckboxes = document.getElementById("vBoolUxSelectHalfCheckboxes");
-    const vOptUxSelectHalfCheckboxesType = document.getElementById("vOptUxSelectHalfCheckboxesType");
-    const vBoolUxSelectAllAdmin = document.getElementById("vBoolUxSelectAllAdmin");
-    const vBoolUxAvailableRolesCopyPasteButtons = document.getElementById("vBoolUxAvailableRolesCopyPasteButtons");
-    const vBoolUxCustAccessCopyPasteButtons = document.getElementById("vBoolUxCustAccessCopyPasteButtons");
-    const vBoolUxCustAccessTogglePCNs = document.getElementById("vBoolUxCustAccessTogglePCNs");
-    const vBoolUxSavePopupCsv = document.getElementById("vBoolUxSavePopupCsv");
-    const vBoolUxMenuSearchKeyboardOBS = document.getElementById("vBoolUxMenuSearchKeyboardOBS");
-    const vBoolUxRoleRevHistory = document.getElementById("vBoolUxRoleRevHistory");
-    const vListEnterprisePCNs = document.getElementById("vListEnterprisePCNs");
-    const vStrSecurityManagerGlossary = document.getElementById("vStrSecurityManagerGlossary");
-    const vStrSettingsManagerGlossary = document.getElementById("vStrSettingsManagerGlossary");
-    const vBoolClassicCalendarMassUpdate = document.getElementById("vBoolClassicCalendarMassUpdate");
-    const vBoolClassicChecklistEditLinks = document.getElementById("vBoolClassicChecklistEditLinks");
-    const vBoolClassicChecksheetPopulate = document.getElementById("vBoolClassicChecksheetPopulate");
-    const vBoolClassicCustomerPOButtons = document.getElementById("vBoolClassicCustomerPOButtons");
-    const vBoolClassicEDILogButtons = document.getElementById("vBoolClassicEDILogButtons");
-    const vBoolClassicEscapeOverride = document.getElementById("vBoolClassicEscapeOverride");
-    const vBoolClassicLabelDesignerButtons = document.getElementById("vBoolClassicLabelDesignerButtons");
-    const vBoolClassicLabelDesignerLinks = document.getElementById("vBoolClassicLabelDesignerLinks");
-    const vBoolClassicRenaultDelforButton = document.getElementById("vBoolClassicRenaultDelforButton");
-    const vBoolClassicUserManagerCopy = document.getElementById("vBoolClassicUserManagerCopy");
-    const vBoolClassicUserManagerSelectAllAdmin = document.getElementById("vBoolClassicUserManagerSelectAllAdmin");
-    const vBoolClassicUserManagerPasteClassic = document.getElementById("vBoolClassicUserManagerPasteClassic");
-    const vBoolClassicUserManagerPasteUX = document.getElementById("vBoolClassicUserManagerPasteUX");
-    const vStrClassicUserManagerExcludeText = document.getElementById("vStrClassicUserManagerExcludeText");
-    const vStrClassicUserManagerUXRolePrefix = document.getElementById("vStrClassicUserManagerUXRolePrefix");
-    const vBoolClassicVPTabIndexFix = document.getElementById("vBoolClassicVPTabIndexFix");
-    const vBoolClassicPosRoleAssocCopyPaste = document.getElementById("vBoolClassicPosRoleAssocCopyPaste");
-    const vBoolClassicPreventLoginPopup = document.getElementById("vBoolClassicPreventLoginPopup");
+
+    function renderSettings() {
+        const container = document.getElementById("settingsContainer");
+        
+        SETTINGS.forEach(setting => {
+            const wrapper = document.createElement("label");
+            
+            //TODO 
+            // - add all types
+            // - set up the full HTML structure for each element
+            // - add text label to schema
+            // - class to schema
+            // - add group to schema
+            if (setting.type === "checkbox") {
+                wrapper.innerHTML = `
+                    <input type="checkbox" id="${setting.key}">
+                    ${setting.label}
+                `;
+            }
+
+            if (setting.type === "text") {
+                wrapper.innerHTML = `
+                    ${setting.label}
+                    <input type="text" id="${setting.key}">
+                `;
+            }
+
+            container.appendChild(wrapper);
+        });
+    }
+    // renderSettings()
     const saveButton = document.getElementById("saveButton");
 
     // Dunamically sets the tooltip bounds to keep them within the window
@@ -88,82 +68,61 @@ document.addEventListener("DOMContentLoaded", function () {
     tooltipText()
 
 
-    // Function to update dependencies
-    function updateDependencies() {
-        const isvBoolUxLazyLoadingEnabled = vBoolUxLazyLoading.checked;
-        vBoolUxExportAnywhere.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxSecurityActionKeys.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxRoleRevisionHistory.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxRoleManagerActionKeys.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxPosRoleAssocRearrangeColumns.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxPosRoleAssocCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxSecurityRoleCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxUserManagerCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxRoleManagerHighlightButtons.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxSelectHalfCheckboxes.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxSelectAllAdmin.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxAvailableRolesCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
-        vBoolUxSavePopupCsv.disabled = !isvBoolUxLazyLoadingEnabled;
-    }
     // Load saved settings
-    loadSettings((settings) =>{
-        vBoolUxChecklistEditLink.checked = settings.vBoolUxChecklistEditLink;
-        vBoolUxChecksheetFillButton.checked = settings.vBoolUxChecksheetFillButton;
-        vBoolUxCompareSettings.checked = settings.vBoolUxCompareSettings;
-        vBoolUxEDILogButtons.checked = settings.vBoolUxEDILogButtons;
-        vBoolUxFavoritesUnlock.checked = settings.vBoolUxFavoritesUnlock;
-        vBoolUxSQLF5Execute.checked = settings.vBoolUxSQLF5Execute;
-        vBoolUxLabelDesignerButtons.checked = settings.vBoolUxLabelDesignerButtons;
-        vBoolUxFilterPinEnforce.checked = settings.vBoolUxFilterPinEnforce;
-        vBoolUxProjectManagementChecklistLink.checked = settings.vBoolUxProjectManagementChecklistLink;
-        vBoolUxLazyLoading.checked = settings.vBoolUxLazyLoading;
-        vBoolUxTruckBannerFix.checked = settings.vBoolUxTruckBannerFix;
-        vBoolUxExportAnywhere.checked = settings.vBoolUxExportAnywhere;
-        vBoolUxSecurityActionKeys.checked = settings.vBoolUxSecurityActionKeys;
-        vBoolUxRoleRevisionHistory.checked = settings.vBoolUxRoleRevisionHistory;
-        vBoolUxRoleManagerActionKeys.checked = settings.vBoolUxRoleManagerActionKeys;
-        vBoolUxPosRoleAssocRearrangeColumns.checked = settings.vBoolUxPosRoleAssocRearrangeColumns;
-        vBoolUxEmployeeSwapNames.checked = settings.vBoolUxEmployeeSwapNames;
-        vBoolUxPosRoleAssocCopyPasteButtons.checked = settings.vBoolUxPosRoleAssocCopyPasteButtons;
-        vBoolUxSecurityRoleCopyPasteButtons.checked = settings.vBoolUxSecurityRoleCopyPasteButtons;
-        vBoolUxUserManagerCopyPasteButtons.checked = settings.vBoolUxUserManagerCopyPasteButtons;
-        vBoolUxRoleManagerHighlightButtons.checked = settings.vBoolUxRoleManagerHighlightButtons;
-        vBoolUxSelectHalfCheckboxes.checked = settings.vBoolUxSelectHalfCheckboxes;
-        vOptUxSelectHalfCheckboxesType.selectedIndex = settings.vOptUxSelectHalfCheckboxesType;
-        vBoolUxSelectAllAdmin.checked = settings.vBoolUxSelectAllAdmin;
-        vBoolUxAvailableRolesCopyPasteButtons.checked = settings.vBoolUxAvailableRolesCopyPasteButtons;
-        vBoolUxCustAccessCopyPasteButtons.checked = settings.vBoolUxCustAccessCopyPasteButtons;
-        vBoolUxCustAccessTogglePCNs.checked = settings.vBoolUxCustAccessTogglePCNs;
-        vBoolUxSavePopupCsv.checked = settings.vBoolUxSavePopupCsv;
-        vBoolUxMenuSearchKeyboardOBS.checked = settings.vBoolUxMenuSearchKeyboardOBS;
-        vBoolUxRoleRevHistory.checked = settings.vBoolUxRoleRevHistory;
-        vListEnterprisePCNs.value = settings.vListEnterprisePCNs;
-        vStrSecurityManagerGlossary.value = settings.vStrSecurityManagerGlossary;
-        vStrSettingsManagerGlossary.value = settings.vStrSettingsManagerGlossary;
+    loadSettings((settings) => {
 
-        vBoolClassicCalendarMassUpdate.checked = settings.vBoolClassicCalendarMassUpdate;
-        vBoolClassicChecklistEditLinks.checked = settings.vBoolClassicChecklistEditLinks;
-        vBoolClassicChecksheetPopulate.checked = settings.vBoolClassicChecksheetPopulate;
-        vBoolClassicCustomerPOButtons.checked = settings.vBoolClassicCustomerPOButtons;
-        vBoolClassicEDILogButtons.checked = settings.vBoolClassicEDILogButtons;
-        vBoolClassicEscapeOverride.checked = settings.vBoolClassicEscapeOverride;
-        vBoolClassicLabelDesignerButtons.checked = settings.vBoolClassicLabelDesignerButtons;
-        vBoolClassicLabelDesignerLinks.checked = settings.vBoolClassicLabelDesignerLinks;
-        vBoolClassicRenaultDelforButton.checked = settings.vBoolClassicRenaultDelforButton;
-        vBoolClassicUserManagerCopy.checked = settings.vBoolClassicUserManagerCopy;
-        vBoolClassicUserManagerSelectAllAdmin.checked = settings.vBoolClassicUserManagerSelectAllAdmin;
-        vBoolClassicUserManagerPasteClassic.checked = settings.vBoolClassicUserManagerPasteClassic;
-        vBoolClassicUserManagerPasteUX.checked = settings.vBoolClassicUserManagerPasteUX;
-        vStrClassicUserManagerExcludeText.value = settings.vStrClassicUserManagerExcludeText;
-        vStrClassicUserManagerUXRolePrefix.value = settings.vStrClassicUserManagerUXRolePrefix;
-        vBoolClassicVPTabIndexFix.checked = settings.vBoolClassicVPTabIndexFix;
-        vBoolClassicPosRoleAssocCopyPaste.checked = settings.vBoolClassicPosRoleAssocCopyPaste;
-        vBoolClassicPreventLoginPopup.checked = settings.vBoolClassicPreventLoginPopup;
-        updateDependencies();
+        SETTINGS.forEach(setting => {
+
+            const element = document.getElementById(setting.key);
+            if (!element) return;
+
+            switch (setting.type) {
+                case "checkbox":
+                    element.checked = settings[setting.key];
+                    break;
+                case "text":
+                case "textarea":
+                    element.value = settings[setting.key];
+                    break;
+                case "select":
+                    element.selectedIndex = settings[setting.key];
+                    break;
+            }
+        });
+        SETTINGS.forEach(setting => {
+            if (!setting.dependsOn) return;
+
+            const parent = document.getElementById(setting.dependsOn);
+            const child = document.getElementById(setting.key);
+
+            child.disabled = !parent.checked;
+            parent.addEventListener("change", () => {
+                child.disabled = !parent.checked;
+            });
+        });
     });
 
-    // Listen for changes in lazy loading
-    vBoolUxLazyLoading.addEventListener("change", updateDependencies);
+    function collectSettings() {
+        const result = {};
+        SETTINGS.forEach(setting => {
+            const element = document.getElementById(setting.key);
+            if (!element) return;
+
+            switch (setting.type) {
+                case "checkbox":
+                    result[setting.key] = element.checked;
+                    break;
+                case "text":
+                case "textarea":
+                    result[setting.key] = element.value;
+                    break;
+                case "select":
+                    result[setting.key] = element.selectedIndex;
+                    break;
+            }
+        });
+        return result;
+    }
     
     // Save settings
     saveButton.addEventListener("click", function () {
@@ -172,59 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             removeLazyRule()
         }
-        saveSettings({
-            vBoolUxChecklistEditLink: vBoolUxChecklistEditLink.checked,
-            vBoolUxChecksheetFillButton: vBoolUxChecksheetFillButton.checked,
-            vBoolUxCompareSettings: vBoolUxCompareSettings.checked,
-            vBoolUxEDILogButtons: vBoolUxEDILogButtons.checked,
-            vBoolUxFavoritesUnlock: vBoolUxFavoritesUnlock.checked,
-            vBoolUxSQLF5Execute: vBoolUxSQLF5Execute.checked,
-            vBoolUxLabelDesignerButtons: vBoolUxLabelDesignerButtons.checked,
-            vBoolUxFilterPinEnforce: vBoolUxFilterPinEnforce.checked,
-            vBoolUxProjectManagementChecklistLink: vBoolUxProjectManagementChecklistLink.checked,
-            vBoolUxLazyLoading: vBoolUxLazyLoading.checked,
-            vBoolUxTruckBannerFix: vBoolUxTruckBannerFix.checked,
-            vBoolUxExportAnywhere: vBoolUxExportAnywhere.checked,
-            vBoolUxSecurityActionKeys: vBoolUxSecurityActionKeys.checked,
-            vBoolUxRoleRevisionHistory: vBoolUxRoleRevisionHistory.checked,
-            vBoolUxRoleManagerActionKeys: vBoolUxRoleManagerActionKeys.checked,
-            vBoolUxPosRoleAssocRearrangeColumns: vBoolUxPosRoleAssocRearrangeColumns.checked,
-            vBoolUxEmployeeSwapNames: vBoolUxEmployeeSwapNames.checked,
-            vBoolUxPosRoleAssocCopyPasteButtons: vBoolUxPosRoleAssocCopyPasteButtons.checked,
-            vBoolUxSecurityRoleCopyPasteButtons: vBoolUxSecurityRoleCopyPasteButtons.checked,
-            vBoolUxUserManagerCopyPasteButtons: vBoolUxUserManagerCopyPasteButtons.checked,
-            vBoolUxRoleManagerHighlightButtons: vBoolUxRoleManagerHighlightButtons.checked,
-            vBoolUxSelectHalfCheckboxes: vBoolUxSelectHalfCheckboxes.checked,
-            vOptUxSelectHalfCheckboxesType: vOptUxSelectHalfCheckboxesType.selectedIndex,
-            vBoolUxSelectAllAdmin: vBoolUxSelectAllAdmin.checked,
-            vBoolUxAvailableRolesCopyPasteButtons: vBoolUxAvailableRolesCopyPasteButtons.checked,
-            vBoolUxCustAccessCopyPasteButtons: vBoolUxCustAccessCopyPasteButtons.checked,
-            vBoolUxCustAccessTogglePCNs: vBoolUxCustAccessTogglePCNs.checked,
-            vBoolUxSavePopupCsv: vBoolUxSavePopupCsv.checked,
-            vBoolUxMenuSearchKeyboardOBS: vBoolUxMenuSearchKeyboardOBS.checked,
-            vBoolUxRoleRevHistory: vBoolUxRoleRevHistory.checked,
-            vListEnterprisePCNs: vListEnterprisePCNs.value,
-            vStrSecurityManagerGlossary: vStrSecurityManagerGlossary.value,
-            vStrSettingsManagerGlossary: vStrSettingsManagerGlossary.value,
-            vBoolClassicCalendarMassUpdate: vBoolClassicCalendarMassUpdate.checked,
-            vBoolClassicChecklistEditLinks: vBoolClassicChecklistEditLinks.checked,
-            vBoolClassicChecksheetPopulate: vBoolClassicChecksheetPopulate.checked,
-            vBoolClassicCustomerPOButtons: vBoolClassicCustomerPOButtons.checked,
-            vBoolClassicEDILogButtons: vBoolClassicEDILogButtons.checked,
-            vBoolClassicEscapeOverride: vBoolClassicEscapeOverride.checked,
-            vBoolClassicLabelDesignerButtons: vBoolClassicLabelDesignerButtons.checked,
-            vBoolClassicLabelDesignerLinks: vBoolClassicLabelDesignerLinks.checked,
-            vBoolClassicRenaultDelforButton: vBoolClassicRenaultDelforButton.checked,
-            vBoolClassicUserManagerCopy: vBoolClassicUserManagerCopy.checked,
-            vBoolClassicUserManagerSelectAllAdmin: vBoolClassicUserManagerSelectAllAdmin.checked,
-            vBoolClassicUserManagerPasteClassic: vBoolClassicUserManagerPasteClassic.checked,
-            vBoolClassicUserManagerPasteUX: vBoolClassicUserManagerPasteUX.checked,
-            vStrClassicUserManagerExcludeText: vStrClassicUserManagerExcludeText.value,
-            vStrClassicUserManagerUXRolePrefix: vStrClassicUserManagerUXRolePrefix.value,
-            vBoolClassicVPTabIndexFix: vBoolClassicVPTabIndexFix.checked,
-            vBoolClassicPosRoleAssocCopyPaste: vBoolClassicPosRoleAssocCopyPaste.checked,
-            vBoolClassicPreventLoginPopup: vBoolClassicPreventLoginPopup.checked
-        }, () =>
+        saveSettings(collectSettings(), () =>
         {
             const statusMessage = document.getElementById("statusMessage");
             statusMessage.textContent = "Settings saved!";

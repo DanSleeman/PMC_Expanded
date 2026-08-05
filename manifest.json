@@ -583,7 +583,9 @@
       "ux/src/UX-Truck-Ship-Banner-Fix-Script.js",
       "ux/src/UX-Role-Manager-Highlight-Copied-Script.js",
       "ux/src/UX-Role-Security-Copy-Buttons-Script.js",
-      "util/new-session-script.js"
+      "util/new-session-script.js",
+      "settings-schema.js"
+
     ],
     "matches":[
       "*://test.plexus-online.com/*",
