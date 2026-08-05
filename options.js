@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const vBoolUxCustAccessCopyPasteButtons = document.getElementById("vBoolUxCustAccessCopyPasteButtons");
     const vBoolUxCustAccessTogglePCNs = document.getElementById("vBoolUxCustAccessTogglePCNs");
     const vBoolUxSavePopupCsv = document.getElementById("vBoolUxSavePopupCsv");
+    const vBoolUxSecurityManagerModalPopup = document.getElementById("vBoolUxSecurityManagerModalPopup");
     const vBoolUxMenuSearchKeyboardOBS = document.getElementById("vBoolUxMenuSearchKeyboardOBS");
     const vBoolUxRoleRevHistory = document.getElementById("vBoolUxRoleRevHistory");
     const vListEnterprisePCNs = document.getElementById("vListEnterprisePCNs");
@@ -104,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
         vBoolUxSelectAllAdmin.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxAvailableRolesCopyPasteButtons.disabled = !isvBoolUxLazyLoadingEnabled;
         vBoolUxSavePopupCsv.disabled = !isvBoolUxLazyLoadingEnabled;
+        vBoolUxSecurityManagerModalPopup.disabled = !isvBoolUxLazyLoadingEnabled;
     }
     // Load saved settings
     loadSettings((settings) =>{
@@ -135,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
         vBoolUxCustAccessCopyPasteButtons.checked = settings.vBoolUxCustAccessCopyPasteButtons;
         vBoolUxCustAccessTogglePCNs.checked = settings.vBoolUxCustAccessTogglePCNs;
         vBoolUxSavePopupCsv.checked = settings.vBoolUxSavePopupCsv;
+        vBoolUxSecurityManagerModalPopup.checked = settings.vBoolUxSecurityManagerModalPopup;
         vBoolUxMenuSearchKeyboardOBS.checked = settings.vBoolUxMenuSearchKeyboardOBS;
         vBoolUxRoleRevHistory.checked = settings.vBoolUxRoleRevHistory;
         vListEnterprisePCNs.value = settings.vListEnterprisePCNs;
@@ -201,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
             vBoolUxCustAccessCopyPasteButtons: vBoolUxCustAccessCopyPasteButtons.checked,
             vBoolUxCustAccessTogglePCNs: vBoolUxCustAccessTogglePCNs.checked,
             vBoolUxSavePopupCsv: vBoolUxSavePopupCsv.checked,
+            vBoolUxSecurityManagerModalPopup: vBoolUxSecurityManagerModalPopup.checked,
             vBoolUxMenuSearchKeyboardOBS: vBoolUxMenuSearchKeyboardOBS.checked,
             vBoolUxRoleRevHistory: vBoolUxRoleRevHistory.checked,
             vListEnterprisePCNs: vListEnterprisePCNs.value,

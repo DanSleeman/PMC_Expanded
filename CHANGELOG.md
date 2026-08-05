@@ -11,6 +11,8 @@ Added context menu entry to check/uncheck half of the checkboxes on any given pa
 
 Added copy/paste buttons to the security role actions screen.
 
+Added link to security admin manager screen for all modal dialog popup windows.
+
 ### Changed
 
 Removed UX production from sites for checksheet pencil whipping button.

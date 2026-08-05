@@ -27,6 +27,7 @@ export function loadSettings(callback) {
         vBoolUxCustAccessCopyPasteButtons: true,
         vBoolUxCustAccessTogglePCNs: true,
         vBoolUxSavePopupCsv: true,
+        vBoolUxSecurityManagerModalPopup: true,
         vBoolUxMenuSearchKeyboardOBS: false,
         vBoolUxRoleRevHistory: true,
         vBoolUxTruckBannerFix: true,
