@@ -25,6 +25,10 @@ function tableRowButtons(){
     if (toggleButtons){
         return;
     }
+    const pcnSortCells = document.querySelectorAll('tr.plex-grid-row.selectable > td[data-col-index="3"] > div > input')
+    const values = [...pcnSortCells].map(e => parseInt(e.value) || 0)
+    var currentIndex = Math.max(...values) + 1
+
     const head = document.querySelectorAll('tr.plex-grid-header-row')
     head.forEach((h, index) => {
         if (index % 2 === 0){
@@ -73,7 +77,8 @@ function tableRowButtons(){
                 button.style.backgroundColor = '';
             } else {
                 inputs.col2.click();
-                inputs.col3.value = 1;
+                inputs.col3.value = currentIndex;
+                currentIndex += 1
                 if (!inputs.col4.checked) {
                     inputs.col4.click();
                 }

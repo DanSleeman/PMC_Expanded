@@ -17,6 +17,8 @@ Added link to security admin manager screen for all modal dialog popup windows.
 
 Removed UX production from sites for checksheet pencil whipping button.
 
+Changed PCN Toggle to increase the next sort order when adding PCNs.
+
 ## [0.21.0] - 6/12/2026
 
 ### Added
