@@ -183,10 +183,7 @@
   {
     "matches": [
       "*://test.plexus-online.com/*",
-      "*://www.plexus-online.com/*",
-      "*://test.plexonline.com/*",
-      "*://www.plexonline.com/*",
-      "*://plus.plexonline.com/*"
+      "*://test.plexonline.com/*"
     ],  
     "include_globs": [
       "*Modules/Quality/Checksheet/ChecksheetLine.aspx*"
